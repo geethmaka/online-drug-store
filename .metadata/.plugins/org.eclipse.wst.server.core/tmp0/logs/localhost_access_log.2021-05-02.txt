@@ -1,0 +1,10 @@
+127.0.0.1 - - [02/May/2021:16:15:21 +0530] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [02/May/2021:16:15:23 +0530] "GET /online-drug-store/index.jsp HTTP/1.1" 200 219
+0:0:0:0:0:0:0:1 - - [02/May/2021:16:15:24 +0530] "GET /online-drug-store/Home HTTP/1.1" 500 3822
+127.0.0.1 - - [02/May/2021:16:16:02 +0530] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [02/May/2021:16:16:02 +0530] "GET /online-drug-store/index.jsp HTTP/1.1" 200 219
+0:0:0:0:0:0:0:1 - - [02/May/2021:16:16:04 +0530] "GET /online-drug-store/Home HTTP/1.1" 500 3822
+127.0.0.1 - - [02/May/2021:16:38:16 +0530] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [02/May/2021:16:38:17 +0530] "GET /online-drug-store/WEB-INF/classes/home/Home.java HTTP/1.1" 404 682
+0:0:0:0:0:0:0:1 - - [02/May/2021:16:38:26 +0530] "GET /online-drug-store/ HTTP/1.1" 200 219
+0:0:0:0:0:0:0:1 - - [02/May/2021:16:38:28 +0530] "GET /online-drug-store/Home HTTP/1.1" 500 3843

@@ -1,0 +1,8 @@
+INDEX VERSION 1.4+C:\Users\GeethmakaDissanayake\Desktop\online-drug-store\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+1748206840.index
+997156194.index
+1098583492.index
+4245948320.index
+505164303.index
+2621447274.index
+3419682618.index
