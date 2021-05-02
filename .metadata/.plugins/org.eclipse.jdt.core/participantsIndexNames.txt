@@ -1,3 +1,0 @@
-INDEX VERSION 1.131
-C:\Users\GeethmakaDissanayake\Desktop\online-drug-store\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\505164303.index
-\online-drug-store\src\main\java
