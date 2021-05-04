@@ -4,19 +4,19 @@
 <html>
 <head>
 	<meta charset="ISO-8859-1">
-	<link rel="stylesheet" type="text/css" href="../css/forms.css">
+	<link rel="stylesheet" type="text/css" href="css/forms.css">
     <title>Login</title>
 </head>
     <body>
         <center>
-            <img src="../img/cart.png" class="logo"><br><br>
+            <img src="img/cart.png" class="logo"><br><br>
         <center>
         <div class="center_form">
             <div>
                 <form action="../php/login.php" method="POST" onsubmit="return validateForm()">
                     <fieldset>
                         <div class="formtop">
-                            <span>Sign in to buyme or <a href="CommonRegistration.html"class="link">Create an Account</a></span>
+                            <span>Sign in or <a href="CommonRegistration.html"class="link">Create an Account</a></span>
                         </div><br>
                         <div>
                             <label for="email">EMAIL ADDRESS :</label><br>
@@ -46,9 +46,9 @@
                 <a href="about.html">About</a>
                 <div>
                     <br>
-                    <img src="../img/facebook.png" height="50px" width="50px">&nbsp;&nbsp;&nbsp;&nbsp;
-                    <img src="../img/twitter.png" height="50px" width="50px">&nbsp;&nbsp;&nbsp;&nbsp;
-                    <img src="../img/insta.png" height="50px" width="50px">&nbsp;&nbsp;&nbsp;&nbsp;
+                    <img src="img/facebook.png" height="50px" width="50px">&nbsp;&nbsp;&nbsp;&nbsp;
+                    <img src="img/twitter.png" height="50px" width="50px">&nbsp;&nbsp;&nbsp;&nbsp;
+                    <img src="img/insta.png" height="50px" width="50px">&nbsp;&nbsp;&nbsp;&nbsp;
                 </div>
             </div>
         </div>

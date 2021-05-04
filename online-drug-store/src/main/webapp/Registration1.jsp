@@ -4,14 +4,14 @@
 <html>
 <head>
 	<meta charset="ISO-8859-1">
-    <link rel="stylesheet" type="text/css" href="../css/forms.css">
+    <link rel="stylesheet" type="text/css" href="css/forms.css">
     <title>Create Account</title>
 </head>
 <body>
     <div class="toplogin">
         Already a member? &nbsp; <a href="login.html"  class="link">Log In</a>
     </div>
-    <img src="../img/cart.png" class="logo"><br><br>
+    <img src="img/cart.png" class="logo"><br><br>
     <div class="center_form">
         <div>
             <form action="../php/commonreg.php" method="post" onsubmit= ''><!--set a function to check pasword-->
@@ -20,7 +20,7 @@
                     <div class="formtop">
                         Welcome!<br> 
                     </div>
-                    <h4>Create Your Buyme Account</h4>
+                    <h4>Enter Your Details</h4>
                     <div>
                         <label for="fname">First Name :</label><br>
                         <input type="text" id="fname" name="fname" size="48" placeholder="ex:-Peter"Required><br><br>
@@ -64,9 +64,9 @@
             <a href="about.html">About</a>
             <div>
                 <br>
-                <img src="../img/facebook.png" height="50px" width="50px">&nbsp;&nbsp;&nbsp;&nbsp;
-                <img src="../img/twitter.png" height="50px" width="50px">&nbsp;&nbsp;&nbsp;&nbsp;
-                <img src="../img/insta.png" height="50px" width="50px">&nbsp;&nbsp;&nbsp;&nbsp;
+                <img src="img/facebook.png" height="50px" width="50px">&nbsp;&nbsp;&nbsp;&nbsp;
+                <img src="img/twitter.png" height="50px" width="50px">&nbsp;&nbsp;&nbsp;&nbsp;
+                <img src="img/insta.png" height="50px" width="50px">&nbsp;&nbsp;&nbsp;&nbsp;
             </div>
         </div>
     </div>
