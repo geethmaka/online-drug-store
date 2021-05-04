@@ -36,23 +36,22 @@ public class Dbcon extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
 		
 		try{  
 			Class.forName("com.mysql.jdbc.Driver");  
 			Connection con=DriverManager.getConnection(  
-			"jdbc:mysql://localhost:3306/sys","root","toor"); 
+			"jdbc:mysql://localhost:3306/online_drug_store","root","toor"); 
 			//SLIIT12345TEST
 			//here sonoo is database name, root is username and password  
 			Statement stmt=con.createStatement(); 
-			response.getWriter().append(stmt.toString());
-//			ResultSet rs=stmt.executeQuery("select * from emp");  
-//			while(rs.next())  
-//			System.out.println(rs.getInt(1)+"  "+rs.getString(2)+"  "+rs.getString(3));  
+			ResultSet rs=stmt.executeQuery("select * from Item");  
+			while(rs.next())  
+			response.getWriter().append(rs.getInt(1)+"  "+rs.getString(2)+"  "+rs.getInt(3)+"  "+rs.getDouble(4));  
 			con.close();  
 			}
 		catch(Exception e){ response.getWriter().append(e.toString());}  
 	}
 
 }
+
+
