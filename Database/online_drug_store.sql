@@ -5,7 +5,7 @@ CREATE TABLE `online_drug_store`.`Customer` (
     `firstName` varchar(20) not null,
     `lastName` varchar(20) not null,
 	`email` varchar(50) not null,
-    `phoneNo` int not null,
+    `phoneNo` varchar(11) not null,
     `password` varchar(20) not null,
     `addressLine1` varchar(50) not null,
     `addressLine2` varchar(50),
@@ -19,19 +19,10 @@ CREATE TABLE `online_drug_store`.`Employee` (
     `firstName` varchar(20) not null,
     `lastName` varchar(20) not null,
 	`email` varchar(50) not null,
-    `phoneNo` int not null,
+    `phoneNo` varchar(11) not null,
     `password` varchar(20) not null,
 	`Staff` varchar(20),
     PRIMARY KEY (`employeeID`)
-);
-
-CREATE TABLE `online_drug_store`.`Delivery` (
-	`deliveryID` int not null auto_increment,
-    `orderID` int,
-    `status` boolean null,
-    PRIMARY KEY (`deliveryID`),
-    FOREIGN KEY (`orderID`)
-    REFERENCES `online_drug_store`.`Orders`(`orderID`)
 );
 
 CREATE TABLE `online_drug_store`.`Item` (
@@ -45,9 +36,32 @@ CREATE TABLE `online_drug_store`.`Item` (
 CREATE TABLE `online_drug_store`.`Orders` (
 	`orderID` int not null auto_increment,
     `customerID` int,
+    `itemID` int, 
 	`quantity` int,
     `totalAmount` double,
     PRIMARY KEY (`orderID`),
-    FOREIGN KEY (`customerID`)
-    REFERENCES `online_drug_store`.`Customer`(`customerID`)
+    CONSTRAINT fk_order_customerID
+		FOREIGN KEY (`customerID`)
+		REFERENCES `online_drug_store`.`Customer`(`customerID`)
+		ON DELETE SET NULL,
+	CONSTRAINT 	fk_order_itemID
+		FOREIGN KEY (`ItemID`)
+        REFERENCES `online_drug_store`.`Item`(`itemID`)
+        ON DELETE SET NULL
 );
+
+CREATE TABLE `online_drug_store`.`Delivery` (
+	`deliveryID` int not null auto_increment,
+    `orderID` int,
+    `status` varchar(10),
+    PRIMARY KEY (`deliveryID`),
+	CONSTRAINT fk_delivery_orderID
+		FOREIGN KEY (`orderID`)
+		REFERENCES `online_drug_store`.`Orders`(`orderID`)
+		ON DELETE SET NULL
+);
+
+
+
+
+

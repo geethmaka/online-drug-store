@@ -20,7 +20,7 @@ public class Dbcon extends HttpServlet {
 
     }
 
-	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		
 //		DatabaseConnection dbc = new DatabaseConnection();

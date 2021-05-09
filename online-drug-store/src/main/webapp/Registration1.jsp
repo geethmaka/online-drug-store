@@ -34,6 +34,19 @@
 
                         <label for="pno">Telephone (Enter Phone number starting from 94):</label><br>
                         <input type ="tel" id="pno" name="pno"  size="48"placeholder="94712345678" Required pattern="[0-9]{11}"><br><br>
+                        
+                        <label for="address1">Address Line 1 :</label><br>
+                        <input type="text" id="address1" name="address1" size="48" Required><br><br>
+
+                        <label for="address2">Address Line 2(optional) :</label><br>
+                        <input type="text" id="address2" name="address2" size="48"><br><br>
+
+                        <label for="city">City :</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <label for="State">State/Province :</label><br>
+                        <input type="text" id="city" name="city" size="20" Required>
+                        <input type="text" id="state" name="state" size="20" Required><br><br>
 
                         <label for="pwd">Password :</label><br>
                         <input type="password" id="pwd" name="pwd" size="48"  
@@ -47,7 +60,7 @@
                         <label for="agreeterms">By clicking, I agree to the Terms of Use and have read the Privacy Statement</label><br><br>
                     </div>
                     <div class="center">    
-                        <button type="submit" id="submitc" class="greenbtn btn" name="action" value="customer" disabled>register as a customer</button>
+                        <button type="submit" id="submitc" class="greenbtn btn" name="action" value="customer" disabled>Register</button>
                     </div>
                 </fieldset>
             </form>
