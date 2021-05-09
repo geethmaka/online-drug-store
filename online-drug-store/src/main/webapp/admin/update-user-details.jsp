@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ page import = "java.util.List" %>
+<%@ page import = "java.util.LinkedList" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,25 +10,25 @@
 <title>Insert title here</title>
 </head>
 	<body>
-		<div class="topBar">
+		<!--<div class="topBar">
             <div style="padding-left: 20px;padding-top:30px;">
-                <a href="./home.php"><img src="../img/cart.png" height="100" width="100"></a>
+                <a href=""><img src="../img/cart.png" height="100" width="100"></a>
             </div>
             <div class="searchBar">
                 <div></div>
-                <form action="search.php" method="post">
+                <form action="" method="post">
                     <div class="searchBarRow" style="text-align: center;align-items: center;">
                         <div style="text-align: center;">
                             <input style="height:40px;" type="text" name="search" size="150">
                         </div>
                         <div>
-                            <button type="submit" class="searchButton"><img src="../img/search.png" height="30" width="30"></button>
+                            <button type="submit" class="searchButton"><img src="" height="30" width="30"></button>
                         </div>
                     </div>
                 </form>
                 <div></div>
-            </div>
-            <div id="logOutButtonContainer" style="align-items: center;align-content: center; text-align: center;padding-top: 35px;display:none;">
+            </div>-->
+            <!--<div id="logOutButtonContainer" style="align-items: center;align-content: center; text-align: center;padding-top: 35px;display:none;">
                 <span style="font-weight: bolder;font-size: 20px;">Welcome Back,</span><br>
                 <span id="username">[username]</span><br><br>
                 <a href="./customerAccount.php"><button>My Account</button></a>&nbsp;&nbsp;
@@ -36,10 +39,10 @@
                     <a href="./login.html"><button>Login</button></a>
                 </div>
                 <div>
-                    <a href="./commonregistration.html"><button>SignUp</button></a>
+                    <a href=""><button>SignUp</button></a>
                 </div>
             </div>
-        </div>
+        </div>-->
         <div id="main" class="main">
             <br>
             <table border="1">
@@ -49,9 +52,24 @@
                     <th>NIC</th>
                     <th>Email</th>
                     <th>Phone number</th>
-                    <th>Password</th>
+                    <th>Action</th>
                 </tr>
-            </table>
+           		<c:forEach items="${value}" var="user"> 
+           		<tr>
+		    	 	<td><c:out value="${user.getEmail()}" /></td>
+		    	 	<td><c:out value="${user.getEmail()}" /></td>
+		    	 	<td><c:out value="${user.getEmail()}" /></td>
+		    	 	<td><c:out value="${user.getEmail()}" /></td>
+		    	 	<td><c:out value="${user.getEmail()}" /></td>
+		    	 	<td><c:out value="${user.getEmail()}" /></td>
+		    	 	<td>
+		    	 		<form action="/deleteuser" method="">
+		    	 			<input type = "submit" value="Delete User"/>
+		    	 		</form>
+		    	 	<td>
+	    	 	</tr>
+    			</c:forEach>
+    		</table>
             <br>
         </div>
         <div class="bottomBar">
