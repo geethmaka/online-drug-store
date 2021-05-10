@@ -37,10 +37,8 @@ public class Login extends HttpServlet {
 					ll.add(n);
 				}
 				
-				 User[] array = ll.toArray(new User[ll.size()]);
-	
-				 array = Arrays.copyOf(array, array.length + 1);
-				 array[array.length - 1] = (User) request.getAttribute("user");
+				User[] array = ll.toArray(new User[ll.size()]);
+				 
 				RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/admin/index.jsp");
 				request.setAttribute("value", array);
 				dispatcher.forward(request, response);

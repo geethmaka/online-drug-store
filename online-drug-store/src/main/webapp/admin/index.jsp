@@ -15,7 +15,7 @@
             <span style="font-size: 30px;">Admin Panel</span>
             <div style="float: right;">
                 <a href="addstaff.html"><button>Add another employee</button></a>
-                <a href="updateuserdetails.php"><button>Update Staff Details</button></a>
+                <form action="updateuser" method="post"><button type="submit" name="value" value="${value}">Update Staff Details</button></form>
                 <form action="../php/logout.php"><button type="submit">SignOut</button></form>
             </div>
         </div>

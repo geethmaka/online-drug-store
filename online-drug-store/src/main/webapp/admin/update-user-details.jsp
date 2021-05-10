@@ -43,6 +43,9 @@
                 </div>
             </div>
         </div>-->
+        <c:forEach items="${value}" var="user">
+        	<p>${user.getFname()}</p>
+        </c:forEach>
         <div id="main" class="main">
             <br>
             <table border="1">
@@ -54,21 +57,7 @@
                     <th>Phone number</th>
                     <th>Action</th>
                 </tr>
-           		<c:forEach items="${value}" var="user"> 
-           		<tr>
-		    	 	<td><c:out value="${user.getEmail()}" /></td>
-		    	 	<td><c:out value="${user.getEmail()}" /></td>
-		    	 	<td><c:out value="${user.getEmail()}" /></td>
-		    	 	<td><c:out value="${user.getEmail()}" /></td>
-		    	 	<td><c:out value="${user.getEmail()}" /></td>
-		    	 	<td><c:out value="${user.getEmail()}" /></td>
-		    	 	<td>
-		    	 		<form action="/deleteuser" method="">
-		    	 			<input type = "submit" value="Delete User"/>
-		    	 		</form>
-		    	 	<td>
-	    	 	</tr>
-    			</c:forEach>
+                <tr><td>${value}</td></tr>
     		</table>
             <br>
         </div>

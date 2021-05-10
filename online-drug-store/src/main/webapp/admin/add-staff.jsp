@@ -12,25 +12,24 @@
                 <a href="./home.php"><img src="../img/cart.png" height="150" width="150"></a>
             </div>
             <div>
-                <form method="post" action="../php/addStaff.php"onsubmit="return checkPassword()">
+                <form method="post" action="addstaff">
                     <fieldset>
                         <legend style="text-align: center;">Staff Registration</legend>
                         <div style="text-align:left;">
 
                             <label for="fname">First Name :</label><br>
-                            <input type="text" id="fname" name="fname" size="48" Required><br><br>
+                            <input type="text" id="fname" name="fname" size="48" value="test"><br><br>
 
                             <label for="lname">Last Name :</label><br>
-                            <input type="text" id="lname" name="lname" size="48"><br><br>
+                            <input type="text" id="lname" name="lname" size="48" value="test"><br><br>
 
                             <label for="email">Email :</label><br>
-                            <input type="email" id="email" name="email" size="48" pattern="[a-z 0-9 +-_%]+@+[a-z 0-9 +-_%]+.[a-z]{2,3}" Required><br><br>
+                            <input type="text" id="email" name="email" size="48" value="test"><br><br>
+                            <!-- pattern="[a-z 0-9 +-_%]+@+[a-z 0-9 +-_%]+.[a-z]{2,3}" Required -->
 
                             <label for="number">Number :</label><br>
-                            <input type="number" id="number" name="number" size="10" Required><br><br>
+                            <input type="number" id="number" name="number" size="10" value="00"><br><br>
 
-                            <label for="nic">NIC :</label><br>
-                            <input type ="text" id="nic" name="nic" size="48"  pattern="[0-9,vV].{10}"  Required><br><br>
 
                             <label for="type">Type :</label><br>
                             &nbsp;&nbsp;<select name="type" id="type">
@@ -42,7 +41,8 @@
                             <br><br>
                             <label for="pw">Password :</label><br>
                             <input type="password" id="pwd" name="pwd" size="48" 
-                            title="Must contain at least one  number and one uppercase and lowercase letter, and at least 6 or more characters" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"><br><br>
+                            title="Must contain at least one  number and one uppercase and lowercase letter, and at least 6 or more characters" value="test"><br><br>
+                            <!-- pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" -->
 
                             <label for="rpwd">Re-enter Password :</label><br>
                             <input type="password" id="rpwd" name="rpwd" size="48"  title="Six or more characters" ><br><br>
@@ -51,14 +51,14 @@
                         <input type="checkbox" id="agreeterms" name="agreeterms" onclick="enableButon()">
                             <label for="agreeterms">By clicking, I agree to the Terms of Use and have read the Privacy Statement</label><br><br>
                         <div class="center">    
-                            <button type="submit" id="submita" class="greenbtn btn" disabled>register</button>
+                            <button type="submit" id="submita" class="greenbtn btn">register</button>
                         </div>
                     </fieldset>
                 </form>
             </div>
-            <div style="float:left;padding-left: 300px;">
+            <!--<div style="float:left;padding-left: 300px;">
                 Already a member? <a style="color:red" href="./login.html">Log In</a>
-            </div>
+            </div>-->
         </div>
         <div>
             <div class="bottomBar">
