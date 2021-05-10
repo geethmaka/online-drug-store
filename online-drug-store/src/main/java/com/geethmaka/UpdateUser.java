@@ -18,31 +18,38 @@ import com.common.DatabaseConnection;
 import com.common.User;
 
 /**
- * Servlet implementation class DeleteUser
+ * Servlet implementation class UpdateUser
  */
-@WebServlet("/deleteuser")
-public class DeleteUser extends HttpServlet {
+@WebServlet("/updateuser")
+public class UpdateUser extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public DeleteUser() {
+    public UpdateUser() {
         super();
         // TODO Auto-generated constructor stub
     }
 
 	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+	}
+
+	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.getWriter().append(request.getParameter("id"));
 		DatabaseConnection dbc = new DatabaseConnection();
 		List<User> ll = new LinkedList<User>();
-		
 		try {
 			Statement stmt=dbc.getConnection().createStatement();
-			String command = "delete from customer where customerID=" + request.getParameter("id");
+			
+			String command = "UPDATE customer SET firstName = '"+request.getParameter("fname")+"',lastName = '"+request.getParameter("lname")+"',email = '"+request.getParameter("email")+"',phoneNo='"+request.getParameter("phone")+"',addressLine1 ='"+ request.getParameter("address1")+"',addressLine2 ='"+ request.getParameter("fname")+"',city ='"+ request.getParameter("city")+"' WHERE customerID ="+ request.getParameter("id");
 			int rows=stmt.executeUpdate(command);
 			
 			ResultSet rs=stmt.executeQuery("select * from customer");
