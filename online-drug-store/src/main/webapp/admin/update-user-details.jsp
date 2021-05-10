@@ -43,9 +43,6 @@
                 </div>
             </div>
         </div>-->
-        <c:forEach items="${value}" var="user">
-        	<p>${user.getFname()}</p>
-        </c:forEach>
         <div id="main" class="main">
             <br>
             <table border="1">
@@ -57,7 +54,22 @@
                     <th>Phone number</th>
                     <th>Action</th>
                 </tr>
-                <tr><td>${value}</td></tr>
+                <form action="updateuser" method="post">
+               	<c:forEach items="${value}" var="user"> 
+		        	<tr>
+				    	 <td><input type="text" name="fname" value="<c:out value="${user.getFname()}" />"></td>
+				    	 <td><input type="text" name="lname" value="<c:out value="${user.getLname()}" />"></td>
+				    	 <td><input type="text" name="email" value="<c:out value="${user.getEmail()}" />"></td>
+				    	 <td><input type="text" name="phone" value="<c:out value="${user.getPhoneNo()}" />"></td>
+				    	 <td><input type="text" name="address1" value="<c:out value="${user.getAddress1()}" />"></td>
+				    	 <td><input type="text" name="address2" value="<c:out value="${user.getAddress2()}" />"></td>
+				    	 <td><input type="text" name="city" value="<c:out value="${user.getCity()}" />"></td>
+				    	 <td>
+				    	 	<button type = "submit" name="id" value="${user.getId()}">Update User</button>
+				    	 <td>
+			    	 	</tr>
+	    		</c:forEach>
+	    		</form>
     		</table>
             <br>
         </div>

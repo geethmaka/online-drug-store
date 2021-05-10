@@ -15,8 +15,8 @@
             <span style="font-size: 30px;">Admin Panel</span>
             <div style="float: right;">
                 <a href="addstaff.html"><button>Add another employee</button></a>
-                <form action="updateuser" method="post"><button type="submit" name="value" value="${value}">Update Staff Details</button></form>
-                <form action="../php/logout.php"><button type="submit">SignOut</button></form>
+                <form action="update-redirect" method="post"><button type="submit">Update Staff Details</button></form>
+                <!--<form action="../php/logout.php"><button type="submit">SignOut</button></form>-->
             </div>
         </div>
         <br>
