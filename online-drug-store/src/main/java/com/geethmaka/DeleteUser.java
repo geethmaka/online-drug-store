@@ -36,13 +36,16 @@ public class DeleteUser extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		 //response.getWriter().append(request.getParameter("id"));
+		 response.getWriter().append(request.getParameter("id"));
 		DatabaseConnection dbc = new DatabaseConnection();
 		List<User> ll = new LinkedList<User>();
+		
 		try {
 			Statement stmt=dbc.getConnection().createStatement();
-			String command = "delete * from customer where customerID=" + request.getParameter("id");
-			ResultSet rs=stmt.executeUpdate(command);
+			String command = "delete from customer where customerID=" + request.getParameter("id");
+			int rows=stmt.executeUpdate(command);
+			
+			ResultSet rs=stmt.executeQuery("select * from customer");
 			while(rs.next()) {
 				User n=new User(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getInt(5),rs.getString(6),rs.getString(7),rs.getString(8),rs.getString(9));
 				ll.add(n);
@@ -52,6 +55,7 @@ public class DeleteUser extends HttpServlet {
 
 			 array = Arrays.copyOf(array, array.length + 1);
 			 array[array.length - 1] = (User) request.getAttribute("user");
+			 
 			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/admin/index.jsp");
 			request.setAttribute("value", array);
 			dispatcher.forward(request, response);
