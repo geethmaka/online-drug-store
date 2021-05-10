@@ -13,14 +13,14 @@
         <center>
         <div class="center_form">
             <div>
-                <form action="../php/login.php" method="POST" onsubmit="return validateForm()">
+                <form action="login" method="post">
                     <fieldset>
                         <div class="formtop">
-                            <span>Sign in or <a href="CommonRegistration.html"class="link">Create an Account</a></span>
+                            <span>Sign in or <a href="CommonRegistration.html" class="link">Create an Account</a></span>
                         </div><br>
                         <div>
-                            <label for="email">EMAIL ADDRESS :</label><br>
-                            <input type="email" id="email" name="email" size="48" pattern="[a-z 0-9 +-_%]+@+[a-z 0-9 +-_%]+.[a-z]{2,3}" ><br><br>
+                            <label for="email">EMAIL ADDRESS or username:</label><br>
+                            <input type="text" id="email" name="email" size="48"><br><br>
 
                             <label for="password">PASSWORD :</label><br>
                             <input type ="password" id="password" name="password" size="48"><br>
@@ -29,7 +29,7 @@
                             <a href="forgot_password1.html" class="link">Forgot Password?</a>
                         </div><br><br>
                         <div class="center">
-                            <button id="login" class="greenbtn btn">sign in</button> 
+                            <button type="submit" id="login" class="greenbtn btn">sign in</button> 
                         </div>    
                     </fieldset>
                 </form>
