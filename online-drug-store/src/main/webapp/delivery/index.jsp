@@ -39,29 +39,16 @@
         </div>
        
         <div class="main">
-		
-		
             <div style="position: relative; left: 0; top: 0;text-align: center;">
                 <img src="img/cover2.jpg" class="cover">
                 <img src="img/logo.png" height="100" width="100" class="propic">
                     <br><br>
                     <p>Delivery manager</p>
-                  
                 </div>   
-            <br>
-            <center>
-            <div class="btn-group">
-            <a href="Deliverystaff.jsp"><button class="button">Delivery person details</button></a>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="Shippingdetails.jsp"> <button  class="button">Shipping details</button></a>
-            <br><br>  
-            <a href="Orderdetails.jsp" ><button  class="button">Order details</button></a>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <br><br>
-            </center>
-            </div>
-           
+                
+                
         </div>
+        
         <div class="bottomBar">
             <div class="footer">
                 <br><br>
