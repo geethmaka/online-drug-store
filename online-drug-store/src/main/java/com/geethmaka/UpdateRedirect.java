@@ -16,9 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.common.DatabaseConnection;
 import com.common.User;
 
-/**
- * Servlet implementation class UpdateUser
- */
+
 @WebServlet("/update-redirect")
 public class UpdateRedirect extends HttpServlet {
 	private static final long serialVersionUID = 1L;
