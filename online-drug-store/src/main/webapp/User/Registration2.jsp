@@ -4,17 +4,18 @@
 <html>
 <head>
 	<meta charset="ISO-8859-1">
-	<link rel="stylesheet" type="text/css" href="css/forms.css">
+	<link rel="stylesheet" type="text/css" href="../css/forms.css">
+	<script src="JS/RegisterUser.js"></script>
     <title>Create Account</title>
 </head>
 <body>
     <div class="toplogin">
         Already a member? <a href="login.html" class="link">Log In</a>
     </div>
-    <img src="img/cart.png" class="logo"><br><br>
+    <img src="../img/cart.png" class="logo"><br><br>
     <div class="center_form">
         <div>
-            <form action="../php/cutomerdetails.php" method="POST">
+            <form action="" method="POST">
                 <fieldset>
                     <legend>Customer</legend>
                     <div class="formtop">
@@ -35,11 +36,11 @@
                         <input type="text" id="city" name="city" size="20" Required>
                         <input type="text" id="state" name="state" size="20" Required><br><br>
 
-                        <input type="checkbox" id="agreesd" name="agreesd" value="agree" onclick=''><!-- Create a function to enable button when check the box -->
+                        <input type="checkbox" id="agreeterms" name="agreeterms" value="agree" onclick='enableButton()'><!-- Create a function to enable button when check the box -->
                         <label for="agreeshipping">By clicking,I agree that the Shipping details are correct.</label><br><br>
                     </div>
                     <div class="center">
-                        <button type="submit" id="submitc1" class="greenbtn btn" disabled>SUBMIT</button>
+                        <button type="submit" id="submitc" class="greenbtn btn" disabled>SUBMIT</button>
                     </div>
                 </fieldset>
             </form>
@@ -56,9 +57,9 @@
             <a href="about.html">About</a>
             <div>
                 <br>
-                <img src="img/facebook.png" height="50px" width="50px">&nbsp;&nbsp;&nbsp;&nbsp;
-                <img src="img/twitter.png" height="50px" width="50px">&nbsp;&nbsp;&nbsp;&nbsp;
-                <img src="img/insta.png" height="50px" width="50px">&nbsp;&nbsp;&nbsp;&nbsp;
+                <img src="../img/facebook.png" height="50px" width="50px">&nbsp;&nbsp;&nbsp;&nbsp;
+                <img src="../img/twitter.png" height="50px" width="50px">&nbsp;&nbsp;&nbsp;&nbsp;
+                <img src="../img/insta.png" height="50px" width="50px">&nbsp;&nbsp;&nbsp;&nbsp;
             </div>
         </div>
     </div>
