@@ -42,7 +42,7 @@ public class UpdateUser extends HttpServlet {
 			int rows=stmt.executeUpdate(command);
 			
 
-			User[] data=dbc.getStaffdetails("customer");
+			User[] data=dbc.getStaffdetails();
 			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/admin/index.jsp");
 			request.setAttribute("value", data);
 			dispatcher.forward(request, response);

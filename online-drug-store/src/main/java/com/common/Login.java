@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.classes.Delivery;
+
 @WebServlet("/login")
 public class Login extends HttpServlet {
 	
@@ -28,14 +30,14 @@ public class Login extends HttpServlet {
 		DatabaseConnection dbc = new DatabaseConnection();
 		
 		if((request.getParameter("email").equals("admin"))&&(request.getParameter("password").equals("admin"))) {
-			User[] data=dbc.getStaffdetails("customer");
+			User[] data=dbc.getStaffdetails();
 			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/admin/index.jsp");
 			request.setAttribute("value", data);
 			dispatcher.forward(request, response);
 		}
 		
 		if((request.getParameter("email").equals("d"))&&(request.getParameter("password").equals("d"))) {
-			User[] data=dbc.getStaffdetails("customer");
+			Delivery[] data=dbc.getDeliveryDetails();
 			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/delivery/index.jsp");
 			request.setAttribute("value", data);
 			dispatcher.forward(request, response);

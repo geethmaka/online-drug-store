@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ page import = "java.util.List" %>
+<%@ page import = "java.util.LinkedList" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -44,10 +47,38 @@
                 <img src="img/logo.png" height="100" width="100" class="propic">
                     <br><br>
                     <p>Delivery manager</p>
-                </div>   
-                
-                
+            </div> 
+            
         </div>
+        
+                            <table id="table" border="1" width="100%">
+                        <tr>
+                            <td colspan="6">
+                                User Detials
+                            </td>
+                            <td rowspan="2">
+                                Action
+                            </td>
+                        </tr>
+                        <tr>
+		                    <th>Delivery Id</th>
+		                    <th>Order Id</th>
+		                    <th>Status</th>
+		                    <th>Action</th>
+                		</tr>
+	           			<c:forEach items="${value}" var="delivery"> 
+		           		<tr>
+				    	 	<td><c:out value="${delivery.getDeliveryId()}" /></td>
+				    	 	<td><c:out value="${delivery.getorderId()}" /></td>
+				    	 	<td><c:out value="${delivery.getStatus()}" /></td>
+				    	 	<td>
+				    	 		<form action="deleteuser" method="post">
+				    	 			<button type = "submit" name="id" value="${user.getId()}">Mark as Completed</button>
+				    	 		</form>
+				    	 	<td>
+			    	 	</tr>
+	    				</c:forEach>
+                    </table>
         
         <div class="bottomBar">
             <div class="footer">
