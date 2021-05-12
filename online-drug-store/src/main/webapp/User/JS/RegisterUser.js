@@ -1,4 +1,6 @@
-
+/**
+ * 
+ */
 function enableButton()
 {
 	if(document.getElementById("agreeterms").checked==true){

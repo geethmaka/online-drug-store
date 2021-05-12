@@ -15,7 +15,7 @@
     <img src="../img/cart.png" class="logo"><br><br>
     <div class="center_form">
         <div>
-            <form action="../php/commonreg.php" method="post" onsubmit= ''><!--set a function to check pasword-->
+            <form action="Register1Servlet" method="Post" onsubmit= ''><!--set a function to check pasword-->
                 <fieldset>
                     <legend>Registration</legend>
                     <div class="formtop">
@@ -44,7 +44,7 @@
                         <label for="rpwd">Re-enter Password :</label><br>
                         <input type="password" id="rpwd" name="rpwd" size="48"  title="Six or more characters" Required pattern=".{6,}"><br><br>
                         
-                        <input type="checkbox" id="agreeterms" name="agreeterms" value="agree" onclick='enableButton()' ><!-- Create a function to enable button when check the box -->
+                        <input type="checkbox" id="agreeterms" name="agreeterms" value="agree" onclick='enableButton()' >
                         <label for="agreeterms">By clicking, I agree to the Terms of Use and have read the Privacy Statement</label><br><br>
                     </div>
                     <div class="center">    
@@ -57,12 +57,12 @@
     <div class="bottomBar">
         <div class="footer">
             <br><br>
-            <a href="report.html">Report</a>&nbsp;|&nbsp;
-            <a href="faq.html">FAQ</a>&nbsp;|&nbsp;
-            <a href="contact.html">Contact Us</a>&nbsp;|&nbsp;
-            <a href="privacy.html">Privacy Policy</a>&nbsp;|&nbsp;
-            <a href="help.html">Help</a>&nbsp;|&nbsp;
-            <a href="about.html">About</a>
+            <a href="../report.jsp">Report</a>&nbsp;|&nbsp;
+            <a href="../faq.jsp">FAQ</a>&nbsp;|&nbsp;
+            <a href="../contact.jsp">Contact Us</a>&nbsp;|&nbsp;
+            <a href="../privacy.jsp">Privacy Policy</a>&nbsp;|&nbsp;
+            <a href="../help.jsp">Help</a>&nbsp;|&nbsp;
+            <a href="../about.jsp">About</a>
             <div>
                 <br>
                 <img src="../img/facebook.png" height="50px" width="50px">&nbsp;&nbsp;&nbsp;&nbsp;

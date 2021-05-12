@@ -32,7 +32,7 @@ public class Addstaff extends HttpServlet {
 			Statement stmt=dbc.getConnection().createStatement();
 			String command = "insert into employee(firstName,lastName,email,phoneNo,password,Staff) VALUES('"+request.getParameter("fname")+"','"+request.getParameter("lname")+"','"+request.getParameter("email")+"','"+request.getParameter("number")+"','"+request.getParameter("pwd")+"','"+request.getParameter("type")+"')";
 			int rows=stmt.executeUpdate(command);	
-		}catch(Exception e){
+		} catch(Exception e) {
 			e.printStackTrace();
 		}
 	}

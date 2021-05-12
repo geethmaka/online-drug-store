@@ -10,12 +10,12 @@
 </head>
 <body>
     <div class="toplogin">
-        Already a member? <a href="login.html" class="link">Log In</a>
+        Already a member? <a href="login.jsp" class="link">Log In</a>
     </div>
     <img src="../img/cart.png" class="logo"><br><br>
     <div class="center_form">
         <div>
-            <form action="" method="POST">
+            <form action="Register2Servlet" method="Post">
                 <fieldset>
                     <legend>Customer</legend>
                     <div class="formtop">
@@ -23,6 +23,8 @@
                     </div>
                     <h4>Enter Your Shipping Details</h4>    
                     <div>
+                    <input type="hidden" name="CustomerObj" value="${CustomerObj}"/>
+                    
                         <label for="address1">Address Line 1 :</label><br>
                         <input type="text" id="address1" name="address1" size="48" Required><br><br>
 
@@ -49,12 +51,12 @@
     <div class="bottomBar">
         <div class="footer">
             <br><br>
-            
-            <a href="faq.html">FAQ</a>&nbsp;|&nbsp;
-            <a href="contact.html">Contact Us</a>&nbsp;|&nbsp;
-            <a href="privacy.html">Privacy Policy</a>&nbsp;|&nbsp;
-            <a href="help.html">Help</a>&nbsp;|&nbsp;
-            <a href="about.html">About</a>
+            <a href="../report.jsp">Report</a>&nbsp;|&nbsp;
+            <a href="../faq.jsp">FAQ</a>&nbsp;|&nbsp;
+            <a href="../contact.jsp">Contact Us</a>&nbsp;|&nbsp;
+            <a href="../privacy.jsp">Privacy Policy</a>&nbsp;|&nbsp;
+            <a href="../help.jsp">Help</a>&nbsp;|&nbsp;
+            <a href="../about.jsp">About</a>
             <div>
                 <br>
                 <img src="../img/facebook.png" height="50px" width="50px">&nbsp;&nbsp;&nbsp;&nbsp;
