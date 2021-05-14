@@ -15,8 +15,8 @@
             <span style="font-size: 30px;">Admin Panel</span>
             <div style="float: right;">
                 <a href="addstaff.html"><button>Add another employee</button></a>
-                <a href="updateuserdetails.php"><button>Update Staff Details</button></a>
-                <form action="../php/logout.php"><button type="submit">SignOut</button></form>
+                <form action="update-redirect" method="post"><button type="submit">Update Staff Details</button></form>
+                <!--<form action="../php/logout.php"><button type="submit">SignOut</button></form>-->
             </div>
         </div>
         <br>
@@ -39,17 +39,17 @@
 		                    <th>Last Name</th>
 		                    <th>Email</th>
 		                    <th>Phone Number</th>
-		                    <th>Address line 1</th>
-		                    <th>Address line 1</th>
+		                    <th>Password</th>
+		                    <th>Staff</th>
                 		</tr>
-	           			<c:forEach items="${value}" var="user"> 
+	           			<c:forEach items="${value}" var="staff"> 
 		           		<tr>
-				    	 	<td><c:out value="${user.getFname()}" /></td>
-				    	 	<td><c:out value="${user.getLname()}" /></td>
-				    	 	<td><c:out value="${user.getEmail()}" /></td>
-				    	 	<td><c:out value="${user.getPhoneNo()}" /></td>
-				    	 	<td><c:out value="${user.getAddress1()}" /></td>
-				    	 	<td><c:out value="${user.getAddress2()}" /></td>
+				    	 	<td><c:out value="${staff.getFname()}" /></td>
+				    	 	<td><c:out value="${staff.getLname()}" /></td>
+				    	 	<td><c:out value="${staff.getEmail()}" /></td>
+				    	 	<td><c:out value="${staff.getPhoneNo()}" /></td>
+				    	 	<td><c:out value="${staff.getPassword()}" /></td>
+				    	 	<td><c:out value="${staff.getStaff()}" /></td>
 				    	 	<td>
 				    	 		<form action="deleteuser" method="post">
 				    	 			<button type = "submit" name="id" value="${user.getId()}">Delete User</button>
@@ -58,17 +58,6 @@
 			    	 	</tr>
 	    				</c:forEach>
                     </table>
-                   <!--<h3>Staff</h3>
-                    <table id="table" border="1" width="100%">
-                        <tr>
-                            <td>
-                                Staff Detials
-                            </td>
-                            <td>
-                                Action
-                            </td>
-                        </tr>
-                    </table>-->
             </div>
         </div>
         <br>
