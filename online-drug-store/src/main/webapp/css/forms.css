@@ -1,7 +1,7 @@
 @charset "ISO-8859-1";
 
 body {
-     background-image: url('img/background5.jpg');
+    background-image: url('../img/background5.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -9,7 +9,7 @@ body {
 }
 
 a{
-    color:#000;
+    color:#ffff;
     text-decoration: none;
 }
 
@@ -26,23 +26,27 @@ a{
     width: 100%;
 }
 
-.toplogin
-{
+.toplogin {
+	color:#ffff;
     float:right;
 }   
 
 /*form*/
 fieldset {
-    background-color: #fff;
     border-radius: 10px;
+    color:#ffff;
+    border-color:  gray;
 }
 legend {
     background-color: gray;
     color: white;
 }
 input {
+	color: white;
     margin: 5px;
     border-radius:5px;
+    border-color:  gray;
+    background-color: transparent;
 }
 .center_form{
     padding-left: 550px; 

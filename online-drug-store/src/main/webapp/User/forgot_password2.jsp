@@ -5,13 +5,13 @@
 <head>
 <meta charset="ISO-8859-1">
 <link rel="stylesheet" type="text/css" href="../css/forms.css">
-        <link rel="stylesheet" type="text/css" href="../css/main.css">
         <script src="../js/forgetPassword.js"> </script> 
        
         <title>Forget Password</title>
     </head>
     <body>
-	<br><br><br><br><br>
+    <img src="../img/cart.png" class="logo">
+    <br><br><br><br>
         <div class="center_form">
             <div>
                 <form action="forgetPassword2" method="POST" onsubmit="return checkPassword()">
@@ -38,7 +38,7 @@
                     </fieldset>
                 </form>
             </div>
-        </div><br><br><br><br><br><br><br><br><br><br><br>
+        </div><br><br><br><br><br>
         <div class="bottomBar">
             <div class="footer">
                 <br><br>

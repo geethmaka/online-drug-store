@@ -8,10 +8,9 @@
     <title>Login</title>
 </head>
     <body>
-        <center>
-            <img src="../img/cart.png" class="logo"><br><br>
-        <center>
-        <div class="../center_form">
+        <img src="../img/cart.png" class="logo">
+        <br><br><br>
+        <div class="center_form">
             <div>
                 <form action="login" method="post">
                     <fieldset>
@@ -34,7 +33,7 @@
                     </fieldset>
                 </form>
             </div>
-        </div><br><br><br><br><br><br><br>
+        </div><br><br><br><br><br><br>
         <div class="bottomBar">
             <div class="footer">
                 <br><br>
@@ -46,9 +45,9 @@
                 <a href="about.jsp">About</a>
                 <div>
                     <br>
-                    <img src="img/facebook.png" height="50px" width="50px">&nbsp;&nbsp;&nbsp;&nbsp;
-                    <img src="img/twitter.png" height="50px" width="50px">&nbsp;&nbsp;&nbsp;&nbsp;
-                    <img src="img/insta.png" height="50px" width="50px">&nbsp;&nbsp;&nbsp;&nbsp;
+                    <img src="../img/facebook.png" height="50px" width="50px">&nbsp;&nbsp;&nbsp;&nbsp;
+                    <img src="../img/twitter.png" height="50px" width="50px">&nbsp;&nbsp;&nbsp;&nbsp;
+                    <img src="../img/insta.png" height="50px" width="50px">&nbsp;&nbsp;&nbsp;&nbsp;
                 </div>
             </div>
         </div>
