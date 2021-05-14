@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.common.DatabaseConnection;
+import com.common.Staff;
 import com.common.User;
 
 @WebServlet("/deleteuser")
@@ -35,7 +36,7 @@ public class DeleteUser extends HttpServlet {
 			int rows=stmt.executeUpdate(command);
 			
 			
-			User[] data=dbc.getStaffdetails();
+			Staff[] data=dbc.getStaffdetails();
 			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/admin/index.jsp");
 			request.setAttribute("value", data);
 			dispatcher.forward(request, response);

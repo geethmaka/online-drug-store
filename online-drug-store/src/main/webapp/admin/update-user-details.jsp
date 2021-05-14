@@ -47,29 +47,34 @@
             <br>
             <table border="1">
                 <tr>
-                    <th>Staff ID</th>
-                    <th>User Name</th>
-                    <th>NIC</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
                     <th>Email</th>
-                    <th>Phone number</th>
-                    <th>Action</th>
+                    <th>Phone No.</th>
+                    <th>Password</th>
+                    <th>Staff</th>
                 </tr>
-                <form action="updateuser" method="post">
-               	<c:forEach items="${value}" var="user"> 
-		        	<tr>
-				    	 <td><input type="text" name="fname" value="<c:out value="${user.getFname()}" />"></td>
-				    	 <td><input type="text" name="lname" value="<c:out value="${user.getLname()}" />"></td>
-				    	 <td><input type="text" name="email" value="<c:out value="${user.getEmail()}" />"></td>
-				    	 <td><input type="text" name="phone" value="<c:out value="${user.getPhoneNo()}" />"></td>
-				    	 <td><input type="text" name="address1" value="<c:out value="${user.getAddress1()}" />"></td>
-				    	 <td><input type="text" name="address2" value="<c:out value="${user.getAddress2()}" />"></td>
-				    	 <td><input type="text" name="city" value="<c:out value="${user.getCity()}" />"></td>
-				    	 <td>
-				    	 	<button type = "submit" name="id" value="${user.getId()}">Update User</button>
-				    	 <td>
-			    	 	</tr>
-	    		</c:forEach>
-	    		</form>
+                
+	               	<c:forEach items="${value}" var="staff"> 
+	               	<form action="updateuser" method="post">
+			        	<tr>
+					    	 <td><input type="text" name="fname" value="<c:out value="${staff.getFname()}" />"></td>
+					    	 <td><input type="text" name="lname" value="<c:out value="${staff.getLname()}" />"></td>
+					    	 <td><input type="text" name="email" value="<c:out value="${staff.getEmail()}" />"></td>
+					    	 <td><input type="text" name="phone" value="<c:out value="${staff.getPhoneNo()}" />"></td>
+					    	 <td><input type="text" name="password" value="<c:out value="${staff.getPassword()}" />"></td>
+					    	 <td>
+					    	 	<select name="staff">
+					    	 		<option value="Delivery">Delivery Staff</option>
+					    	 		<option value="Other">Other</option>
+					    	 	</select>
+					    	 </td>
+					    	 <td>
+					    	 	<button type = "submit" name="id" value="<c:out value="${staff.getId()}" />">Update User</button>
+					    	 <td>
+				    	 	</tr>
+				    </form>
+		    		</c:forEach>
     		</table>
             <br>
         </div>
