@@ -50,3 +50,13 @@
     cursor:pointer;
     overflow: hidden;
 }
+input {
+	color: white;
+    margin: 5px;
+    border-radius:5px;
+    border-color:  gray;
+    background-color: transparent;
+}
+form{
+	color: white;
+}
