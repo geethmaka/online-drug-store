@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="css/home.css">
         <style>
             .bottomBar{
-                background-color: #4885ED;
+                
                 height: 140px;
                 width: 100%;
                 margin-top: 250px;
@@ -44,35 +44,36 @@
             <br>
             <div style="text-align: center;">
                 <div class="person">
+                	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <img src="img/logo.png" height="100" width="100"><br>
-                    Geethmaka Dissanayake<br>
+                  <p>  Geethmaka Dissanayake<br>
                     0710891055<br>
                     it20226428@my.sliit.lk<br>
-                    <a href="https://www.facebook.com/geethmaka"><img src="img/facebook.png" height="50px" width="50px"></a>
+                    <a href="https://www.facebook.com/geethmaka"><img src="img/facebook.png" height="50px" width="50px"></a></p>>
                 </div>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <div class="person">
                     <img src="img/logo.png" height="100" width="100"><br>
-                    Nipun Senarath<br>
+                    <p>Nipun Senarath<br>
                     0773969049<br>
                     it20255824@my.sliit.lk<br>
-                    <img src="img/facebook.png" height="50px" width="50px">
+                    <img src="img/facebook.png" height="50px" width="50px"></p>
                 </div>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <div class="person">
                     <img src="img/logo.png" height="100" width="100"><br>
-                    Pamuditha Kekulandara<br>
+                    <p>Pamuditha Kekulandara<br>
                     0761113244<br>
                     it20256814@my.sliit.lk<br>
-                    <img src="img/facebook.png" height="50px" width="50px">
+                    <img src="img/facebook.png" height="50px" width="50px"></p>
                 </div>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <div class="person">
                     <img src="img/logo.png" height="100" width="100"><br>
-                    Hirosha Samarasekara<br>
+                    <p>Hirosha Samarasekara<br>
                     0702834234<br>
                     it20279370@my.sliit.lk<br>
-                    <img src="img/facebook.png" height="50px" width="50px">
+                    <img src="img/facebook.png" height="50px" width="50px"></p>
                 </div>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
              
