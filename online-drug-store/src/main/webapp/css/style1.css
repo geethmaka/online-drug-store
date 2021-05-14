@@ -13,14 +13,14 @@ a{
     padding-left: 150px;
 }
 .topBar{
-    background-color: #4885ED;
+    background-color: rgb(0, 255, 0);
     height: 140px;
     width: 100%;
     padding-top: 20px;
     padding-bottom: 20x;
 }
 .bottomBar{
-    background-color: #4885ED;
+    background-color: #21ADA8;
     height: 140px;
     width: 100%;
     margin-top: 250px;

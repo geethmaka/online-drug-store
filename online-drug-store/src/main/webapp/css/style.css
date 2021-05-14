@@ -18,7 +18,7 @@ a{
 }
 .topBar{
     display: grid;
-    background-color: #4885ED;
+    background-color: #21ADA8;
     height: 180px;
     width: 100%;
     grid-template-columns: 300px auto 250px;
@@ -35,7 +35,7 @@ a{
     align-items: center;
 }
 .bottomBar{
-    background-color: #4885ED;
+   
     height: 140px;
     width: 100%;
 }

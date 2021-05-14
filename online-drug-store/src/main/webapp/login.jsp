@@ -4,19 +4,19 @@
 <html>
 <head>
 	<meta charset="ISO-8859-1">
-	<link rel="stylesheet" type="text/css" href="css/forms.css">
+	<link rel="stylesheet" type="text/css" href="../css/forms.css">
     <title>Login</title>
 </head>
     <body>
         <center>
-            <img src="img/cart.png" class="logo"><br><br>
+            <img src="../img/cart.png" class="logo"><br><br>
         <center>
-        <div class="center_form">
+        <div class="../center_form">
             <div>
                 <form action="login" method="post">
                     <fieldset>
                         <div class="formtop">
-                            <span>Sign in or <a href="CommonRegistration.html" class="link">Create an Account</a></span>
+                            <span>Sign in or <a href="Registration1" class="link">Create an Account</a></span>
                         </div><br>
                         <div>
                             <label for="email">EMAIL ADDRESS or username:</label><br>
@@ -39,11 +39,11 @@
             <div class="footer">
                 <br><br>
               
-                <a href="faq.html">FAQ</a>&nbsp;|&nbsp;
-                <a href="contact.html">Contact Us</a>&nbsp;|&nbsp;
-                <a href="privacy.html">Privacy Policy</a>&nbsp;|&nbsp;
-                <a href="help.html">Help</a>&nbsp;|&nbsp;
-                <a href="about.html">About</a>
+                <a href="faq.jsp">FAQ</a>&nbsp;|&nbsp;
+                <a href="contact.jsp">Contact Us</a>&nbsp;|&nbsp;
+                <a href="privacy.jsp">Privacy Policy</a>&nbsp;|&nbsp;
+                <a href="help.jsp">Help</a>&nbsp;|&nbsp;
+                <a href="about.jsp">About</a>
                 <div>
                     <br>
                     <img src="img/facebook.png" height="50px" width="50px">&nbsp;&nbsp;&nbsp;&nbsp;

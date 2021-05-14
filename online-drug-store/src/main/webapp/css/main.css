@@ -1,5 +1,6 @@
 body{
-    background-image: url('../img/bg1.jpg');
+    
+    background-image: url('img/background5.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -15,7 +16,7 @@ body{
 }
 
 a{
-    color:#000;
+    color:#ffff;
     text-decoration: none;
 }
 
@@ -27,7 +28,7 @@ a{
 
 .topBar{
     display: grid;
-    background-color: #4885ED;
+    background-color: #247ba0;
     height: 180px;
     width: 100%;
     grid-template-columns: 300px auto;
@@ -44,7 +45,85 @@ a{
 }
 
 .bottomBar{
-    background-color: #4885ED;
+	background-color:ffff;
+}
+	body{
+    
+    
+        background-image: url('../img/background5.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        font-family: 'Segoe UI';
+    
+}
+    
+    .logo
+    {
+        padding-left: 20px;
+        padding-top:30px;
+        max-height:5px;
+        max-width: 5px;
+    }
+    
+    a{
+        color:#ffff;
+        text-decoration: none;
+    }
+    
+    .main{
+        padding-right: 150px;
+        padding-left: 150px;
+        text-align: center;
+    }
+    
+    .topBar{
+        display: grid;
+        background-color:#21ADA8;
+        height: 180px;
+        width: 100%;
+        grid-template-columns: 300px auto;
+    }
+    
+    .searchBar{
+        display:grid;
+        grid-template-rows: 60px 60px 60px;
+    }
+    
+    .searchBarRow{
+        display:grid;
+        grid-template-columns: 850px auto;
+    }
+    
+    .bottomBar{
+      
+        height: 140px;
+        width: 100%;
+        bottom: 0px; 
+    }
+    
+    .footer{
+        text-align: center;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+    }
+    
+    .border{
+        border-style: dashed;
+    }
+    
+    .searchButton{
+        background: none;
+        border:none;
+        height: 40px;
+    }
+    
+    .link:hover{
+        color: white;
+    
+     
+     
     height: 140px;
     width: 100%;
     bottom: 0px; 
@@ -69,4 +148,18 @@ a{
 
 .link:hover{
     color: white;
+}
+.question{
+	color:#ffff;
+	
+	
+}
+h1{
+	color:#ffff;
+}
+p{
+	color:#ffff;
+}
+ul{
+	color:#ffff;
 }
