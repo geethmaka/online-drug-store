@@ -1,7 +1,7 @@
 @charset "ISO-8859-1";
 
 body {
-    background-image: url('../img/bg1.jpg');
+     background-image: url('img/background5.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -21,7 +21,7 @@ a{
 }
 
 .bottomBar{
-    background-color: #4885ED;
+    
     height: 140px;
     width: 100%;
 }

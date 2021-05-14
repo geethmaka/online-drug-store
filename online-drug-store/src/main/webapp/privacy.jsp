@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="css/home.css">
         <style>
             .bottomBar{
-                background-color: #4885ED;
+               
                 width: 100%;
                 position: fixed;
                 bottom: 0px;

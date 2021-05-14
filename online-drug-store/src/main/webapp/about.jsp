@@ -5,7 +5,7 @@
 <head>
 <meta charset="ISO-8859-1">
     <link rel="stylesheet" href="css/main.css">
-        <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/home.css">
     </head>
     <body>
         <div class="topBar">
@@ -28,11 +28,11 @@
         <div class="main">
             <h1>About US</h1>
             <div style="text-align: center;">
-                <a href="buyme.lk" style="text-decoration: underline;color: #4885ED;">buyme.lk</a><br>
-                BuyMe Inc.<br>
+                <a href="buyme.lk" style="text-decoration: underline;color: #ffff;">buyme.lk</a><br>
+               <p> BuyMe Inc.<br>
                 Group 17<br>
                 Y2 S1<br>
-                SLIIT Kandy<br>
+                SLIIT Kandy<br><p>
             </div>
             <br>
         </div>
