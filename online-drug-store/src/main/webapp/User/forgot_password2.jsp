@@ -14,23 +14,25 @@
 	<br><br><br><br><br>
         <div class="center_form">
             <div>
-                <form action="../php/updatePassword.php" method="POST" onsubmit="return checkPassword()">
+                <form action="forgetPassword2" method="POST" onsubmit="return checkPassword()">
                     <fieldset>
                         <legend>Forgot Password</legend>
                         <div class="formtop">
                             Change Password
                         </div><br>
                         <div>
+                        	<input type="hidden" name="CustomerID" value="${CustomerID}"/>
+                        	
                             <label for="newpwd">Enter New password :</label><br>
                             <input type="password" id="password" name="password" size="48"
-                            title="Must contain at least one  number and one uppercase and lowercase letter, and at least 6 or more characters"Required > </input> <br><br>
+                            title="Must contain at least one  number and one uppercase and lowercase letter, and at least 6 or more characters"Required ></input> <br><br>
 
                             <label for="reenterpwd">Re-enter new password :</label>
-                            <input type="password" id="confirm" size="48"  Required >
+                            <input type="password" id="confirm" name = "confirmpassword" size="48"  Required >
                         </div><br>
 
                         <div class="center">
-                            
+                            <div><p>${message}</p></div>
                             <button type="submit" id="submitc1" class="greenbtn btn">Submit</button>
                         </div>
                     </fieldset>

@@ -32,11 +32,15 @@ public class Register1Servlet extends HttpServlet {
 		customer.setPhoenNo(request.getParameter("pno"));
 		customer.setPassword(request.getParameter("pwd"));
 		
-		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/User/Registration2.jsp");
-		request.getSession().setAttribute("CustomerObj",customer);
-		dispatcher.forward(request, response);
+		if(request.getParameter("pwd").equals(request.getParameter("rpwd"))) {
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/User/Registration2.jsp");
+			request.getSession().setAttribute("CustomerObj",customer);
+			dispatcher.forward(request, response);
+		}
+		else {
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/User/Registration1.jsp");
+			request.setAttribute("message", "Password mismatch!!!");
+			dispatcher.forward(request, response);
+		}
 	}
-
 }
-
-

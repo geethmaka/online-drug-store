@@ -83,12 +83,12 @@
     <div class="bottomBar">
         <div class="footer">
             <br><br>
-            <a href="report.html">Report</a>&nbsp;|&nbsp;
-            <a href="faq.html">FAQ</a>&nbsp;|&nbsp;
-            <a href="contact.html">Contact Us</a>&nbsp;|&nbsp;
-            <a href="privacy.html">Privacy Policy</a>&nbsp;|&nbsp;
-            <a href="help.html">Help</a>&nbsp;|&nbsp;
-            <a href="about.html">About</a>
+            <a href="../report.html">Report</a>&nbsp;|&nbsp;
+            <a href="../faq.html">FAQ</a>&nbsp;|&nbsp;
+            <a href="../contact.html">Contact Us</a>&nbsp;|&nbsp;
+            <a href="../privacy.html">Privacy Policy</a>&nbsp;|&nbsp;
+            <a href="../help.html">Help</a>&nbsp;|&nbsp;
+            <a href="../about.html">About</a>
             <div>
                 <br>
                 <img src="../img/facebook.png" height="50px" width="50px">&nbsp;&nbsp;&nbsp;&nbsp;

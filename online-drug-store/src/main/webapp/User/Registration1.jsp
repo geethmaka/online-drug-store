@@ -10,12 +10,12 @@
 </head>
 <body>
     <div class="toplogin">
-        Already a member? &nbsp; <a href="login.html"  class="link">Log In</a>
+        Already a member? &nbsp; <a href="login.jsp"  class="link">Log In</a>
     </div>
     <img src="../img/cart.png" class="logo"><br><br>
     <div class="center_form">
         <div>
-            <form action="Register1Servlet" method="Post" onsubmit= ''><!--set a function to check pasword-->
+            <form action="Register1Servlet" method="Post">
                 <fieldset>
                     <legend>Registration</legend>
                     <div class="formtop">
@@ -44,10 +44,11 @@
                         <label for="rpwd">Re-enter Password :</label><br>
                         <input type="password" id="rpwd" name="rpwd" size="48"  title="Six or more characters" Required pattern=".{6,}"><br><br>
                         
-                        <input type="checkbox" id="agreeterms" name="agreeterms" value="agree" onclick='enableButton()' >
+                        <input type="checkbox" id="agreeterms" name="agreeterms" value="agree" onclick='enableButton()'>
                         <label for="agreeterms">By clicking, I agree to the Terms of Use and have read the Privacy Statement</label><br><br>
                     </div>
-                    <div class="center">    
+                    <div class="center">
+                    	<div><p>${message}</p></div>
                         <button type="submit" id="submitc" class="greenbtn btn" name="action" value="customer" disabled>Register</button>
                     </div>
                 </fieldset>

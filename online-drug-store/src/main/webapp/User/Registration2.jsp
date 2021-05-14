@@ -23,7 +23,7 @@
                     </div>
                     <h4>Enter Your Shipping Details</h4>    
                     <div>
-                    <input type="hidden" name="CustomerObj" value="${CustomerObj}"/>
+                    	<input type="hidden" name="CustomerObj" value="${CustomerObj}"/>
                     
                         <label for="address1">Address Line 1 :</label><br>
                         <input type="text" id="address1" name="address1" size="48" Required><br><br>
