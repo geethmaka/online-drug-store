@@ -23,18 +23,18 @@ public class DatabaseConnection {
 		return con;
 	}
 	
-	public User[] getStaffdetails() {
-		List<User> ll = new LinkedList<User>();
-		User[] array = null;
+	public Staff[] getStaffdetails() {
+		List<Staff> ll = new LinkedList<Staff>();
+		Staff[] array = null;
 		try {
 			Statement stmt=this.getConnection().createStatement();
-			ResultSet rs=stmt.executeQuery("select * from staff");
+			ResultSet rs=stmt.executeQuery("select * from employee");
 			while(rs.next()) {
-				User n=new User(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getInt(5),rs.getString(6),rs.getString(7),rs.getString(8),rs.getString(9));
+				Staff n=new Staff(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getInt(5),rs.getString(6),rs.getString(7));
 				ll.add(n);
 			}
 			
-			array = ll.toArray(new User[ll.size()]);
+			array = ll.toArray(new Staff[ll.size()]);
 			 
 		} catch (Exception e) {
 //			response.getWriter().append(e.toString());

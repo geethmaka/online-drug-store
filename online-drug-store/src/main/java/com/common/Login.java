@@ -30,7 +30,7 @@ public class Login extends HttpServlet {
 		DatabaseConnection dbc = new DatabaseConnection();
 		
 		if((request.getParameter("email").equals("admin"))&&(request.getParameter("password").equals("admin"))) {
-			User[] data=dbc.getStaffdetails();
+			Staff[] data=dbc.getStaffdetails();
 			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/admin/index.jsp");
 			request.setAttribute("value", data);
 			dispatcher.forward(request, response);

@@ -20,10 +20,10 @@
                         </div><br>
                         <div>
                             <label for="email">EMAIL ADDRESS or username:</label><br>
-                            <input type="text" id="email" name="email" size="48"><br><br>
+                            <input type="text" id="email" name="email" size="48" value="admin"><br><br>
 
                             <label for="password">PASSWORD :</label><br>
-                            <input type ="password" id="password" name="password" size="48"><br>
+                            <input type ="password" id="password" name="password" size="48" value=""><br>
                         </div>
                         <div>
                             <a href="forgot_password1.html" class="link">Forgot Password?</a>
