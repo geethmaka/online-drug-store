@@ -1,6 +1,11 @@
 package com.common;
 
 import java.io.IOException;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.LinkedList;
+import java.util.List;
+
 //import java.sql.*;
 //import java.util.*;
 //
@@ -11,6 +16,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.classes.Customer;
 import com.classes.Delivery;
 
 @WebServlet("/login")
@@ -23,15 +29,23 @@ public class Login extends HttpServlet {
     }
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.getWriter().append("fff");
+		response.getWriter().append("Access Denied!");
 	}
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		DatabaseConnection dbc = new DatabaseConnection();
 		Staff[] staffData=dbc.getStaffdetails();
-		Delivery[] data=dbc.getDeliveryDetails();
-		response.getWriter().append(Integer.toString(staffData.length));
-		response.getWriter().append(Integer.toString(data.length));
+		Delivery[] DeliveryData=dbc.getDeliveryDetails();
+		Customer[] CustomerData=dbc.getCustomerDetails();
+		
+		for(int i=0;i<CustomerData.length;i++) {
+			if((CustomerData[i].getEmail().equals(request.getParameter("email")))&&(CustomerData[i].getPassword().equals(request.getParameter("password")))) {
+				RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/index.jsp");
+				dispatcher.forward(request, response);
+				break;
+			}
+		}
+		
 		for(int i=0;i<staffData.length;i++) {
 			if((staffData[i].getEmail().equals(request.getParameter("email")))&&(staffData[i].getPassword().equals(request.getParameter("password")))) {
 				if(staffData[i].getStaff().equals("Admin")) {
@@ -41,17 +55,18 @@ public class Login extends HttpServlet {
 				}
 				else if(staffData[i].getStaff().equals("Delivery")) {
 					RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/delivery/index.jsp");
-					request.setAttribute("value", data);
+					request.setAttribute("value", DeliveryData);
 					dispatcher.forward(request, response);
 				}
 				else if(staffData[i].getStaff().equals("Stock")) {
 					RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/delivery/index.jsp");
-					request.setAttribute("value", data);
+					request.setAttribute("value", DeliveryData);
 					dispatcher.forward(request, response);
 				}
 				break;
 			}
 		}
+		
 		
 	}
 
