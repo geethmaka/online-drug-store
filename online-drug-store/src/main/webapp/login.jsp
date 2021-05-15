@@ -22,7 +22,7 @@
                             <input type="text" id="email" name="email" size="48" value=""><br><br>
 
                             <label for="password">PASSWORD :</label><br>
-                            <input type ="password" id="password" name="password" size="48" value=""><br>
+                            <input type ="password" id="password" name="password" size="48"><br>
                         </div>
                         <div>
                             <a href="User/forgot_password1.jsp" class="link">Forgot Password?</a>
