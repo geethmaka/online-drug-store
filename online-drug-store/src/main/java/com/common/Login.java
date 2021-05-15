@@ -1,9 +1,14 @@
 package com.common;
 
 import java.io.IOException;
-import java.sql.*;
-import java.util.*;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.LinkedList;
+import java.util.List;
 
+//import java.sql.*;
+//import java.util.*;
+//
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,6 +16,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.classes.Customer;
 import com.classes.Delivery;
 
 @WebServlet("/login")
@@ -22,26 +28,45 @@ public class Login extends HttpServlet {
         super();
     }
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.getWriter().append("Access Denied!");
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		DatabaseConnection dbc = new DatabaseConnection();
+		Staff[] staffData=dbc.getStaffdetails();
+		Delivery[] DeliveryData=dbc.getDeliveryDetails();
+		Customer[] CustomerData=dbc.getCustomerDetails();
 		
-		if((request.getParameter("email").equals("admin"))&&(request.getParameter("password").equals("admin"))) {
-			User[] data=dbc.getStaffdetails();
-			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/admin/index.jsp");
-			request.setAttribute("value", data);
-			dispatcher.forward(request, response);
+		for(int i=0;i<CustomerData.length;i++) {
+			if((CustomerData[i].getEmail().equals(request.getParameter("email")))&&(CustomerData[i].getPassword().equals(request.getParameter("password")))) {
+				RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/index.jsp");
+				dispatcher.forward(request, response);
+				break;
+			}
 		}
 		
-		if((request.getParameter("email").equals("d"))&&(request.getParameter("password").equals("d"))) {
-			Delivery[] data=dbc.getDeliveryDetails();
-			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/delivery/index.jsp");
-			request.setAttribute("value", data);
-			dispatcher.forward(request, response);
+		for(int i=0;i<staffData.length;i++) {
+			if((staffData[i].getEmail().equals(request.getParameter("email")))&&(staffData[i].getPassword().equals(request.getParameter("password")))) {
+				if(staffData[i].getStaff().equals("Admin")) {
+					RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/admin/index.jsp");
+					request.setAttribute("value", staffData);
+					dispatcher.forward(request, response);
+				}
+				else if(staffData[i].getStaff().equals("Delivery")) {
+					RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/delivery/index.jsp");
+					request.setAttribute("value", DeliveryData);
+					dispatcher.forward(request, response);
+				}
+				else if(staffData[i].getStaff().equals("Stock")) {
+					RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/delivery/index.jsp");
+					request.setAttribute("value", DeliveryData);
+					dispatcher.forward(request, response);
+				}
+				break;
+			}
 		}
+		
 		
 	}
 

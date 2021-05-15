@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.common.DatabaseConnection;
+import com.common.Staff;
 import com.common.User;
 
 /**
@@ -38,11 +39,11 @@ public class UpdateUser extends HttpServlet {
 		try {
 			Statement stmt=dbc.getConnection().createStatement();
 			
-			String command = "UPDATE customer SET firstName = '"+request.getParameter("fname")+"',lastName = '"+request.getParameter("lname")+"',email = '"+request.getParameter("email")+"',phoneNo='"+request.getParameter("phone")+"',addressLine1 ='"+ request.getParameter("address1")+"',addressLine2 ='"+ request.getParameter("fname")+"',city ='"+ request.getParameter("city")+"' WHERE customerID ="+ request.getParameter("id");
+			String command = "UPDATE employee SET firstName = '"+request.getParameter("fname")+"',lastName = '"+request.getParameter("lname")+"',email = '"+request.getParameter("email")+"',phoneNo='"+request.getParameter("phone")+"',password ='"+ request.getParameter("password")+"',Staff ='"+ request.getParameter("staff")+"' WHERE employeeID ="+ request.getParameter("id");
+//			response.getWriter().append(command);
 			int rows=stmt.executeUpdate(command);
 			
-
-			User[] data=dbc.getStaffdetails();
+			Staff[] data=dbc.getStaffdetails();
 			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/admin/index.jsp");
 			request.setAttribute("value", data);
 			dispatcher.forward(request, response);
