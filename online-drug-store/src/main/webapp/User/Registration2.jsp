@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="toplogin">
-        Already a member? <a href="login.jsp" class="link">Log In</a>
+        Already a member? <a href="../login.jsp" class="link">Log In</a>
     </div>
     <img src="../img/cart.png" class="logo"><br><br>
     <div class="center_form">

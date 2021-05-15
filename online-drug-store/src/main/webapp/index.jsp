@@ -39,16 +39,16 @@
             <div id="logOutButtonContainer" style="align-items: center;align-content: center; text-align: center;padding-top: 35px;display:none;">
                 <span style="font-weight: bolder;font-size: 20px;">Welcome Back,</span><br>
                 <span id="username">[username]</span><br><br>
-                <a href="./customerAccount.php"><button>My Account</button></a>&nbsp;&nbsp;
+                <a href="./customer_account.jsp"><button>My Account</button></a>&nbsp;&nbsp;
                 <form action="../php/logout.php"><button type="submit">SignOut</button></form>
             </div>
             <!--this page is shown by default-->
             <div id="loginButtonContainer" class="searchBar" style="align-items: center;align-content: center; text-align: center;padding-top: 35px;">
                 <div>
-                    <a href="./login.html"><button class='button'><b>Login<b></button></a>
+                    <a href="./login.jsp"><button class='button'><b>Login<b></button></a>
                 </div>
                 <div>
-                    <a href="./commonregistration.html"><button><b>SignUp<b></button></a>
+                    <a href="User/Registration1.jsp"><button><b>SignUp<b></button></a>
                 </div>
             </div>
         </div>

@@ -4,28 +4,28 @@
 <html>
 <head>
 	<meta charset="ISO-8859-1">
-	<link rel="stylesheet" type="text/css" href="../css/forms.css">
+	<link rel="stylesheet" type="text/css" href="css/forms.css">
     <title>Login</title>
 </head>
     <body>
-        <img src="../img/cart.png" class="logo">
+        <img src="img/cart.png" class="logo">
         <br><br><br>
         <div class="center_form">
             <div>
                 <form action="login" method="post">
                     <fieldset>
                         <div class="formtop">
-                            <span>Sign in or <a href="Registration1" class="link">Create an Account</a></span>
+                            <span>Sign in or <a href="User/Registration1.jsp" class="link">Create an Account</a></span>
                         </div><br>
                         <div>
-                            <label for="email">EMAIL ADDRESS or username:</label><br>
-                            <input type="text" id="email" name="email" size="48" value="admin"><br><br>
+                            <label for="email">EMAIL ADDRESS:</label><br>
+                            <input type="text" id="email" name="email" size="48" value=""><br><br>
 
                             <label for="password">PASSWORD :</label><br>
                             <input type ="password" id="password" name="password" size="48" value=""><br>
                         </div>
                         <div>
-                            <a href="forgot_password1.html" class="link">Forgot Password?</a>
+                            <a href="User/forgot_password1.jsp" class="link">Forgot Password?</a>
                         </div><br><br>
                         <div class="center">
                             <button type="submit" id="login" class="greenbtn btn">sign in</button> 
@@ -45,9 +45,9 @@
                 <a href="about.jsp">About</a>
                 <div>
                     <br>
-                    <img src="../img/facebook.png" height="50px" width="50px">&nbsp;&nbsp;&nbsp;&nbsp;
-                    <img src="../img/twitter.png" height="50px" width="50px">&nbsp;&nbsp;&nbsp;&nbsp;
-                    <img src="../img/insta.png" height="50px" width="50px">&nbsp;&nbsp;&nbsp;&nbsp;
+                    <img src="img/facebook.png" height="50px" width="50px">&nbsp;&nbsp;&nbsp;&nbsp;
+                    <img src="img/twitter.png" height="50px" width="50px">&nbsp;&nbsp;&nbsp;&nbsp;
+                    <img src="img/insta.png" height="50px" width="50px">&nbsp;&nbsp;&nbsp;&nbsp;
                 </div>
             </div>
         </div>
