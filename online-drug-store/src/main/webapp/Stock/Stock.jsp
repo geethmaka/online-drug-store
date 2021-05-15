@@ -42,9 +42,9 @@
             </div>
         </div>
         <div class="main">
-            <div class="covermain">
-                <img src="../img/cover2.jpg" class="cover">
+            
                 <img src="../img/logo.png" height="100" width="100" class="propic">
+                <br><br><br><br><br>
                 <div class="right">
                     <button><a href="edit_account.php?user=seller">Edit account</a></button>
                 </div>
@@ -125,7 +125,7 @@
                     </form>
                 </fieldset>
             </div>
-        </div>
+        
         <br>
         <div class="bottomBar">
             <div class="footer">

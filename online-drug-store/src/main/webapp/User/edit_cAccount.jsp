@@ -8,6 +8,8 @@
     <link rel="stylesheet" type="text/css" href="../css/main.css">
     <link rel="stylesheet" type="text/css" href="../css/signedInUser.css">
     <link rel="stylesheet" type="text/css" href="../css/customer.css">
+    <link rel="stylesheet" type="text/css" href="../css/form.css">
+    <link rel="stylesheet" type="text/css" href="../css/forms.css">
     <script src="JS/Edit_Account.js"></script>
 </head>
 <body>
@@ -34,9 +36,8 @@
         </div>
     </div>
     <div class="main">
-        <div class="covermain">
-            <img src="../img/cover2.jpg" class="cover">
             <img src="../img/logo.png" height="100" width="100" class="propic">
+            <br><br><br><br><br><br>
         </div><br><br>
         <!--<button id="up_pro_pic">UPLOAD</button><br>-->
         <br>
@@ -79,16 +80,15 @@
                 <button type="submit" id="submit">SUBMIT</button>
             </form><br>
         </div>
-    </div>
     <div class="bottomBar">
         <div class="footer">
             <br><br>
-            <a href="../report.html">Report</a>&nbsp;|&nbsp;
-            <a href="../faq.html">FAQ</a>&nbsp;|&nbsp;
-            <a href="../contact.html">Contact Us</a>&nbsp;|&nbsp;
-            <a href="../privacy.html">Privacy Policy</a>&nbsp;|&nbsp;
-            <a href="../help.html">Help</a>&nbsp;|&nbsp;
-            <a href="../about.html">About</a>
+        	<a href="report.jsp">Report</a>&nbsp;|&nbsp;
+            <a href="/faq.jsp">FAQ</a>&nbsp;|&nbsp;
+            <a href="contact.jsp">Contact Us</a>&nbsp;|&nbsp;
+            <a href="privacy.jsp">Privacy Policy</a>&nbsp;|&nbsp;
+            <a href="help.jsp">Help</a>&nbsp;|&nbsp;
+            <a href="abput.jsp">About</a>
             <div>
                 <br>
                 <img src="../img/facebook.png" height="50px" width="50px">&nbsp;&nbsp;&nbsp;&nbsp;

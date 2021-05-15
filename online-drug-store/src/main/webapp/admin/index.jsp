@@ -9,13 +9,21 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../css/main.css">
+    <link rel="stylesheet" type="text/css" href="../css/signedInUser.css">   
+    <link rel="stylesheet" type="text/css" href="../css/customer.css">
+     <link rel="stylesheet" type="text/css" href="../css/table.css">
+     <link rel="stylesheet" type="text/css" href="../css/forms.css">
+    
+     
 </head>
-	<body>
+	<body style="width:100%">
+		
         <div>
             <span style="font-size: 30px;">Admin Panel</span>
             <div style="float: right;">
-                <a href="addstaff.html"><button>Add another employee</button></a>
-                <form action="update-redirect" method="post"><button type="submit">Update Staff Details</button></form>
+                <a href="addstaff.html"><button class="button">Add another employee</button></a>
+                <form action="update-redirect" method="post"><button type="submit" class="button">Update Staff Details</button></form>
                 <!--<form action="../php/logout.php"><button type="submit">SignOut</button></form>-->
             </div>
         </div>
