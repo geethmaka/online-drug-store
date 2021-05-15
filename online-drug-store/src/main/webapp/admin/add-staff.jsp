@@ -36,7 +36,7 @@
                                 <option value="" selected></option>
                                 <option value="Admin">Admin</option>
                                 <option value="DeliveryM">Delivery Manager</option>
-                                <option value="PaymentH">Payment Handler</option>
+                                <option value="Stock ">Stock Manager</option>
                             </select>
                             <br><br>
                             <label for="pw">Password :</label><br>

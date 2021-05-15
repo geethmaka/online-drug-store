@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.24, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: online_drug_store
+-- Host: localhost    Database: online_drug_store
 -- ------------------------------------------------------
 -- Server version	8.0.24
 
@@ -34,7 +34,7 @@ CREATE TABLE `customer` (
   `city` varchar(50) NOT NULL,
   `province` varchar(50) NOT NULL,
   PRIMARY KEY (`customerID`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -43,7 +43,7 @@ CREATE TABLE `customer` (
 
 LOCK TABLES `customer` WRITE;
 /*!40000 ALTER TABLE `customer` DISABLE KEYS */;
-INSERT INTO `customer` VALUES (1,'Test','Test','test','12345678','admin','add','add','ddd','sss');
+INSERT INTO `customer` VALUES (1,'Hirosha','Samarasekaraa','hirosha@gmail.com','94718181818','Hirosha1','lewalla','kandy','kandy','c'),(2,'Geethmak','Disanayaka','geethmaka@gmail.com','94718181817','Geethmaka!','elagolla','kandy','kandy','c'),(3,'Nipun','Senarath','nipun@gmail.com','94718181816','Nipun1','mawanalla','mawanalla','mawanalla','s'),(4,'Pamuditha','kekulandara','pamuditha@gmail.com','94718181815','Pamuditha1','gampola','kandy','kandy','c');
 /*!40000 ALTER TABLE `customer` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -61,7 +61,7 @@ CREATE TABLE `delivery` (
   PRIMARY KEY (`deliveryID`),
   KEY `fk_delivery_orderID` (`orderID`),
   CONSTRAINT `fk_delivery_orderID` FOREIGN KEY (`orderID`) REFERENCES `orders` (`orderID`) ON DELETE SET NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -70,7 +70,6 @@ CREATE TABLE `delivery` (
 
 LOCK TABLES `delivery` WRITE;
 /*!40000 ALTER TABLE `delivery` DISABLE KEYS */;
-INSERT INTO `delivery` VALUES (1,3,'shipped');
 /*!40000 ALTER TABLE `delivery` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -90,7 +89,7 @@ CREATE TABLE `employee` (
   `password` varchar(20) NOT NULL,
   `Staff` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`employeeID`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -99,7 +98,7 @@ CREATE TABLE `employee` (
 
 LOCK TABLES `employee` WRITE;
 /*!40000 ALTER TABLE `employee` DISABLE KEYS */;
-INSERT INTO `employee` VALUES (1,'test','test','admin','710891055','admin','Admin'),(2,'rr','rrr','rrrr','4444','rr','Delivery'),(3,'admin1','admin','admin1','2222','admin','Admin');
+INSERT INTO `employee` VALUES (1,'Delivery','01','Delivery01@gmail.com','9471122330','Delivery01','DeliveryM'),(2,'Delivery','01','Delivery01@gmail.com','9471122330','Delivery01','Delivery Manager'),(3,'Stock','01','stock01@gmail.com','9471122331','Stock01','Stock Manager'),(4,'Admin','01','Admin01@gmail.com','9471122332','Admin01','Admin');
 /*!40000 ALTER TABLE `employee` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -115,8 +114,9 @@ CREATE TABLE `item` (
   `name` varchar(50) NOT NULL,
   `quantity` int NOT NULL,
   `unitPrice` double NOT NULL,
+  `details` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`itemID`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -125,7 +125,7 @@ CREATE TABLE `item` (
 
 LOCK TABLES `item` WRITE;
 /*!40000 ALTER TABLE `item` DISABLE KEYS */;
-INSERT INTO `item` VALUES (1,'TestItem1',10,100);
+INSERT INTO `item` VALUES (1,'Jeewaayu',100,375,'35G'),(2,'Santizer',150,195,'50ml'),(3,'Vitagen ',200,1600,'450G'),(4,'Blood Glucose Meter',50,3100,'small');
 /*!40000 ALTER TABLE `item` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -147,7 +147,7 @@ CREATE TABLE `orders` (
   KEY `fk_order_itemID` (`itemID`),
   CONSTRAINT `fk_order_customerID` FOREIGN KEY (`customerID`) REFERENCES `customer` (`customerID`) ON DELETE SET NULL,
   CONSTRAINT `fk_order_itemID` FOREIGN KEY (`itemID`) REFERENCES `item` (`itemID`) ON DELETE SET NULL
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -156,7 +156,6 @@ CREATE TABLE `orders` (
 
 LOCK TABLES `orders` WRITE;
 /*!40000 ALTER TABLE `orders` DISABLE KEYS */;
-INSERT INTO `orders` VALUES (3,1,1,10,1000);
 /*!40000 ALTER TABLE `orders` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -169,4 +168,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-14 23:35:32
+-- Dump completed on 2021-05-15 13:45:24
