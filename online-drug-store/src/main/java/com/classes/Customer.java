@@ -92,18 +92,4 @@ public class Customer {
 	public void setProvince(String province) {
 		this.province = province;
 	}
-	
-//	public Customer(int customerID, String firstName, String lastName,String email, String phoneNo, String password, String addressLine1, String addressLine2, String city, String province) {
-//		this.customerID = customerID;
-//		this.firstName = firstName;
-//		this.lastName = lastName;
-//		this.email = email;
-//		this.phoenNo = phoneNo;
-//		this.password = password;
-//		this.addressLine1 = addressLine1;
-//		this.addressLine2 = addressLine2;
-//		this.city = city;
-//		this.province = province;
-//	}
-
 }

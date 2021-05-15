@@ -102,18 +102,18 @@ input {
 
 /*links*/
 .link:link {
-    color: blue;
+    color:  #00ff40 ;
 }
 .link:visited {
-    color: darkblue;
+    color: rgb(0, 255, 0)le;
 }
 .link:hover {
-    color: red;
+    color: rgb(0, 255, 128);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
 .link:active {
-    color: blueviolet;
+    color:#008040; 
 } 
-
 .logo{
     padding-left: 20px;
     padding-top:30px;
