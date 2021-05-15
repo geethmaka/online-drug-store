@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ page import = "java.util.List" %>
+<%@ page import = "java.util.LinkedList" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -55,33 +58,21 @@
             <table class="table" border ="1">
                 <tr>
                     <th><b>Product Name</b></th>
-                    <th><b>Description</b></th>
                     <th><b>Quantity</b></td> 
                     <th><b>Unit Price</b></td>  
-                    <th><b>Discount</b></td> 
                 </tr>
-                <?php
-                    include "../php/config.php";
-
-                    $sellerDetails = "SELECT * FROM item where SID='".$_SESSION['SID']."'";
-                    $sellerDetailsResult = $conn->query($sellerDetails);
-                    while($row = mysqli_fetch_array($sellerDetailsResult)) {
-                        echo "<form action='../php/sellerActions.php' method='post' style='text-align:center'>
-                                    <input type='text' name='itemid' value='".$row['Item_number']."' style='display:none'>
-                                    <tr>
-                                        <td>".$row['Item_Name']."</td>
-                                        <td><input type='text' size='40' name='description' value='".$row['Description']."'></td>
-                                        <td><input type='number' name='quantity' value='".$row['Quantity']."'></td>
-                                        <td><input type='number' name='unitprice' value='".$row['Unit_Price']."'></td>
-                                        <td><input type='number' name='discount' value='".$row['Discount']."'></td>
-                                        <td>
-                                            <button type='submit' name='action' value='update'>Update Item</button><br>
-                                            <button type='submit' name='action' value='remove'>Remove Item</button>
-                                        </td>
-                                    </tr>
-                                </form>";
-                    }
-                ?>
+                <c:forEach items="${value}" var="Item"> 
+		        	<tr>
+				   		<td><c:out value="${Item.getName()}" /></td>
+				    	<td><c:out value="${Item.getQuantity()}" /></td>
+				    	<td><c:out value="${Item.getUnitPrice()}" /></td>
+				    	<td>
+				    		<form action="deleteuser" method="post">
+				    	 		<button type = "submit" name="id" value="${Item.getItemID()}">Remove Item</button>
+				    	 	</form>
+				    	 </td>
+			    	 </tr>
+	    		</c:forEach>
             </table>
             <br>
             <div>

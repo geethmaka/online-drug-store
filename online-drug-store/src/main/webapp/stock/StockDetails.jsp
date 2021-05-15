@@ -60,28 +60,9 @@
                     <th><b>Unit Price</b></td>  
                     <th><b>Discount</b></td> 
                 </tr>
-                <?php
-                    include "../php/config.php";
-
-                    $sellerDetails = "SELECT * FROM item where SID='".$_SESSION['SID']."'";
-                    $sellerDetailsResult = $conn->query($sellerDetails);
-                    while($row = mysqli_fetch_array($sellerDetailsResult)) {
-                        echo "<form action='../php/sellerActions.php' method='post' style='text-align:center'>
-                                    <input type='text' name='itemid' value='".$row['Item_number']."' style='display:none'>
-                                    <tr>
-                                        <td>".$row['Item_Name']."</td>
-                                        <td><input type='text' size='40' name='description' value='".$row['Description']."'></td>
-                                        <td><input type='number' name='quantity' value='".$row['Quantity']."'></td>
-                                        <td><input type='number' name='unitprice' value='".$row['Unit_Price']."'></td>
-                                        <td><input type='number' name='discount' value='".$row['Discount']."'></td>
-                                        <td>
-                                            <button type='submit' name='action' value='update'>Update Item</button><br>
-                                            <button type='submit' name='action' value='remove'>Remove Item</button>
-                                        </td>
-                                    </tr>
-                                </form>";
-                    }
-                ?>
+                <tr>
+                	
+                </tr>
             </table>
             <br>
             <div>
