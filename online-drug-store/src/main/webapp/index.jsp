@@ -46,10 +46,10 @@
             <!--this page is shown by default-->
             <div id="loginButtonContainer" class="searchBar" style="align-items: center;align-content: center; text-align: center;padding-top: 35px;">
                 <div>
-                    <a href="./login.jsp"><button class='button'><b>Login<b></button></a>
+                    <a href="../login.jsp"><button class='button'><b>Login</b></button></a>
                 </div>
                 <div>
-                    <a href="User/Registration1.jsp"><button><b>SignUp<b></button></a>
+                    <a href="User/Registration1.jsp"><button><b>SignUp</b></button></a>
                 </div>
             </div>
         </div>

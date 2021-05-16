@@ -35,8 +35,8 @@
     </div>
     <div class="main">
         <div class="covermain">
-            <img src="../img/cover2.jpg" class="cover">
             <img src="../img/logo.png" height="100" width="100" class="propic">
+            <br><br>
             <div class="right">
                 <button><a href="edit_cAccount.jsp">Edit account</a></button>
             </div>

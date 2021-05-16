@@ -47,15 +47,13 @@ a{
 .bottomBar{
 	background-color:ffff;
 }
-	body{
-    
-    
-        background-image: url('../img/background5.jpg');
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-size: cover;
-        font-family: 'Segoe UI';
-    
+
+body{
+	background-image: url('../img/background5.jpg');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	font-family: 'Segoe UI';    
 }
     
     .logo
@@ -124,42 +122,23 @@ a{
     
      
      
-    height: 140px;
+   /*  height: 140px;
     width: 100%;
-    bottom: 0px; 
+    bottom: 0px;  */
 }
 
-.footer{
-    text-align: center;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-}
-
-.border{
-    border-style: dashed;
-}
-
-.searchButton{
-    background: none;
-    border:none;
-    height: 40px;
-}
-
-.link:hover{
-    color: white;
-}
 .question{
 	color:#ffff;
-	
-	
 }
+
 h1{
 	color:#ffff;
 }
+
 p{
 	color:#ffff;
 }
+
 ul{
 	color:#ffff;
 }

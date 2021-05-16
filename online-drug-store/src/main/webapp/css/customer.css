@@ -61,5 +61,8 @@ form{
 	color: white;
 }
 button{
-	
+	border-color:white;
+    background-color: gray;
+    color: white;
+    height: 25px;
 }

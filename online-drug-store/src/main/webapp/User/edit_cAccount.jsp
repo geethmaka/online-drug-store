@@ -49,11 +49,11 @@
                 <fieldset id="chgusername" disabled style="border: none;">
                     <label for="chgfname">First Name :</label>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="text" id="chgfname"></input> <br><br>
+                    <input type="text" id="chgfname" name="fname"></input> <br><br>
 
                     <label for="chglrname">Last Name :</label>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="text" id="chglname"></input> <br><br>
+                    <input type="text" id="chglname" name="lname"></input> <br><br>
                 </fieldset>
 
                 <input type="checkbox" id="chgpwd" name="change_pwd" onclick='enablepassword()'>
@@ -74,9 +74,11 @@
                     &nbsp;&nbsp;&nbsp;&nbsp;
                     <input type="password" id="newrpwd" name="reenterpwd" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" ></input> <br><br>
                 </fieldset>
-
+				<div style = "color:red;"><p>${message}</p></div>
+				<div style = "color:red;"><p>${message1}</p></div>
                 <button id="delete" name="delete">Delete Account</button>&nbsp;&nbsp;&nbsp;&nbsp;
                 <button type="submit" id="submit">SUBMIT</button>
+                
             </form><br>
         </div>
     </div>
