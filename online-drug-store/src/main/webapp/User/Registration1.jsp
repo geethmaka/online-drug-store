@@ -48,7 +48,7 @@
                         <label for="agreeterms">By clicking, I agree to the Terms of Use and have read the Privacy Statement</label><br><br>
                     </div>
                     <div class="center">
-                    	<div><p>${message}</p></div>
+                    	<div style = "color:red;"><p>${message}</p></div>
                         <button type="submit" id="submitc" class="greenbtn btn" name="action" value="customer" disabled>Register</button>
                     </div>
                 </fieldset>

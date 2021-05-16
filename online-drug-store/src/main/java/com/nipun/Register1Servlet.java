@@ -9,7 +9,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.classes.Customer;
+import com.classes.Delivery;
 import com.common.DatabaseConnection;
+import com.common.Staff;
 
 @WebServlet("/User/Register1Servlet")
 public class Register1Servlet extends HttpServlet {
@@ -33,9 +35,22 @@ public class Register1Servlet extends HttpServlet {
 		customer.setPassword(request.getParameter("pwd"));
 		
 		if(request.getParameter("pwd").equals(request.getParameter("rpwd"))) {
+			
+			DatabaseConnection dbc = new DatabaseConnection();
+			Customer[] CustomerData=dbc.getCustomerDetails();
+			
+			for(int i=0;i<CustomerData.length;i++) {
+				if((CustomerData[i].getEmail().equals(request.getParameter("email")))) {
+					RequestDispatcher redirect = getServletContext().getRequestDispatcher("/User/Registration1.jsp");
+					request.setAttribute("message", "User Already exists!!!");
+					redirect.forward(request, response);
+					break;
+				}
+			}
 			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/User/Registration2.jsp");
 			request.getSession().setAttribute("CustomerObj",customer);
 			dispatcher.forward(request, response);
+			
 		}
 		else {
 			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/User/Registration1.jsp");
