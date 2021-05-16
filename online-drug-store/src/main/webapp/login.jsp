@@ -38,7 +38,6 @@
         <div class="bottomBar">
             <div class="footer">
                 <br><br>
-              
                 <a href="faq.jsp">FAQ</a>&nbsp;|&nbsp;
                 <a href="contact.jsp">Contact Us</a>&nbsp;|&nbsp;
                 <a href="privacy.jsp">Privacy Policy</a>&nbsp;|&nbsp;
@@ -55,7 +54,7 @@
     </body>
 </html>
 <% }else if(request.getSession().getAttribute("Logged").equals("Admin")){
-response.sendRedirect("admin/index.jsp");}
+	response.sendRedirect("admin/index.jsp");}
 else if(request.getSession().getAttribute("Logged").equals("Delivery")){
 	response.sendRedirect("delivery/index.jsp");
 }

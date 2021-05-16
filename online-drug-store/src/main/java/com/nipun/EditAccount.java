@@ -30,13 +30,13 @@ public class EditAccount extends HttpServlet {
 		DatabaseConnection dbc = new DatabaseConnection();
 		int customerID = (int) request.getSession().getAttribute("CustomerID");
 		
-		response.getWriter().append(request.getParameter("change_un")+" ");
+//		response.getWriter().append(request.getParameter("change_un")+" ");
 		
-		response.getWriter().append(request.getParameter("fname")+" ");
-		response.getWriter().append(request.getParameter("lname")+" ");
-		response.getWriter().append(request.getParameter("oldpwd")+" ");
-		response.getWriter().append(request.getParameter("newpwd")+" ");
-		response.getWriter().append(request.getParameter("change_pwd")+" ");
+//		response.getWriter().append(request.getParameter("delete"));
+//		response.getWriter().append(request.getParameter("lname")+" ");
+//		response.getWriter().append(request.getParameter("oldpwd")+" ");
+//		response.getWriter().append(request.getParameter("newpwd")+" ");
+//		response.getWriter().append(request.getParameter("change_pwd")+" ");
 		
 		try {
 			if(request.getParameter("change_un").equals("on")) {
@@ -70,9 +70,9 @@ public class EditAccount extends HttpServlet {
 					}
 				}
 			}
-			else if(request.getParameter()) {
+			else if(request.getParameter(null) != null) {
 				Statement stmt5=dbc.getConnection().createStatement();
-				String command5 = "delete from customer where customerID=" + request.getParameter("delete");
+				String command5 = "delete from customer where customerID = " + customerID;
 				int rows3 = stmt5.executeUpdate(command5);
 				
 				RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("login.jsp");

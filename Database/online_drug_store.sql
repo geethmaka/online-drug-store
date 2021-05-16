@@ -61,7 +61,7 @@ CREATE TABLE `online_drug_store`.`Delivery` (
 		ON DELETE SET NULL
 );
 
-select * from `online_drug_store`.`Customer`;
+select * from `online_drug_store`.`Employee`;
 
 select addressLine1, addressLine2, city, province
 from `online_drug_store`.`Customer` c, `online_drug_store`.`Orders` o
