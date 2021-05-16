@@ -2,7 +2,12 @@
     pageEncoding="ISO-8859-1"%>
 <%@ page import = "java.util.List" %>
 <%@ page import = "java.util.LinkedList" %>
+<%@ page import = "com.classes.Item" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+<% if(request.getSession().getAttribute("Logged")=="Stock") {
+	Item[] data = (Item[]) request.getSession().getAttribute("data");
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -61,7 +66,7 @@
                     <th><b>Quantity</b></td> 
                     <th><b>Unit Price</b></td>  
                 </tr>
-                <c:forEach items="${value}" var="Item"> 
+                <c:forEach items="${data}" var="Item"> 
 		        	<tr>
 				   		<td><c:out value="${Item.getName()}" /></td>
 				    	<td><c:out value="${Item.getQuantity()}" /></td>
@@ -146,4 +151,9 @@
              document.getElementById("loginButtonContainer").style.display="none";
          }
     </script>
+ <%}else{ %>
+ <body>
+ <p>blocked
+ </body>
+ <%} %>
 </html>
