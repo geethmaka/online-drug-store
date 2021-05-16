@@ -65,17 +65,11 @@ input {
 .greenbtn{
     background-color: #46d676;
 }
-.bluebtn{
-    background-color: #4678d6;
-}
 .greenbtn:hover 
 {
     background-color: #319b69;
 }
-.bluebtn:hover 
-{
-    background-color: #385894;
-}
+
 .btn
 {
     border-radius: 4px;
@@ -90,14 +84,8 @@ input {
 .greenbtn:active 
 {
   background-color: #3e8e41;
-  box-shadow: 0 5px #666666;
-  transform: translateY(4px);
-}
-.bluebtn:active 
-{
-  background-color: #0000ff;
-  box-shadow: 0 5px #666666;
-  transform: translateY(4px);/*for a 2d look*/
+  box-shadow: 3px 3px #00000000;
+  transform: translateY(2px);
 }
 
 /*links*/

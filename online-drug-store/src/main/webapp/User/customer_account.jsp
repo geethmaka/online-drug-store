@@ -29,20 +29,21 @@
         <div class="welcome">
             <span style="font-weight: bolder;font-size: 20px;">Welcome Back,</span><br>
             <span id="username">[username]</span><br><br>
-            <button>My Account</button>&nbsp;&nbsp;
-            <button>SignOut</button>
+            <button class="btn">My Account</button>&nbsp;&nbsp;
+            <button class="btn">SignOut</button>
         </div>
     </div>
     <div class="main">
         <div class="covermain">
+        	<br><br>
             <img src="../img/logo.png" height="100" width="100" class="propic">
-            <br><br>
             <div class="right">
-                <button><a href="edit_cAccount.jsp">Edit account</a></button>
+                <button class="btn"><a href="edit_cAccount.jsp">Edit account</a></button>
             </div>
-            <br>
-            <p>[Account Name]</p>
-            <p>[email address]</p>
+            <div>
+            	<p>[Account Name]</p>
+	            <p>[email address]</p>
+            </div>      
         </div><br>
         <div class="left">
             <!--have to be connect the database to -->

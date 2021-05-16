@@ -18,27 +18,18 @@
     text-align: center;
     padding-top: 35px;
 }
-.covermain
-{
+.covermain {
     position: relative; 
     left: 0; 
     top: 0;
     text-align: center;
 }
-.cover
-{
-    position: relative;
-    top: 0;
-    left: 0;
-    height: 300px;
-    width: 950px;
-}
-.propic
-{
-    position: absolute;
+
+.propic {
     top: 245px;
     left: 550px;
 }
+
 #up_pro_pic
 {
     border-radius: 4px;
@@ -50,6 +41,7 @@
     cursor:pointer;
     overflow: hidden;
 }
+
 input {
 	color: white;
     margin: 5px;
@@ -57,12 +49,23 @@ input {
     border-color:  gray;
     background-color: transparent;
 }
+
 form{
 	color: white;
 }
-button{
-	border-color:white;
-    background-color: gray;
+
+.btn{
+	background-color: #c0c0c0;
+	border-radius: 2px;
     color: white;
-    height: 25px;
-}
+    padding: 3px 6px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    text-transform: uppercase;
+    background-color: #808080;
+	box-shadow: 1px 1px #666666;
+	transform: translateY(1px);
+} 
+

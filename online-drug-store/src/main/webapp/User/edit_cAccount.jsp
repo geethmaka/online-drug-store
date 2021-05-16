@@ -29,15 +29,15 @@
         <div class="welcome">
             <span style="font-weight: bolder;font-size: 20px;">Welcome Back,</span><br>
             <span id="username">[username]</span><br><br>
-            <button>My Account</button>&nbsp;&nbsp;
-            <button>SignOut</button>
+            <button class="btn">My Account</button>&nbsp;&nbsp;
+            <button class="btn">SignOut</button>
         </div>
     </div>
     <div class="main">
+    	<br><br>
         <div class="covermain">
-            <img src="../img/cover2.jpg" class="cover">
             <img src="../img/logo.png" height="100" width="100" class="propic">
-        </div><br><br>
+        </div>
         <!--<button id="up_pro_pic">UPLOAD</button><br>-->
         <br>
         <div>
@@ -76,8 +76,8 @@
                 </fieldset>
 				<div style = "color:red;"><p>${message}</p></div>
 				<div style = "color:red;"><p>${message1}</p></div>
-                <button id="delete" name="delete">Delete Account</button>&nbsp;&nbsp;&nbsp;&nbsp;
-                <button type="submit" id="submit">SUBMIT</button>
+                <button id="delete" name="delete" class="btn">Delete Account</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                <button type="submit" id="submit" class="btn">SUBMIT</button>
                 
             </form><br>
         </div>

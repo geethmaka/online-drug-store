@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.common.DatabaseConnection;
 
-@WebServlet("/EditAccount")
+@WebServlet("/User/EditAccount")
 public class EditAccount extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -30,15 +30,21 @@ public class EditAccount extends HttpServlet {
 		DatabaseConnection dbc = new DatabaseConnection();
 		int customerID = (int) request.getSession().getAttribute("CustomerID");
 		
-		response.getWriter().append(request.getParameter("chenge_pwd"));
+		response.getWriter().append(request.getParameter("change_un")+" ");
+		
+		response.getWriter().append(request.getParameter("fname")+" ");
+		response.getWriter().append(request.getParameter("lname")+" ");
+		response.getWriter().append(request.getParameter("oldpwd")+" ");
+		response.getWriter().append(request.getParameter("newpwd")+" ");
+		response.getWriter().append(request.getParameter("change_pwd")+" ");
 		
 		try {
-			if() {
+			if(request.getParameter("change_un").equals("on")) {
 				Statement stmt1 = dbc.getConnection().createStatement();
 				String command1 = "UPDATE customer SET fistName = '" + request.getParameter("lname") + "', lastName ='" + request.getParameter("fname") + "' where customerID =" + customerID;
 				int rows1 = stmt1.executeUpdate(command1);
 			}
-			else if() {
+			else if(request.getParameter("change_pwd").equals("on")) {
 				Statement stmt2 = dbc.getConnection().createStatement();
 				String command2 = "Select password from customer where customerID = " + customerID;
 				ResultSet rs = stmt2.executeQuery(command2);
@@ -64,7 +70,7 @@ public class EditAccount extends HttpServlet {
 					}
 				}
 			}
-			else if() {
+			else if(request.getParameter()) {
 				Statement stmt5=dbc.getConnection().createStatement();
 				String command5 = "delete from customer where customerID=" + request.getParameter("delete");
 				int rows3 = stmt5.executeUpdate(command5);
