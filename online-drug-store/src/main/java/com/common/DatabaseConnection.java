@@ -6,6 +6,7 @@ import java.util.List;
 
 import com.classes.Customer;
 import com.classes.Delivery;
+import com.classes.Item;
 
 public class DatabaseConnection {
 	private Connection con;
@@ -72,6 +73,24 @@ public class DatabaseConnection {
 			}
 			
 			array = ll.toArray(new Customer[ll.size()]);
+			 
+		} catch (Exception e) {
+		}
+		return array;
+	}
+	
+	public Item[] getItemDetails() {
+		List<Item> ll = new LinkedList<Item>();
+		Item[] array = null;
+		try {
+			Statement stmt=this.getConnection().createStatement();
+			ResultSet rs=stmt.executeQuery("select * from item");
+			while(rs.next()) {
+				Item n=new Item(rs.getInt(1),rs.getString(2),rs.getInt(3),rs.getDouble(4));
+				ll.add(n);
+			}
+			
+			array = ll.toArray(new Item[ll.size()]);
 			 
 		} catch (Exception e) {
 		}
