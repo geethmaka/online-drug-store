@@ -30,7 +30,7 @@
                         <input type ="text" id="telno" name="telno" pattern="[0-9]{11}" size="48" Required><br><br>
                     </div>
                     <div class="center">
-                    	<div><p>${message}</p></div>
+                    	<div style = "color:red;"><p>${message}</p></div>
                            <button type="submit" id="submitc1" class="greenbtn btn">next</button> 
                        </div>
                    </fieldset>

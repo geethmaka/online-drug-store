@@ -1,9 +1,8 @@
 package com.nipun;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.ResultSet;
-import java.sql.*;
+import java.sql.Statement;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -12,9 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.classes.Customer;
 import com.common.DatabaseConnection;
-import com.mysql.cj.Session;
 
 @WebServlet("/User/forgetPassword1")
 public class forgetPassword1 extends HttpServlet {
@@ -36,16 +33,15 @@ public class forgetPassword1 extends HttpServlet {
 			String command = "select customerID from Customer where email = '" + request.getParameter("email") + "' and phoneNo = '" + request.getParameter("telno") + "'";
 			ResultSet rs = stmt.executeQuery(command);
 			
-			if(!rs.next()) {
+			if(!rs.next()) {//finding a row with matching customerID
 				RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/User/forgot_password1.jsp");
 				request.setAttribute("message", "Incorrect User Account Details");
 				dispatcher.forward(request, response);
 			}
-			else {
+			else {//go to the next row checking the data
 				int customerID = rs.getInt(1);
-				//response.getWriter().println(customerID);
 				request.getSession().setAttribute("CustomerID", customerID);
-				RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/User/forgot_password2.jsp");
+				RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/User/forgot_password2.jsp");//redirect to forgot_password2 page
 				dispatcher.forward(request, response);
 				
 			}
