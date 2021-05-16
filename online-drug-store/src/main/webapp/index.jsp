@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<% if(request.getSession().getAttribute("Logged")==null){request.getSession().setAttribute("Logged","User");} %>
 <!DOCTYPE html>
 <html>
 	<head>
