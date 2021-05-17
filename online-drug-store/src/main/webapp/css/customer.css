@@ -55,7 +55,8 @@ form{
 }
 
 .btn{
-	background-color: #c0c0c0;
+	background-color:transparent;
+	/* background-color: #c0c0c0; */
 	border-radius: 2px;
     color: white;
     padding: 3px 6px;

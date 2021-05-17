@@ -66,7 +66,7 @@ public class Login extends HttpServlet {
 						dispatcher.forward(request, response);
 					}
 					else if(staffData[i].getStaff().equals("Stock")) {
-						RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/stock/Stock.jsp");
+						RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/stock/index.jsp");
 						request.getSession().setAttribute("Logged","Stock");
 						request.getSession().setAttribute("data",ItemData);
 						request.setAttribute("value", ItemData);
