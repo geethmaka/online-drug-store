@@ -28,7 +28,7 @@
         </div>
         <div class="welcome">
             <span style="font-weight: bolder;font-size: 20px;">Welcome Back,</span><br>
-            <span id="username">[username]</span><br><br>
+            <span id="username">${username}</span><br><br>
             <button class="btn">My Account</button>&nbsp;&nbsp;
             <button class="btn">SignOut</button>
         </div>
@@ -46,13 +46,11 @@
             </div>      
         </div><br>
         <div class="left">
-            <!--have to be connect the database to -->
-            <p>All orders:<span> </span></p>
-            <p>Awaiting payment:<span> </span></p>
-            <p>Awaiting shipment:<span> </span></p>
-            <p>Awaiting delivery:<span> </span></p>
-            <p>Feedbacks:<span> </span></p>
-            <p>Disputes:<span> </span></p>
+            <p>Order Number:<span> </span></p>
+            <p>Item name:<span> </span></p>
+            <p>Quantity:<span> </span></p>
+            <p>Total:<span> </span></p>
+            <p>Status:<span> </span></p>
         </div>
     </div>
     <div class="bottomBar">

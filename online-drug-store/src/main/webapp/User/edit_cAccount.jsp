@@ -28,7 +28,7 @@
         </div>
         <div class="welcome">
             <span style="font-weight: bolder;font-size: 20px;">Welcome Back,</span><br>
-            <span id="username">[username]</span><br><br>
+            <span id="username">${username}</span><br><br>
             <button class="btn">My Account</button>&nbsp;&nbsp;
             <button class="btn">SignOut</button>
         </div>
@@ -42,6 +42,11 @@
         <br>
         <div>
             <form action="EditAccount" method="POST">
+	            <div class="right">
+	            	<button type="submit" id="delete" name="delete" class="btn" value="delete">Delete Account</button>
+	            </div>
+            	<br>
+            
                 <input type="checkbox" id="chgun" name="change_un" onclick='enableusername()'>
                 <label for="change_un">Change Username</label>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br>
@@ -76,8 +81,10 @@
                 </fieldset>
 				<div style = "color:red;"><p>${message}</p></div>
 				<div style = "color:red;"><p>${message1}</p></div>
-                <button id="delete" name="delete" class="btn">Delete Account</button>&nbsp;&nbsp;&nbsp;&nbsp;
-                <button type="submit" id="submit" class="btn">SUBMIT</button>
+                
+                <button type="submit" id="submit" name="submit" class="btn" value="submit">SUBMIT</button>
+                
+                
                 
             </form><br>
         </div>

@@ -55,7 +55,7 @@
 				    	 	<td><c:out value="${staff.getStaff()}" /></td>
 				    	 	<td>
 				    	 		<form action="deleteuser" method="post">
-				    	 			<button type = "submit" name="id" value="${user.getId()}">Delete User</button>
+				    	 			<button type = "submit" name="id" value="${staff.getId()}">Delete User</button>
 				    	 		</form>
 				    	 	<td>
 			    	 	</tr>

@@ -7,11 +7,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/cAccount")
-public class cAccount extends HttpServlet {
+@WebServlet("/CustomerAccount")
+public class CustomerAccount extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-    public cAccount() {
+    public CustomerAccount() {
         super();
     }
 
