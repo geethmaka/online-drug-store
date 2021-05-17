@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
+<% if(request.getSession().getAttribute("Logged")==null){ %>
 <html>
 <head>
 	<meta charset="ISO-8859-1">
@@ -53,3 +54,15 @@
         </div>
     </body>
 </html>
+<% }else if(request.getSession().getAttribute("Logged").equals("Admin")){
+response.sendRedirect("admin/index.jsp");}
+else if(request.getSession().getAttribute("Logged").equals("Delivery")){
+	response.sendRedirect("delivery/index.jsp");
+}
+else if(request.getSession().getAttribute("Logged").equals("Stock")){
+	response.sendRedirect("Stock/stock.jsp");
+}
+else if(request.getSession().getAttribute("Logged").equals("User")){
+	response.sendRedirect("index.jsp");
+}
+%>

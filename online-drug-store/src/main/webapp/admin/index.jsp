@@ -35,6 +35,7 @@
             <div style="float: right;">
                 <a href="addstaff.html"><button>Add another employee</button></a>
                 <form action="update-redirect" method="post"><button type="submit">Update Staff Details</button></form>
+                <form action="logout" method="post"><button type="submit">Logout</button></form>
             </div>
         </div>
         <br>

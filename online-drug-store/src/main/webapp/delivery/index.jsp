@@ -3,6 +3,11 @@
 <%@ page import = "java.util.List" %>
 <%@ page import = "java.util.LinkedList" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page import = "com.classes.Delivery" %>
+
+<% if(request.getSession().getAttribute("Logged")=="Delivery") {
+	Delivery[] data = (Delivery[]) request.getSession().getAttribute("data");
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -66,7 +71,7 @@
 		                    <th>Status</th>
 		                    <th>Action</th>
                 		</tr>
-	           			<c:forEach items="${value}" var="delivery"> 
+	           			<c:forEach items="${data}" var="delivery"> 
 		           		<tr>
 				    	 	<td><c:out value="${delivery.getDeliveryId()}" /></td>
 				    	 	<td><c:out value="${delivery.getorderId()}" /></td>
@@ -98,4 +103,9 @@
             </div>
         </div> 
     </body>
+ <%}else{ %>
+ <body>
+ <p>blocked
+ </body>
+ <%} %>
 </html>
