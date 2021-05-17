@@ -18,6 +18,10 @@
 }
 .topBar{
     display: grid;
+<<<<<<< HEAD
+    background-color: #21ADA8;
+=======
+>>>>>>> master
     height: 180px;
     width: 100%;
     grid-template-columns: 300px auto 250px;

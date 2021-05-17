@@ -9,9 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.classes.Customer;
-import com.classes.Delivery;
 import com.common.DatabaseConnection;
-import com.common.Staff;
 
 @WebServlet("/User/Register1Servlet")
 public class Register1Servlet extends HttpServlet {
