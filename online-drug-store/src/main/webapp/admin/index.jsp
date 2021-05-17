@@ -9,6 +9,8 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../css/main.css">
+<link rel="stylesheet" type="text/css" href="../css/table.css">
 </head>
 <% if(request.getSession().getAttribute("Logged")=="Admin") {
 	Staff[] data = (Staff[]) request.getSession().getAttribute("data");
@@ -17,8 +19,8 @@
         <div>
             <span style="font-size: 30px;">Admin Panel</span>
             <div style="float: right;">
-                <a href="addstaff.html"><button>Add another employee</button></a>
-                <form action="update-redirect" method="post"><button type="submit">Update Staff Details</button></form>
+                <a href="add-staff.jsp"><button>Add another employee</button></a>
+                <!--<form action="update-redirect" method="post">--><a href="admin/update-user-details.jsp"><button>Update Staff Details</button></a><!--</form>-->
                 <form action="logout" method="post"><button type="submit">Logout</button></form>
             </div>
         </div>

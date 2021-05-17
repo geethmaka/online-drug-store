@@ -83,3 +83,20 @@ p{
 ul{
 	color:#ffff;
 }
+table{
+
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+   td {
+    text-align: left;
+    padding: 8px;
+
+   }
+
+    th {
+      background-color: #e4eef0;
+      color: black
+
+   }

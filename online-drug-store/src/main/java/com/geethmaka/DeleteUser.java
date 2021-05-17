@@ -18,7 +18,7 @@ import com.common.DatabaseConnection;
 import com.common.Staff;
 import com.common.User;
 
-@WebServlet("/deleteuser")
+@WebServlet("/admin/deleteuser")
 public class DeleteUser extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -32,14 +32,13 @@ public class DeleteUser extends HttpServlet {
 		
 		try {
 			Statement stmt=dbc.getConnection().createStatement();
-			String command = "delete from customer where customerID=" + request.getParameter("id");
+			String command = "delete from employee where employeeID=" + request.getParameter("id");
 			int rows=stmt.executeUpdate(command);
 			
 			
 			Staff[] data=dbc.getStaffdetails();
-			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/admin/index.jsp");
-			request.setAttribute("value", data);
-			dispatcher.forward(request, response);
+			request.getSession().setAttribute("data", data);
+			response.sendRedirect("index.jsp");
 		} catch (Exception e) {
 			response.getWriter().append(e.toString());
 		}

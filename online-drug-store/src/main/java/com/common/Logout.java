@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/logout")
+@WebServlet("/admin/logout")
 public class Logout extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -17,7 +17,7 @@ public class Logout extends HttpServlet {
 
     public void logout(HttpServletRequest request,HttpServletResponse response) throws IOException {
     	request.getSession().removeAttribute("Logged");
-    	response.sendRedirect("login.jsp");
+    	response.sendRedirect("../login.jsp");
     }
     
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
