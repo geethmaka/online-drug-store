@@ -71,7 +71,7 @@
 				    	 	<td><c:out value="${staff.getStaff()}" /></td>
 				    	 	<td>
 				    	 		<form action="deleteuser" method="post">
-				    	 			<button type = "submit" name="id" value="${user.getId()}">Delete User</button>
+				    	 			<button type = "submit" name="id" value="${staff.getId()}">Delete User</button>
 				    	 		</form>
 				    	 	<td>
 			    	 	</tr>
@@ -87,11 +87,12 @@
             <div style="text-align: center;justify-content: center;align-content: center;align-items: center;">
                 <br><br>
                
-                <a class="link" href="faq.html">FAQ</a>&nbsp;|&nbsp;
-                <a class="link" href="contact.html">Contact Us</a>&nbsp;|&nbsp;
-                <a class="link" href="privacy.html">Privacy Policy</a>&nbsp;|&nbsp;
-                <a class="link" href="help.html">Help</a>&nbsp;|&nbsp;
-                <a class="link" href="about.html">About</a>
+        	<a href="report.jsp">Report</a>&nbsp;|&nbsp;
+            <a href="/faq.jsp">FAQ</a>&nbsp;|&nbsp;
+            <a href="contact.jsp">Contact Us</a>&nbsp;|&nbsp;
+            <a href="privacy.jsp">Privacy Policy</a>&nbsp;|&nbsp;
+            <a href="help.jsp">Help</a>&nbsp;|&nbsp;
+            <a href="abput.jsp">About</a>
                 <div>
                     <br>
                     <img src="../img/facebook.png" height="50px" width="50px">&nbsp;&nbsp;&nbsp;&nbsp;
