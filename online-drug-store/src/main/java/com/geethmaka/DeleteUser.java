@@ -33,14 +33,12 @@ public class DeleteUser extends HttpServlet {
 		try {
 			Statement stmt=dbc.getConnection().createStatement();
 			String command = "delete from employee where employeeID=" + request.getParameter("id");
-
 			int rows=stmt.executeUpdate(command);
-				Staff[] staffData=dbc.getStaffdetails();
-				request.getSession().setAttribute("Logged","Admin");
-				request.getSession().setAttribute("data",staffData);
-				RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/admin/index.jsp");
-				dispatcher.forward(request, response);
-
+			
+			
+			Staff[] data=dbc.getStaffdetails();
+			request.getSession().setAttribute("data", data);
+			response.sendRedirect("index.jsp");
 		} catch (Exception e) {
 			response.getWriter().append(e.toString());
 		}

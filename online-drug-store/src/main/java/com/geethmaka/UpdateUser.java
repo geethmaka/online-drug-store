@@ -40,14 +40,11 @@ public class UpdateUser extends HttpServlet {
 			Statement stmt=dbc.getConnection().createStatement();
 			
 			String command = "UPDATE employee SET firstName = '"+request.getParameter("fname")+"',lastName = '"+request.getParameter("lname")+"',email = '"+request.getParameter("email")+"',phoneNo='"+request.getParameter("phone")+"',password ='"+ request.getParameter("password")+"',Staff ='"+ request.getParameter("staff")+"' WHERE employeeID ="+ request.getParameter("id");
-//			response.getWriter().append(command);
 			int rows=stmt.executeUpdate(command);
 			
 			Staff[] data=dbc.getStaffdetails();
-			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/admin/index.jsp");
 			request.getSession().setAttribute("data",data);
-			//request.setAttribute("value", data);
-			dispatcher.forward(request, response);
+			response.sendRedirect("index.jsp");
 		} catch (Exception e) {
 			response.getWriter().append(e.toString());
 		}

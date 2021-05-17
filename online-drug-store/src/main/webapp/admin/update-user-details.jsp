@@ -2,6 +2,7 @@
     pageEncoding="ISO-8859-1"%>
 <%@ page import = "java.util.List" %>
 <%@ page import = "java.util.LinkedList" %>
+<%@ page import = "com.common.Staff" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
@@ -14,6 +15,9 @@
      <link rel="stylesheet" type="text/css" href="../css/table.css">
      <link rel="stylesheet" type="text/css" href="../css/forms.css">
 </head>
+<% if(request.getSession().getAttribute("Logged")=="Admin") {
+	Staff[] data = (Staff[]) request.getSession().getAttribute("data");
+%>
 	<body>
 		<!--<div class="topBar">
             <div style="padding-left: 20px;padding-top:30px;">
@@ -60,7 +64,7 @@
                     <th>Staff</th>
                 </tr>
                 
-	               	<c:forEach items="${value}" var="staff"> 
+	               	<c:forEach items="${data}" var="staff"> 
 	               	<form action="updateuser" method="post">
 			        	<tr>
 					    	 <td><input type="text" name="fname" value="<c:out value="${staff.getFname()}" />"></td>
@@ -101,4 +105,9 @@
             </div>
         </div>
     </body>
+ <%}else{ %>
+ <body>
+ <p>blocked</p>
+ </body>
+ <%} %>
 </html>
