@@ -13,10 +13,10 @@ import javax.servlet.http.HttpServletResponse;
 import com.common.DatabaseConnection;
 
 @WebServlet("/User/forgetPassword2")
-public class forgetPassword2 extends HttpServlet {
+public class ForgetPassword2 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-    public forgetPassword2() {
+    public ForgetPassword2() {
         super();
     }
 
@@ -33,7 +33,7 @@ public class forgetPassword2 extends HttpServlet {
 			if(request.getParameter("password").equals(request.getParameter("confirmpassword"))) {
 				Statement stmt = dbc.getConnection().createStatement();
 				String command = "UPDATE customer SET password = '" + request.getParameter("password") + "' where customerID =" + customerID;
-				int rows = stmt.executeUpdate(command);
+				stmt.executeUpdate(command);
 				
 				RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("login.jsp");
 				dispatcher.forward(request, response);

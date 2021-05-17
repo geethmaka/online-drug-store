@@ -38,7 +38,7 @@ public class Register2Servlet extends HttpServlet {
 			Statement stmt = dbc.getConnection().createStatement();
 			String command = "insert into customer(firstName,lastName,email,phoneNo,password,addressLine1,addressLine2,city,province)"
 					+ "VALUES('" + customer.getFirstName() + "','" + customer.getLastName() + "','" + customer.getEmail() + "','" + customer.getPhoenNo() + "','" + customer.getPassword() + "','" + customer.getAddressLine1() + "','" + customer.getAddressLine2() + "','" + customer.getCity() + "','" + customer.getProvince() + "')";
-			int rows = stmt.executeUpdate(command);
+			stmt.executeUpdate(command);
 			
 			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/login.jsp");
 			dispatcher.forward(request, response);

@@ -14,10 +14,10 @@ import javax.servlet.http.HttpServletResponse;
 import com.common.DatabaseConnection;
 
 @WebServlet("/User/forgetPassword1")
-public class forgetPassword1 extends HttpServlet {
+public class ForgetPassword1 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-    public forgetPassword1() {
+    public ForgetPassword1() {
         super();
     }
 

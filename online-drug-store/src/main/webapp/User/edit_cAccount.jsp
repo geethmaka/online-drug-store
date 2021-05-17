@@ -30,19 +30,31 @@
         </div>
         <div class="welcome">
             <span style="font-weight: bolder;font-size: 20px;">Welcome Back,</span><br>
-            <span id="username">[username]</span><br><br>
-            <button>My Account</button>&nbsp;&nbsp;
-            <button>SignOut</button>
+            <span id="username">${username}</span><br><br>
+            <button class="btn">My Account</button>&nbsp;&nbsp;
+            <button class="btn">SignOut</button>
         </div>
     </div>
     <div class="main">
+<<<<<<< HEAD
+    	<br><br>
+        <div class="covermain">
+            <img src="../img/logo.png" height="100" width="100" class="propic">
+        </div>
+=======
             <img src="../img/logo.png" height="100" width="100" class="propic">
             <br><br><br><br><br><br>
         </div><br><br>
+>>>>>>> master
         <!--<button id="up_pro_pic">UPLOAD</button><br>-->
         <br>
         <div>
             <form action="EditAccount" method="POST">
+	            <div class="right">
+	            	<button type="submit" id="delete" name="delete" class="btn" value="delete">Delete Account</button>
+	            </div>
+            	<br>
+            
                 <input type="checkbox" id="chgun" name="change_un" onclick='enableusername()'>
                 <label for="change_un">Change Username</label>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br>
@@ -50,11 +62,11 @@
                 <fieldset id="chgusername" disabled style="border: none;">
                     <label for="chgfname">First Name :</label>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="text" id="chgfname"></input> <br><br>
+                    <input type="text" id="chgfname" name="fname"></input> <br><br>
 
                     <label for="chglrname">Last Name :</label>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="text" id="chglname"></input> <br><br>
+                    <input type="text" id="chglname" name="lname"></input> <br><br>
                 </fieldset>
 
                 <input type="checkbox" id="chgpwd" name="change_pwd" onclick='enablepassword()'>
@@ -75,9 +87,13 @@
                     &nbsp;&nbsp;&nbsp;&nbsp;
                     <input type="password" id="newrpwd" name="reenterpwd" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" ></input> <br><br>
                 </fieldset>
-
-                <button id="delete" name="delete">Delete Account</button>&nbsp;&nbsp;&nbsp;&nbsp;
-                <button type="submit" id="submit">SUBMIT</button>
+				<div style = "color:red;"><p>${message}</p></div>
+				<div style = "color:red;"><p>${message1}</p></div>
+                
+                <button type="submit" id="submit" name="submit" class="btn" value="submit">SUBMIT</button>
+                
+                
+                
             </form><br>
         </div>
     <div class="bottomBar">
