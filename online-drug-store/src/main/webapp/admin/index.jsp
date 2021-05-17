@@ -21,7 +21,7 @@
 <% if(request.getSession().getAttribute("Logged").equals("Admin")) {
 	Staff[] data = (Staff[]) request.getSession().getAttribute("data");
 %>
-	<body>
+
         <div>
             <span style="font-size: 30px;">Admin Panel</span>
             <div style="float: right;">
@@ -71,6 +71,8 @@
                     </table>
             </div>
         </div>
+        </div>
+        </div>
         <br>
         <br>
         <div class="bottomBar">
@@ -93,7 +95,6 @@
         </div>
     </body>
  <%}else{ %>
- <body>
  <p>blocked
  </body>
  <%} %>
