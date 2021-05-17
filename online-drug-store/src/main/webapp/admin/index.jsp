@@ -23,17 +23,17 @@
         <div>
             <span style="font-size: 30px;">Admin Panel</span>
             <div style="float: right;">
-                <a href="addstaff.html"><button class="button">Add another employee</button></a>
+                <a href="add-staff.jsp"><button class="button">Add another employee</button></a>
                 <form action="update-redirect" method="post"><button type="submit" class="button">Update Staff Details</button></form>
                 <!--<form action="../php/logout.php"><button type="submit">SignOut</button></form>-->
 <% if(request.getSession().getAttribute("Logged")=="Admin") {
 	Staff[] data = (Staff[]) request.getSession().getAttribute("data");
 %>
-	<body>
+
         <div>
             <span style="font-size: 30px;">Admin Panel</span>
             <div style="float: right;">
-                <a href="addstaff.html"><button>Add another employee</button></a>
+                <a href="add-staff.jsp"><button>Add another employee</button></a>
                 <form action="update-redirect" method="post"><button type="submit">Update Staff Details</button></form>
                 <form action="logout" method="post"><button type="submit">Logout</button></form>
             </div>
@@ -79,6 +79,8 @@
                     </table>
             </div>
         </div>
+        </div>
+        </div>
         <br>
         <br>
         <div class="bottomBar">
@@ -100,7 +102,6 @@
         </div>
     </body>
  <%}else{ %>
- <body>
  <p>blocked
  </body>
  <%} %>
