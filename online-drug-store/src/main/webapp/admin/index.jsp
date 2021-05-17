@@ -9,15 +9,23 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../css/main.css">
+    <link rel="stylesheet" type="text/css" href="../css/signedInUser.css">   
+    <link rel="stylesheet" type="text/css" href="../css/customer.css">
+     <link rel="stylesheet" type="text/css" href="../css/table.css">
+     <link rel="stylesheet" type="text/css" href="../css/forms.css">
+    
+     
 </head>
-<% if(request.getSession().getAttribute("Logged")=="Admin") {
+
+<% if(request.getSession().getAttribute("Logged").equals("Admin")) {
 	Staff[] data = (Staff[]) request.getSession().getAttribute("data");
 %>
-	<body>
+
         <div>
             <span style="font-size: 30px;">Admin Panel</span>
             <div style="float: right;">
-                <a href="addstaff.html"><button>Add another employee</button></a>
+                <a href="add-staff.jsp"><button>Add another employee</button></a>
                 <form action="update-redirect" method="post"><button type="submit">Update Staff Details</button></form>
                 <form action="logout" method="post"><button type="submit">Logout</button></form>
             </div>
@@ -63,17 +71,20 @@
                     </table>
             </div>
         </div>
+        </div>
+        </div>
         <br>
         <br>
         <div class="bottomBar">
             <div style="text-align: center;justify-content: center;align-content: center;align-items: center;">
                 <br><br>
                
-                <a class="link" href="faq.html">FAQ</a>&nbsp;|&nbsp;
-                <a class="link" href="contact.html">Contact Us</a>&nbsp;|&nbsp;
-                <a class="link" href="privacy.html">Privacy Policy</a>&nbsp;|&nbsp;
-                <a class="link" href="help.html">Help</a>&nbsp;|&nbsp;
-                <a class="link" href="about.html">About</a>
+        	<a href="report.jsp">Report</a>&nbsp;|&nbsp;
+            <a href="/faq.jsp">FAQ</a>&nbsp;|&nbsp;
+            <a href="contact.jsp">Contact Us</a>&nbsp;|&nbsp;
+            <a href="privacy.jsp">Privacy Policy</a>&nbsp;|&nbsp;
+            <a href="help.jsp">Help</a>&nbsp;|&nbsp;
+            <a href="abput.jsp">About</a>
                 <div>
                     <br>
                     <img src="../img/facebook.png" height="50px" width="50px">&nbsp;&nbsp;&nbsp;&nbsp;
@@ -84,7 +95,6 @@
         </div>
     </body>
  <%}else{ %>
- <body>
  <p>blocked
  </body>
  <%} %>

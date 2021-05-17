@@ -8,7 +8,8 @@
     <title>Customer Account</title>
     <link rel="stylesheet" type="text/css" href="../css/main.css">
     <link rel="stylesheet" type="text/css" href="../css/signedInUser.css">   
-    <link rel="stylesheet" type="text/css" href="../css/customer.css">      
+    <link rel="stylesheet" type="text/css" href="../css/customer.css">  
+  
 </head>
 <body>
     <div class="topBar">
@@ -34,8 +35,12 @@
         </div>
     </div>
     <div class="main">
+<<<<<<< HEAD
         <div class="covermain">
         	<br><br>
+=======
+    
+>>>>>>> master
             <img src="../img/logo.png" height="100" width="100" class="propic">
             <div class="right">
                 <button class="btn"><a href="edit_cAccount.jsp">Edit account</a></button>
@@ -52,16 +57,16 @@
             <p>Total:<span> </span></p>
             <p>Status:<span> </span></p>
         </div>
-    </div>
+   
     <div class="bottomBar">
         <div class="footer">
             <br><br>
-            <a href="../report.html">Report</a>&nbsp;|&nbsp;
-            <a href="../faq.html">FAQ</a>&nbsp;|&nbsp;
-            <a href="../contact.html">Contact Us</a>&nbsp;|&nbsp;
-            <a href="../privacy.html">Privacy Policy</a>&nbsp;|&nbsp;
-            <a href="../help.html">Help</a>&nbsp;|&nbsp;
-            <a href="../abput.html">About</a>
+            <a href="report.jsp">Report</a>&nbsp;|&nbsp;
+            <a href="/faq.jsp">FAQ</a>&nbsp;|&nbsp;
+            <a href="contact.jsp">Contact Us</a>&nbsp;|&nbsp;
+            <a href="privacy.jsp">Privacy Policy</a>&nbsp;|&nbsp;
+            <a href="help.jsp">Help</a>&nbsp;|&nbsp;
+            <a href="abput.jsp">About</a>
             <div>
                 <br>
                 <img src="../img/facebook.png" height="50px" width="50px">&nbsp;&nbsp;&nbsp;&nbsp;

@@ -18,7 +18,7 @@ import com.common.Staff;
 import com.common.User;
 
 
-@WebServlet("/update-redirect")
+@WebServlet("/admin/update-redirect")
 public class UpdateRedirect extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

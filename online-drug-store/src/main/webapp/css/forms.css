@@ -21,7 +21,6 @@ a{
 }
 
 .bottomBar{
-    
     height: 140px;
     width: 100%;
 }
@@ -88,7 +87,8 @@ input {
   transform: translateY(2px);
 }
 
-/*links*/
+
+/*links
 .link:link {
     color:  #00ff40 ;
 }
@@ -101,7 +101,7 @@ input {
 }
 .link:active {
     color:#008040; 
-} 
+} */
 .logo{
     padding-left: 20px;
     padding-top:30px;

@@ -59,7 +59,7 @@ else if(request.getSession().getAttribute("Logged").equals("Delivery")){
 	response.sendRedirect("delivery/index.jsp");
 }
 else if(request.getSession().getAttribute("Logged").equals("Stock")){
-	response.sendRedirect("Stock/stock.jsp");
+	response.sendRedirect("stock/index.jsp");
 }
 else if(request.getSession().getAttribute("Logged").equals("User")){
 	response.sendRedirect("index.jsp");

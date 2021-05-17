@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.common.DatabaseConnection;
+import com.common.Staff;
 import com.common.User;
 
 @WebServlet("/admin/addstaff")
@@ -32,6 +33,10 @@ public class Addstaff extends HttpServlet {
 			Statement stmt=dbc.getConnection().createStatement();
 			String command = "insert into employee(firstName,lastName,email,phoneNo,password,Staff) VALUES('"+request.getParameter("fname")+"','"+request.getParameter("lname")+"','"+request.getParameter("email")+"','"+request.getParameter("number")+"','"+request.getParameter("pwd")+"','"+request.getParameter("type")+"')";
 			int rows=stmt.executeUpdate(command);	
+			Staff[] staffData=dbc.getStaffdetails();
+			request.getSession().setAttribute("Logged","Admin");
+			request.getSession().setAttribute("data",staffData);
+			response.sendRedirect("index.jsp");
 		} catch(Exception e) {
 			e.printStackTrace();
 		}

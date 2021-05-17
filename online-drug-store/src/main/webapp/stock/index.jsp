@@ -1,14 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ page import = "java.util.List" %>
+<%@ page import = "java.util.LinkedList" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-   <title>Seller Account</title>
-        <link rel="stylesheet" type="text/css" href="../css/main.css">
-        <link rel="stylesheet" type="text/css" href="../css/signedInUser.css">   
-        <link rel="stylesheet" type="text/css" href="../css/seller.css">   
-        <link rel="stylesheet" href="../css/table.css">
+     <title>Seller Account</title>
     </head>
     <body>
         <div class="topBar">
@@ -55,14 +54,21 @@
             <table class="table" border ="1">
                 <tr>
                     <th><b>Product Name</b></th>
-                    <th><b>Description</b></th>
                     <th><b>Quantity</b></td> 
                     <th><b>Unit Price</b></td>  
-                    <th><b>Discount</b></td> 
                 </tr>
-                <tr>
-                	
-                </tr>
+                <c:forEach items="${value}" var="Item"> 
+		        	<tr>
+				   		<td><c:out value="${Item.getName()}" /></td>
+				    	<td><c:out value="${Item.getQuantity()}" /></td>
+				    	<td><c:out value="${Item.getUnitPrice()}" /></td>
+				    	<td>
+				    		<form action="deleteuser" method="post">
+				    	 		<button type = "submit" name="id" value="${Item.getItemID()}">Remove Item</button>
+				    	 	</form>
+				    	 </td>
+			    	 </tr>
+	    		</c:forEach>
             </table>
             <br>
             <div>
@@ -136,4 +142,4 @@
              document.getElementById("loginButtonContainer").style.display="none";
          }
     </script>
-</html>tml>
+</html>
