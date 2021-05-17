@@ -11,7 +11,7 @@
     <div class="toplogin">
         Already a member? <a href="../login.jsp" class="link">Log In</a>
     </div>
-    <img src="../img/cart.png" class="logo"><br>
+    <a href="../index.jsp"><img src="../img/cart.png" class="logo"></a><br>
     <br><br>
 
     <div class="center_form">
@@ -41,12 +41,11 @@
        <div class="bottomBar">
            <div class="footer">
                <br><br>
-              
-              	<a href="faq.jsp">FAQ</a>&nbsp;|&nbsp;
-               <a href="contact.jsp">Contact Us</a>&nbsp;|&nbsp;
-               <a href="privacy.jsp">Privacy Policy</a>&nbsp;|&nbsp;
-               <a href="help.jsp">Help</a>&nbsp;|&nbsp;
-               <a href="about.jsp">About</a>
+               <a href="../faq.jsp">FAQ</a>&nbsp;|&nbsp;
+               <a href="../contact.jsp">Contact Us</a>&nbsp;|&nbsp;
+               <a href="../privacy.jsp">Privacy Policy</a>&nbsp;|&nbsp;
+               <a href="../help.jsp">Help</a>&nbsp;|&nbsp;
+               <a href="../about.jsp">About</a>
                <div>
                    <br>
                    <img src="../img/facebook.png" height="50px" width="50px">&nbsp;&nbsp;&nbsp;&nbsp;

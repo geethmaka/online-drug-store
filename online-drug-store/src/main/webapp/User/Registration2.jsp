@@ -12,7 +12,7 @@
     <div class="toplogin">
         Already a member? <a href="../login.jsp" class="link">Log In</a>
     </div>
-    <img src="../img/cart.png" class="logo"><br><br>
+    <a href="../index.jsp"><img src="../img/cart.png" class="logo"></a><br><br>
     <div class="center_form">
         <div>
             <form action="Register2Servlet" method="Post">
