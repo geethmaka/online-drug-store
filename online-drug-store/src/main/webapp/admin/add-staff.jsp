@@ -5,11 +5,17 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../css/main.css">
+    <link rel="stylesheet" type="text/css" href="../css/signedInUser.css">   
+    <link rel="stylesheet" type="text/css" href="../css/customer.css">   
+    <link rel="stylesheet" type="text/css" href="../css/form.css">
+    <link rel="stylesheet" type="text/css" href="../css/forms.css">
+    
+    
 </head>
 	<body>
         <div class="main">
-            <div style="float:right;padding-right: 300px;">
-                <a href="./home.php"><img src="../img/cart.png" height="150" width="150"></a>
+                   <a href="./home.php"><img src="../img/cart.png" height="150" width="150"></a>
             </div>
             <div>
                 <form method="post" action="addstaff">
@@ -65,11 +71,11 @@
                 <div style="text-align: center;justify-content: center;align-content: center;align-items: center;">
                     <br><br>
                    
-                    <a class="link" href="faq.html">FAQ</a>&nbsp;|&nbsp;
-                    <a class="link" href="contact.html">Contact Us</a>&nbsp;|&nbsp;
-                    <a class="link" href="privacy.html">Privacy Policy</a>&nbsp;|&nbsp;
-                    <a class="link" href="help.html">Help</a>&nbsp;|&nbsp;
-                    <a class="link" href="about.html">About</a>
+                    <a class="link" href="faq.jsp">FAQ</a>&nbsp;|&nbsp;
+                    <a class="link" href="contact.jsp">Contact Us</a>&nbsp;|&nbsp;
+                    <a class="link" href="privacy.jsp">Privacy Policy</a>&nbsp;|&nbsp;
+                    <a class="link" href="help.jsp">Help</a>&nbsp;|&nbsp;
+                    <a class="link" href="about.jsp">About</a>
                     <div>
                         <br>
                         <img src="../img/facebook.png" height="50px" width="50px">&nbsp;&nbsp;&nbsp;&nbsp;
