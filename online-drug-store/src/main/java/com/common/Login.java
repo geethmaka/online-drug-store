@@ -44,6 +44,7 @@ public class Login extends HttpServlet {
 			for(int i=0;i<CustomerData.length;i++) {
 				if((CustomerData[i].getEmail().equals(request.getParameter("email")))&&(CustomerData[i].getPassword().equals(request.getParameter("password")))) {
 					RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/index.jsp");
+					request.getSession().setAttribute("CustomerID",CustomerData[i].getCustomerID());
 					request.getSession().setAttribute("Logged","User");
 					dispatcher.forward(request, response);
 					break;
