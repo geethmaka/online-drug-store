@@ -8,6 +8,11 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../css/main.css">
+    <link rel="stylesheet" type="text/css" href="../css/signedInUser.css">   
+    <link rel="stylesheet" type="text/css" href="../css/customer.css">
+     <link rel="stylesheet" type="text/css" href="../css/table.css">
+     <link rel="stylesheet" type="text/css" href="../css/forms.css">
 </head>
 	<body>
 		<!--<div class="topBar">

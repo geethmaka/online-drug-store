@@ -4,7 +4,8 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<link rel="stylesheet" type="text/css" href="../css/forms.css">
+	<link rel="stylesheet" type="text/css" href="../css/form.css">
+    <link rel="stylesheet" type="text/css" href="../css/forms.css">
         <script src="../js/forgetPassword.js"> </script> 
        
         <title>Forget Password</title>
