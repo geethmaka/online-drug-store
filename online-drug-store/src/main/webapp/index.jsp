@@ -20,7 +20,7 @@
     <body>
         <div class="topBar">
             <div style="padding-left: 20px;padding-top:30px;">
-                <a href="./home.php"><img src="../img/cart.png" height="100" width="100"></a>
+                <a href="./home.php"><img src="img/cart.png" height="100" width="100"></a>
             </div>
             <div class="searchBar">
                 <div></div>
@@ -30,7 +30,7 @@
                             <input style="height:40px;" type="text" name="search" size="150">
                         </div>
                         <div>
-                            <button type="submit" class="searchButton"><img src="../img/search.png" height="30" width="30"></button>
+                            <button type="submit" class="searchButton"><img src="img/search.png" height="30" width="30"></button>
                         </div>
                     </div>
                 </form>
@@ -68,9 +68,9 @@
                 <a class="link" href="about.html">About</a>
                 <div>
                     <br>
-                    <img src="../img/facebook.png" height="50px" width="50px">&nbsp;&nbsp;&nbsp;&nbsp;
-                    <img src="../img/twitter.png" height="50px" width="50px">&nbsp;&nbsp;&nbsp;&nbsp;
-                    <img src="../img/insta.png" height="50px" width="50px">&nbsp;&nbsp;&nbsp;&nbsp;
+                    <img src="img/facebook.png" height="50px" width="50px">&nbsp;&nbsp;&nbsp;&nbsp;
+                    <img src="img/twitter.png" height="50px" width="50px">&nbsp;&nbsp;&nbsp;&nbsp;
+                    <img src="img/insta.png" height="50px" width="50px">&nbsp;&nbsp;&nbsp;&nbsp;
                 </div>
             </div>
         </div>
