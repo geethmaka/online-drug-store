@@ -21,7 +21,7 @@ import com.common.User;
 /**
  * Servlet implementation class UpdateUser
  */
-@WebServlet("/updateuser")
+@WebServlet("/admin/updateuser")
 public class UpdateUser extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -45,7 +45,8 @@ public class UpdateUser extends HttpServlet {
 			
 			Staff[] data=dbc.getStaffdetails();
 			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/admin/index.jsp");
-			request.setAttribute("value", data);
+			request.getSession().setAttribute("data",data);
+			//request.setAttribute("value", data);
 			dispatcher.forward(request, response);
 		} catch (Exception e) {
 			response.getWriter().append(e.toString());

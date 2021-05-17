@@ -30,7 +30,7 @@ public class Login extends HttpServlet {
     }
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.getWriter().append("Access Denied!");
+		response.sendRedirect("login.jsp");
 	}
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -54,11 +54,9 @@ public class Login extends HttpServlet {
 			for(int i=0;i<staffData.length;i++) {
 				if((staffData[i].getEmail().equals(request.getParameter("email")))&&(staffData[i].getPassword().equals(request.getParameter("password")))) {
 					if(staffData[i].getStaff().equals("Admin")) {
-						RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/admin/index.jsp");
 						request.getSession().setAttribute("Logged","Admin");
 						request.getSession().setAttribute("data",staffData);
-						request.setAttribute("value", staffData);
-						dispatcher.forward(request, response);
+						response.sendRedirect("admin/");
 					}
 					else if(staffData[i].getStaff().equals("Delivery")) {
 						RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/delivery/index.jsp");

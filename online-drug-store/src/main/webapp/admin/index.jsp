@@ -18,15 +18,7 @@
      
 </head>
 
-	<body style="width:100%">
-		
-        <div>
-            <span style="font-size: 30px;">Admin Panel</span>
-            <div style="float: right;">
-                <a href="addstaff.html"><button class="button">Add another employee</button></a>
-                <form action="update-redirect" method="post"><button type="submit" class="button">Update Staff Details</button></form>
-                <!--<form action="../php/logout.php"><button type="submit">SignOut</button></form>-->
-<% if(request.getSession().getAttribute("Logged")=="Admin") {
+<% if(request.getSession().getAttribute("Logged").equals("Admin")) {
 	Staff[] data = (Staff[]) request.getSession().getAttribute("data");
 %>
 	<body>
