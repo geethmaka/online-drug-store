@@ -40,7 +40,7 @@ public class Register2Servlet extends HttpServlet {
 					+ "VALUES('" + customer.getFirstName() + "','" + customer.getLastName() + "','" + customer.getEmail() + "','" + customer.getPhoenNo() + "','" + customer.getPassword() + "','" + customer.getAddressLine1() + "','" + customer.getAddressLine2() + "','" + customer.getCity() + "','" + customer.getProvince() + "')";
 			int rows = stmt.executeUpdate(command);
 			
-			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/User/login.jsp");
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/login.jsp");
 			dispatcher.forward(request, response);
 		} catch(Exception e) {
 			e.printStackTrace();

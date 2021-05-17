@@ -42,41 +42,41 @@
         <!--<button id="up_pro_pic">UPLOAD</button><br>-->
         <br>
         <div>
-            <form action="" method="POST">
-                <input type="checkbox" id="chgun" name="change_pwd" value="change_pwd" onclick='enableusername()'>
-                <label for="change_pwd">Change Username</label>
+            <form action="EditAccount" method="POST">
+                <input type="checkbox" id="chgun" name="change_un" onclick='enableusername()'>
+                <label for="change_un">Change Username</label>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br>
 
                 <fieldset id="chgusername" disabled style="border: none;">
                     <label for="chgfname">First Name :</label>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="text" id="chgfname" required></input> <br><br>
+                    <input type="text" id="chgfname"></input> <br><br>
 
                     <label for="chglrname">Last Name :</label>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="text" id="chglname" required></input> <br><br>
+                    <input type="text" id="chglname"></input> <br><br>
                 </fieldset>
 
-                <input type="checkbox" id="chgpwd" name="change_pwd" value="change_pwd" onclick='enablepassword()'>
+                <input type="checkbox" id="chgpwd" name="change_pwd" onclick='enablepassword()'>
                 <label for="change_pwd">Change Password</label>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br>
 
                 <fieldset id="pwdreset" disabled style="border: none;">
                     <label for="oldpwd">Old Password :</label>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="password" id="password" name="oldpwd" Required > <br><br>
+                    <input type="password" id="password" name="oldpwd"> <br><br>
 
                     <label for="newpwd">New password :</label>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <input type="password" id="newpwd" name="newpwd"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
-                    title="Must contain at least one  number and one uppercase and lowercase letter, and at least 6 or more characters" Required></input> <br><br>
+                    title="Must contain at least one  number and one uppercase and lowercase letter, and at least 6 or more characters"></input> <br><br>
 
                     <label for="reenterpwd">Re-enter new password :</label>
                     &nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="password" id="newrpwd" name="reenterpwd" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" Required ></input> <br><br>
+                    <input type="password" id="newrpwd" name="reenterpwd" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" ></input> <br><br>
                 </fieldset>
 
-                <button id="delete">Delete Account</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                <button id="delete" name="delete">Delete Account</button>&nbsp;&nbsp;&nbsp;&nbsp;
                 <button type="submit" id="submit">SUBMIT</button>
             </form><br>
         </div>

@@ -1,41 +1,50 @@
 package com.nipun;
 
 import java.io.IOException;
+import java.sql.Statement;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class EditAccount
- */
+import com.common.DatabaseConnection;
+
 @WebServlet("/EditAccount")
 public class EditAccount extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+
     public EditAccount() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		//response.getWriter().append(request.getParameter("delete"));
+		DatabaseConnection dbc = new DatabaseConnection();
+		
+		response.getWriter().append((CharSequence) request.getAttribute("chenge_pwd"));
+		
+//		try {
+//			if(request.getAttribute("change_pwd")) {
+//				
+//			}
+			
+//			
+//			Statement stmt=dbc.getConnection().createStatement();
+//			String command = "delete from customer where customerID=" + request.getParameter("delete");
+//			int rows=stmt.executeUpdate(command);
+//			
+//			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("login.jsp");
+//			dispatcher.forward(request, response);
+//		} catch (Exception e) {
+//			response.getWriter().append(e.toString());
+//		}
 	}
 
 }

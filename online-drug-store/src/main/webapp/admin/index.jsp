@@ -2,8 +2,8 @@
     pageEncoding="ISO-8859-1"%>
 <%@ page import = "java.util.List" %>
 <%@ page import = "java.util.LinkedList" %>
+<%@ page import = "com.common.Staff" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,6 +17,7 @@
     
      
 </head>
+
 	<body style="width:100%">
 		
         <div>
@@ -25,6 +26,15 @@
                 <a href="addstaff.html"><button class="button">Add another employee</button></a>
                 <form action="update-redirect" method="post"><button type="submit" class="button">Update Staff Details</button></form>
                 <!--<form action="../php/logout.php"><button type="submit">SignOut</button></form>-->
+<% if(request.getSession().getAttribute("Logged")=="Admin") {
+	Staff[] data = (Staff[]) request.getSession().getAttribute("data");
+%>
+	<body>
+        <div>
+            <span style="font-size: 30px;">Admin Panel</span>
+            <div style="float: right;">
+                <a href="addstaff.html"><button>Add another employee</button></a>
+                <form action="update-redirect" method="post"><button type="submit">Update Staff Details</button></form>
             </div>
         </div>
         <br>
@@ -50,7 +60,7 @@
 		                    <th>Password</th>
 		                    <th>Staff</th>
                 		</tr>
-	           			<c:forEach items="${value}" var="staff"> 
+	           			<c:forEach items="${data}" var="staff"> 
 		           		<tr>
 				    	 	<td><c:out value="${staff.getFname()}" /></td>
 				    	 	<td><c:out value="${staff.getLname()}" /></td>
@@ -88,4 +98,9 @@
             </div>
         </div>
     </body>
+ <%}else{ %>
+ <body>
+ <p>blocked
+ </body>
+ <%} %>
 </html>

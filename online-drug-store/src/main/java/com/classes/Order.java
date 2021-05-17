@@ -1,14 +1,18 @@
 package com.classes;
 
-public class Orders {
+public class Order {
 	private int orderID;
 	private int quantity;
 	private double totalPrice;
+	private String location;
+	private String status;
 	
-	public Orders(int orderID, int quantity, double totalPrice) {
+	public Order(int orderID, int quantity, double totalPrice,String location,String status) {
 		this.orderID = orderID;
 		this.quantity = quantity;
 		this.totalPrice = totalPrice;
+		this.location = location;
+		this.status=status;
 	}
 
 	public int getOrderID() {
@@ -23,5 +27,11 @@ public class Orders {
 		return totalPrice;
 	}
 	
+	public String getLocation() {
+		return location;
+	}
 	
+	public String getStatus() {
+		return status;
+	}
 }
