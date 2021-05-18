@@ -10,6 +10,7 @@
      <title>Seller Account</title>
     </head>
     <body>
+    	<form action="../logout" method="post"><button type="submit">Logout</button></form>
         <div class="topBar">
             <div style="padding-left: 20px;padding-top:30px;">
                 <a href="./home.php"><img src="../img/cart.png" height="100" width="100"></a>
@@ -133,13 +134,5 @@
         </div> 
     </body>
     <script type="text/javascript">
-        var idr = '<?php echo isset($_SESSION['username']); ?>'; 
-        var uname = '<?php echo $_SESSION['username']; ?>'; 
-        console.log(idr);
-         if(idr==1){
-             document.getElementById("logOutButtonContainer").style.display="block";
-             document.getElementById("username").innerHTML=uname;
-             document.getElementById("loginButtonContainer").style.display="none";
-         }
     </script>
 </html>

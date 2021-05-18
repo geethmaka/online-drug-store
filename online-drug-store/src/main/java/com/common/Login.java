@@ -59,11 +59,9 @@ public class Login extends HttpServlet {
 						response.sendRedirect("admin/index.jsp");
 					}
 					else if(staffData[i].getStaff().equals("Delivery")) {
-						RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/delivery/index.jsp");
 						request.getSession().setAttribute("Logged","Delivery");
 						request.getSession().setAttribute("data",DeliveryData);
-						request.setAttribute("value", DeliveryData);
-						dispatcher.forward(request, response);
+						response.sendRedirect("delivery/index.jsp");
 					}
 					else if(staffData[i].getStaff().equals("Stock")) {
 						RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/stock/index.jsp");

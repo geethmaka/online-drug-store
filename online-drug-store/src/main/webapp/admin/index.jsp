@@ -22,7 +22,7 @@
             <div style="float: right;">
                 <a href="add-staff.jsp"><button>Add another employee</button></a>
                 <!--<form action="update-redirect" method="post">--><a href="admin/update-user-details.jsp"><button>Update Staff Details</button></a><!--</form>-->
-                <form action="logout" method="post"><button type="submit">Logout</button></form>
+                <form action="../logout" method="post"><button type="submit">Logout</button></form>
             </div>
         </div>
         <br>

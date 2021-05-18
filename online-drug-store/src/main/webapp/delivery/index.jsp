@@ -77,8 +77,11 @@
 				    	 	<td><c:out value="${delivery.getorderId()}" /></td>
 				    	 	<td><c:out value="${delivery.getStatus()}" /></td>
 				    	 	<td>
-				    	 		<form action="deleteuser" method="post">
-				    	 			<button type = "submit" name="id" value="${user.getId()}">Mark as Completed</button>
+				    	 		<form action="" method="post">
+				    	 			<button type = "submit" name="id" value="${delivery.getDeliveryId()}">Mark as Completed</button>
+				    	 		</form>
+				    	 		<form action="" method="post">
+				    	 			<button type = "submit" name="id" value="${delivery.getDeliveryId()}">Delete order</button>
 				    	 		</form>
 				    	 	<td>
 			    	 	</tr>
@@ -105,7 +108,7 @@
     </body>
  <%}else{ %>
  <body>
- <p>blocked
+ <p>blocked</p>
  </body>
  <%} %>
 </html>
