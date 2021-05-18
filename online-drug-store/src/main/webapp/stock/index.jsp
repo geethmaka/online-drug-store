@@ -2,6 +2,7 @@
     pageEncoding="ISO-8859-1"%>
 <%@ page import = "java.util.List" %>
 <%@ page import = "java.util.LinkedList" %>
+<%@ page import = "com.classes.Item" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
@@ -9,6 +10,10 @@
 <meta charset="ISO-8859-1">
      <title>Seller Account</title>
     </head>
+<% if(request.getSession().getAttribute("Logged").equals("Stock")) {
+	Item[] data = (Item[]) request.getSession().getAttribute("data");
+%>
+
     <body>
     	<form action="../logout" method="post"><button type="submit">Logout</button></form>
         <div class="topBar">
@@ -58,13 +63,13 @@
                     <th><b>Quantity</b></td> 
                     <th><b>Unit Price</b></td>  
                 </tr>
-                <c:forEach items="${value}" var="Item"> 
+                <c:forEach items="${data}" var="Item"> 
 		        	<tr>
 				   		<td><c:out value="${Item.getName()}" /></td>
 				    	<td><c:out value="${Item.getQuantity()}" /></td>
 				    	<td><c:out value="${Item.getUnitPrice()}" /></td>
 				    	<td>
-				    		<form action="deleteuser" method="post">
+				    		<form action="deleteitem" method="post">
 				    	 		<button type = "submit" name="id" value="${Item.getItemID()}">Remove Item</button>
 				    	 	</form>
 				    	 </td>
@@ -74,41 +79,24 @@
             <br>
             <div>
                 <fieldset>
-                    <legend><b>Add New Product<br></legend>
-                    <form action="../php/additem.php" method="post">
+                    <legend><b>Add New Product</b><br></legend>
+                    <form action="additem" method="post">
                         <label for="pname">Product Name </label>
-                        <input type="text" id="pname" name="pname" size="48" Required><br><br>
+                        <input type="text" id="pname" name="pname" size="48"><br><br>
 
                         <label for="desc">Description </label>
-                        <input type="text" id="desc" name="desc" size="48" Required><br><br>
+                        <input type="text" id="desc" name="desc" size="48"><br><br>
 
                         
                         <label for="price">Unit price </label>
-                        <input type="text" name="price" size="48" Required><br><br>
+                        <input type="text" name="price" size="48"><br><br>
                         
 
                         <label for="quantity">Quantitty </label>
-                        <input type="text" id="quan" name="quantity" size="48" Required><br><br>
-
-                        <label for="category">Category </label>
-                        <select name="category">
-                            <option value="Electronics">Electronics</option>
-                            <option value="JewelryWatches">Jewelry & Watches</option>
-                            <option value="Sports">Sports</option>
-                            <option value="MenFassion">Men's Fassion</option>
-                            <option value="WomenFassion">Women's Fassion</option>
-                            <option value="HouseholdItems">Household Items</option>
-                            <option value="Toys">Toys</option>
-                            <option value="Tools">Tools</option>
-                            <option value="Beauty">Beauty</option>
-                            <option value="Hair">Hair</option>
-                            <option value="Fitness">Fitness</option>
-                            <option value="Shoes">Shoes</option>
-                            
-                        </select><br><br>
+                        <input type="text" id="quan" name="quantity" size="48"><br><br>
 
                         <div style="text-align: center;">
-                            <button type="submit">Submit</button>
+                            <button type="submit">Add product</button>
                         </div>
                     </form>
                 </fieldset>
@@ -135,4 +123,8 @@
     </body>
     <script type="text/javascript">
     </script>
+ <%}else{ %>
+ <p>blocked</p>
+ </body>
+ <%} %>
 </html>
