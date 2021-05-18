@@ -65,10 +65,13 @@
                 </tr>
                 <c:forEach items="${data}" var="Item"> 
 		        	<tr>
-				   		<td><c:out value="${Item.getName()}" /></td>
-				    	<td><c:out value="${Item.getQuantity()}" /></td>
-				    	<td><c:out value="${Item.getUnitPrice()}" /></td>
+		        		<td><input type="text" name="pname" value="<c:out value="${Item.getName()}" />"></td>
+				   		<td><input type="number" name="quantity" value="<c:out value="${Item.getQuantity()}" />"></td>
+				    	<td><input type="number" name="price" value="<c:out value="${Item.getUnitPrice()}" />"></td>
 				    	<td>
+				    		<form action="updateitem" method="post">
+				    	 		<button type = "submit" name="id" value="${Item.getItemID()}">Update Item</button>
+				    	 	</form>
 				    		<form action="deleteitem" method="post">
 				    	 		<button type = "submit" name="id" value="${Item.getItemID()}">Remove Item</button>
 				    	 	</form>
