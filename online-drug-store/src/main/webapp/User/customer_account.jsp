@@ -35,12 +35,8 @@
         </div>
     </div>
     <div class="main">
-<<<<<<< HEAD
         <div class="covermain">
         	<br><br>
-=======
-    
->>>>>>> master
             <img src="../img/logo.png" height="100" width="100" class="propic">
             <div class="right">
                 <button class="btn"><a href="edit_cAccount.jsp">Edit account</a></button>
