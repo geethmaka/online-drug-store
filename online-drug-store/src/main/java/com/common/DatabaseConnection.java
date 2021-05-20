@@ -48,9 +48,10 @@ public class DatabaseConnection {
 		Delivery[] array = null;
 		try {
 			Statement stmt=this.getConnection().createStatement();
-			ResultSet rs=stmt.executeQuery("select * from delivery");
+			//create view customerOrders AS select orderID, firstName, itemID quantity, totalAmount,addressLine1, addressLine2, city, province from Customer c, Orders o  where c.customerID = o.customerID;
+			ResultSet rs=stmt.executeQuery("select * from customerOrders");
 			while(rs.next()) {
-				Delivery n=new Delivery(rs.getInt(1),rs.getInt(2),rs.getString(3));
+				Delivery n=new Delivery(rs.getInt(1),rs.getInt(2),rs.getInt(3),rs.getString(4),rs.getInt(5),(rs.getString(6)+","+rs.getString(7)+","+rs.getString(7)+","+rs.getString(8)+","+rs.getString(9)),rs.getString(10));
 				ll.add(n);
 			}
 			
@@ -95,5 +96,20 @@ public class DatabaseConnection {
 		} catch (Exception e) {
 		}
 		return array;
+	}
+	
+	public Item fetchItem(int id) {
+		try {
+			Statement stmt=this.getConnection().createStatement();
+			String command = "select * from item where itemID="+id;
+			ResultSet rs=stmt.executeQuery(command);
+			while(rs.next()) {
+				Item n=new Item(rs.getInt(1),rs.getString(2),rs.getInt(3),rs.getDouble(4));
+				return n;
+			}
+			 
+		} catch (Exception e) {
+		}
+		return null;
 	}
 }

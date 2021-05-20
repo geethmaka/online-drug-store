@@ -43,7 +43,7 @@
                 <br><br>
                 <a href="Orderdetails.jsp" ><button class="button">Order</button></a>
                 <br><br>
-                <form action="../php/logout.jsp"><button type="submit" class="button">SignOut</button></form>
+                <form action="../logout"><button type="submit" class="button">SignOut</button></form>
             </div>
         </div>
        
@@ -54,20 +54,14 @@
             </div> 
             
             <br><br><br><br>
-        
-        
-                            <table id="table" border="1" width="100%">
-                        <tr>
-                            <td colspan="6">
-                                User Detials
-                            </td>
-                            <td rowspan="2">
-                                Action
-                            </td>
-                        </tr>
+                        <table id="table" border="1" width="100%">
                         <tr>
 		                    <th>Delivery Id</th>
 		                    <th>Order Id</th>
+		                    <th>Item Id</th>
+		                    <th>Customer Name</th>
+		                    <th>Quantity</th>
+		                    <th>Location</th>
 		                    <th>Status</th>
 		                    <th>Action</th>
                 		</tr>
@@ -75,13 +69,18 @@
 		           		<tr>
 				    	 	<td><c:out value="${delivery.getDeliveryId()}" /></td>
 				    	 	<td><c:out value="${delivery.getorderId()}" /></td>
+				    	 	<td><c:out value="${delivery.getItemId()}" /></td>
+				    	 	<td><c:out value="${delivery.getFname()}" /></td>
+				    	 	<td><c:out value="${delivery.getQuantity()}" /></td>
+				    	 	<td><c:out value="${delivery.getLocation()}" /></td>
 				    	 	<td><c:out value="${delivery.getStatus()}" /></td>
+				    	 	<!--<input type="number" name="productquantity" value="<c:out value="${Item.getQuantity()}" />">-->
 				    	 	<td>
 				    	 		<form action="" method="post">
-				    	 			<button type = "submit" name="id" value="${delivery.getDeliveryId()}">Mark as Completed</button>
+				    	 			<button type = "submit" name="id" value="${delivery.getDeliveryId()}">Update</button>
 				    	 		</form>
 				    	 		<form action="" method="post">
-				    	 			<button type = "submit" name="id" value="${delivery.getDeliveryId()}">Delete order</button>
+				    	 			<button type = "submit" name="id" value="${delivery.getDeliveryId()}">Cancel order</button>
 				    	 		</form>
 				    	 	<td>
 			    	 	</tr>

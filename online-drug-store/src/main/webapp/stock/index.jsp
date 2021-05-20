@@ -64,12 +64,12 @@
                     <th><b>Unit Price</b></td>  
                 </tr>
                 <c:forEach items="${data}" var="Item"> 
+                	<form action="updateitem" method="post">
 		        	<tr>
-		        		<td><input type="text" name="pname" value="<c:out value="${Item.getName()}" />"></td>
-				   		<td><input type="number" name="quantity" value="<c:out value="${Item.getQuantity()}" />"></td>
-				    	<td><input type="number" name="price" value="<c:out value="${Item.getUnitPrice()}" />"></td>
+		        		<td><input type="text" name="productname" value="<c:out value="${Item.getName()}" />"></td>
+				   		<td><input type="number" name="productquantity" value="<c:out value="${Item.getQuantity()}" />"></td>
+				    	<td><input type="number" name="productprice" value="<c:out value="${Item.getUnitPrice()}" />"></td>
 				    	<td>
-				    		<form action="updateitem" method="post">
 				    	 		<button type = "submit" name="id" value="${Item.getItemID()}">Update Item</button>
 				    	 	</form>
 				    		<form action="deleteitem" method="post">
@@ -92,11 +92,11 @@
 
                         
                         <label for="price">Unit price </label>
-                        <input type="text" name="price" size="48"><br><br>
+                        <input type="number" name="price" size="48"><br><br>
                         
 
                         <label for="quantity">Quantitty </label>
-                        <input type="text" id="quan" name="quantity" size="48"><br><br>
+                        <input type="number" id="quan" name="quantity" size="48"><br><br>
 
                         <div style="text-align: center;">
                             <button type="submit">Add product</button>

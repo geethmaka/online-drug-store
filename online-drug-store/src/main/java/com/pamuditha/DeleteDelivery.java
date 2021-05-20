@@ -1,4 +1,4 @@
-package com.hirosha;
+package com.pamuditha;
 
 import java.io.IOException;
 import java.sql.ResultSet;
@@ -18,21 +18,21 @@ import com.common.DatabaseConnection;
 import com.common.Staff;
 import com.classes.Item;
 
-@WebServlet("/stock/updateitem")
-public class UpdateItem extends HttpServlet {
+@WebServlet("/test")
+public class DeleteDelivery extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-    public UpdateItem() {
+    public DeleteDelivery() {
         super();
     }
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.getWriter().append(request.getParameter("id"));
 		DatabaseConnection dbc = new DatabaseConnection();
 		
 		try {
 			Statement stmt=dbc.getConnection().createStatement();
-			String command = "update item set name='"+request.getParameter("productname")+"',quantity="+request.getParameter("productquantity")+",unitPrice="+request.getParameter("productprice")+" where itemId="+request.getParameter("id");
-			
+			String command = "delete from item where itemID=" + request.getParameter("id");
 			int rows=stmt.executeUpdate(command);
 			
 			
