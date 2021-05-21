@@ -1,6 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<% if(request.getSession().getAttribute("Logged")==null){request.getSession().setAttribute("Logged","User");} %>
+<%@ page import = "com.classes.Item" %>
+<%@ page import = "com.common.DatabaseConnection" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<% 
+	if(request.getSession().getAttribute("Logged")==null){
+		request.getSession().setAttribute("Logged","User");
+		if(request.getAttribute("data")==null){
+			DatabaseConnection dbc = new DatabaseConnection();
+			Item[] items = (Item[]) dbc.getItemDetails();
+			request.setAttribute("data", items);
+		}
+	}
+	
+%>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -54,7 +67,10 @@
             </div>
         </div>
         <div class="main">
-            <br>
+        	<c:forEach items="${data}" var="item">
+        			<p><c:out value="${item.getName()}"/></p>
+        			<a href="item.jsp?id=<c:out value="${item.getItemID()}"/>"><button>Buy</button></a>
+        	</c:forEach>
         </div>
         <br>
         <div class="bottomBar">
@@ -76,3 +92,4 @@
         </div>
     </body>
 </html>
+<%%>

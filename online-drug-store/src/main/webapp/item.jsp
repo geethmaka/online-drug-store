@@ -48,11 +48,11 @@
             </div>
         </div>
         <div class="main">
-        <form action='' method='post'>
+        <form action='buyitem' method='post'>
                     <h1><%=item.getName()%></h1>
-                    Price : Rs. <input type='number' name='price' value='".$row['Unit_Price']."' readonly='readonly'>
+                    Price : Rs. <input type='number' name='price' value="<%=item.getUnitPrice()%>" readonly='readonly'>
                     <br><br>Quantity : <input type='number' name='qunatity'><br><br>
-                    <button type='submit' name='itemD' value='".$_GET['itemID']."'>Purchase</button></form>
+                    <button type='submit' name='itemID' value="<%=item.getItemID()%>">Purchase</button></form>
         </div>
         <br>
         <div class="bottomBar">
