@@ -73,29 +73,48 @@
 				    	 	<td><c:out value="${delivery.getFname()}" /></td>
 				    	 	<td><c:out value="${delivery.getQuantity()}" /></td>
 				    	 	<td><c:out value="${delivery.getLocation()}" /></td>
+				    	 	<form action="updatedelivery" method="post">
 				    	 	<td>
-				    	 		<select>
+				    	 		<select name="status">
 				    	 			<option value="<c:out value="${delivery.getStatus()}" />" selected><c:out value="${delivery.getStatus()}" /></option>
-				    	 			<c:choose>
-				    	 				<c:when test="${delivery.getStatus()}=='pending'">
-				    	 					<option value="shipped">shipped</option>
-				    	 					<option value="cancelled">cancelled</option>
-				    	 				</c:when>
-				    	 			</c:choose>
+				    	 			<c:if test = "${delivery.getStatus()=='pending'}">
+				    	 				<option value="shipped">shipped</option>
+				    	 			</c:if>
 				    	 		</select>
 				    	 	</td>
-				    	 	<!--<input type="number" name="productquantity" value="<c:out value="${Item.getQuantity()}" />">-->
 				    	 	<td>
-				    	 		<form action="" method="post">
 				    	 			<button type = "submit" name="id" value="${delivery.getDeliveryId()}">Update</button>
 				    	 		</form>
-				    	 		<form action="" method="post">
-				    	 			<button type = "submit" name="id" value="${delivery.getDeliveryId()}">Cancel order</button>
+				    	 		<form action="deletedelivery" method="post">
+				    	 			<button type = "submit" name="id" value="${delivery.getDeliveryId()}">Delete order</button>
 				    	 		</form>
 				    	 	<td>
 			    	 	</tr>
 	    				</c:forEach>
                     </table>
+                    
+                <div>
+                <fieldset>
+                    <legend><b>Add New Product</b><br></legend>
+                    <form action="placeorder" method="post">
+                    
+                    	<label for="price">Unit price </label>
+                    	<input type="number" name="id" size="10"><br><br>
+
+           
+                        <label for="price">Unit price </label>
+                        <input type="number" name="price" size="48"><br><br>
+                        
+
+                        <label for="quantity">Quantitty </label>
+                        <input type="number" id="quan" name="quantity" size="48"><br><br>
+
+                        <div style="text-align: center;">
+                            <button type="submit">Add product</button>
+                        </div>
+                    </form>
+                </fieldset>
+            </div>
         
         <div class="bottomBar">
             <div class="footer">

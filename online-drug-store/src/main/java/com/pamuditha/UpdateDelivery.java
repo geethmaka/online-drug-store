@@ -1,50 +1,37 @@
 package com.pamuditha;
 
 import java.io.IOException;
-import java.sql.ResultSet;
 import java.sql.Statement;
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.common.DatabaseConnection;
-import com.common.Staff;
 import com.classes.Delivery;
-import com.classes.Item;
+import com.common.DatabaseConnection;
 
-@WebServlet("/delivery/deletedelivery")
-public class DeleteDelivery extends HttpServlet {
+@WebServlet("/delivery/updatedelivery")
+public class UpdateDelivery extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-    public DeleteDelivery() {
+    public UpdateDelivery() {
         super();
     }
 
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+	}
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.getWriter().append(request.getParameter("id"));
 		DatabaseConnection dbc = new DatabaseConnection();
-		int orderID=0;
 		
 		try {
 			Statement stmt=dbc.getConnection().createStatement();
-			String command = "delete from delivery where deliveryID=" + request.getParameter("id");
-			String getOrderId = "select orderID from delivery where deliveryID=" + request.getParameter("id");
+			String command = "update delivery set status='"+request.getParameter("status")+"' where deliveryID="+request.getParameter("id");
 			
-			ResultSet rs=stmt.executeQuery(getOrderId);
-			while(rs.next()) {
-				orderID=rs.getInt(1);
-			}
-			
-			String deleteOrder = "delete from orders where orderID=" + orderID;
 			int rows=stmt.executeUpdate(command);
-			int rowss=stmt.executeUpdate(deleteOrder);
 			
 			
 			Delivery[] data=dbc.getDeliveryDetails();

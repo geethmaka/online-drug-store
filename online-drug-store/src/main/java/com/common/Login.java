@@ -40,6 +40,7 @@ public class Login extends HttpServlet {
 			Delivery[] DeliveryData=dbc.getDeliveryDetails();
 			Customer[] CustomerData=dbc.getCustomerDetails();
 			Item[] ItemData=dbc.getItemDetails();
+			boolean Found = false;
 			
 			for(int i=0;i<CustomerData.length;i++) {
 				if((CustomerData[i].getEmail().equals(request.getParameter("email")))&&(CustomerData[i].getPassword().equals(request.getParameter("password")))) {
@@ -53,6 +54,7 @@ public class Login extends HttpServlet {
 			
 			for(int i=0;i<staffData.length;i++) {
 				if((staffData[i].getEmail().equals(request.getParameter("email")))&&(staffData[i].getPassword().equals(request.getParameter("password")))) {
+					Found=true;
 					if(staffData[i].getStaff().equals("Admin")) {
 						request.getSession().setAttribute("Logged","Admin");
 						request.getSession().setAttribute("data",staffData);
@@ -71,11 +73,11 @@ public class Login extends HttpServlet {
 					break;
 				}
 			}
-			
-			RequestDispatcher rd=request.getRequestDispatcher("login.jsp");  
-			request.setAttribute("Message","Invalid Login");
-			rd.forward(request, response);	
-			
-			///////
+			 
+			if(!Found) {
+				RequestDispatcher r=request.getRequestDispatcher("login.jsp");  
+				request.setAttribute("Message","Invalid Login");
+				r.forward(request, response);
+			}
 		}
 }
