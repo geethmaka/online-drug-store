@@ -36,16 +36,10 @@
         </div>
     </div>
     <div class="main">
-<<<<<<< HEAD
     	<br><br>
         <div class="covermain">
             <img src="../img/logo.png" height="100" width="100" class="propic">
         </div>
-=======
-            <img src="../img/logo.png" height="100" width="100" class="propic">
-            <br><br><br><br><br><br>
-        </div><br><br>
->>>>>>> master
         <!--<button id="up_pro_pic">UPLOAD</button><br>-->
         <br>
         <div>
