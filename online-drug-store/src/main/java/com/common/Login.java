@@ -43,10 +43,10 @@ public class Login extends HttpServlet {
 			
 			for(int i=0;i<CustomerData.length;i++) {
 				if((CustomerData[i].getEmail().equals(request.getParameter("email")))&&(CustomerData[i].getPassword().equals(request.getParameter("password")))) {
-					RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/index.jsp");
 					request.getSession().setAttribute("CustomerID",CustomerData[i].getCustomerID());
+					request.getSession().setAttribute("Customer",CustomerData[i]);
 					request.getSession().setAttribute("Logged","User");
-					dispatcher.forward(request, response);
+					response.sendRedirect("index.jsp");
 					break;
 				}
 			}
@@ -71,6 +71,9 @@ public class Login extends HttpServlet {
 					break;
 				}
 			}
-	
+			
+			RequestDispatcher rd=request.getRequestDispatcher("login.jsp");  
+			request.setAttribute("Message","Invalid Login");
+			rd.forward(request, response);	
 		}
 }

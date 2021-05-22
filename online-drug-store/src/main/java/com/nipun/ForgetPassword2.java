@@ -35,8 +35,7 @@ public class ForgetPassword2 extends HttpServlet {
 				String command = "UPDATE customer SET password = '" + request.getParameter("password") + "' where customerID =" + customerID;
 				stmt.executeUpdate(command);
 				
-				RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("login.jsp");
-				dispatcher.forward(request, response);
+				response.sendRedirect("../login.jsp");
 			}
 			else {
 				RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/User/forgot_password2.jsp");

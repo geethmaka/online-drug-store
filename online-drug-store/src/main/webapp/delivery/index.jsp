@@ -73,7 +73,17 @@
 				    	 	<td><c:out value="${delivery.getFname()}" /></td>
 				    	 	<td><c:out value="${delivery.getQuantity()}" /></td>
 				    	 	<td><c:out value="${delivery.getLocation()}" /></td>
-				    	 	<td><c:out value="${delivery.getStatus()}" /></td>
+				    	 	<td>
+				    	 		<select>
+				    	 			<option value="<c:out value="${delivery.getStatus()}" />" selected><c:out value="${delivery.getStatus()}" /></option>
+				    	 			<c:choose>
+				    	 				<c:when test="${delivery.getStatus()}=='pending'">
+				    	 					<option value="shipped">shipped</option>
+				    	 					<option value="cancelled">cancelled</option>
+				    	 				</c:when>
+				    	 			</c:choose>
+				    	 		</select>
+				    	 	</td>
 				    	 	<!--<input type="number" name="productquantity" value="<c:out value="${Item.getQuantity()}" />">-->
 				    	 	<td>
 				    	 		<form action="" method="post">

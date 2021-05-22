@@ -49,22 +49,25 @@
                 </form>
                 <div></div>
             </div>
+            <%if(request.getSession().getAttribute("CustomerID")!=null){ %>
             <!-- this part only shows when user logged in-->
-            <div id="logOutButtonContainer" style="align-items: center;align-content: center; text-align: center;padding-top: 35px;display:none;">
+            <div id="logOutButtonContainer" style="align-items: center;align-content: center; text-align: center;padding-top: 35px;">
                 <span style="font-weight: bolder;font-size: 20px;">Welcome Back,</span><br>
-                <span id="username">[username]</span><br><br>
+                <span id="username">${Customer.getFirstName()}</span><br><br>
                 <a href="./customer_account.jsp"><button>My Account</button></a>&nbsp;&nbsp;
-                <form action="../php/logout.php"><button type="submit">SignOut</button></form>
+                <form action="logout"><button type="submit">SignOut</button></form>
             </div>
+            <%}else{ %>
             <!--this page is shown by default-->
             <div id="loginButtonContainer" class="searchBar" style="align-items: center;align-content: center; text-align: center;padding-top: 35px;">
                 <div>
-                    <a href="../login.jsp"><button class='button'><b>Login</b></button></a>
+                    <a href="login.jsp"><button class='button'><b>Login</b></button></a>
                 </div>
                 <div>
                     <a href="User/Registration1.jsp"><button><b>SignUp</b></button></a>
                 </div>
             </div>
+            <%}%>
         </div>
         <div class="main">
         	<c:forEach items="${data}" var="item">

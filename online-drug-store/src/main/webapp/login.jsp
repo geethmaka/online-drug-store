@@ -28,6 +28,9 @@
                         <div>
                             <a href="User/forgot_password1.jsp" class="link">Forgot Password?</a>
                         </div><br><br>
+                        <div>
+                        	<div style = "color:red;"><p>${Message}</p></div>
+                        </div>
                         <div class="center">
                             <button type="submit" id="login" class="greenbtn btn">sign in</button> 
                         </div>    

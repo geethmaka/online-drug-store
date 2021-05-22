@@ -36,8 +36,7 @@
                        </div>
                    </fieldset>
                </form>
-           </div>
-           
+           </div>   
        </div><br><br><br><br><br><br>
        <div class="bottomBar">
            <div class="footer">
