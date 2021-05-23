@@ -4,9 +4,11 @@
 <%@ page import = "java.util.LinkedList" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page import = "com.classes.Delivery" %>
+<%@ page import = "com.classes.Item" %>
 
 <% if(request.getSession().getAttribute("Logged")=="Delivery") {
 	Delivery[] data = (Delivery[]) request.getSession().getAttribute("data");
+	Item[] items = (Item[]) request.getSession().getAttribute("items");
 %>
 <!DOCTYPE html>
 <html>
@@ -92,14 +94,31 @@
 			    	 	</tr>
 	    				</c:forEach>
                     </table>
-                    
+                    <div>
+                                <table class="table" border ="1">
+                <tr>
+                	<th><b>Product Name</b></th>
+                    <th><b>Product Name</b></th>
+                    <th><b>Quantity</b></td> 
+                    <th><b>Unit Price</b></td>  
+                </tr>
+                <c:forEach items="${items}" var="Item"> 
+		        	<tr>
+		        		<td><input type="text" name="productname" value="<c:out value="${Item.getItemID()}"/>" readonly></td>
+		        		<td><input type="text" name="productname" value="<c:out value="${Item.getName()}" />"></td>
+				   		<td><input type="number" name="productquantity" value="<c:out value="${Item.getQuantity()}" />"></td>
+				    	<td><input type="number" name="productprice" value="<c:out value="${Item.getUnitPrice()}" />"></td>
+			    	 </tr>
+	    		</c:forEach>
+            </table>
+                    </div>
                 <div>
                 <fieldset>
                     <legend><b>Add New Product</b><br></legend>
                     <form action="placeorder" method="post">
                     
-                    	<label for="price">Unit price </label>
-                    	<input type="number" name="id" size="10"><br><br>
+                    	<label for="itemid">ItemID</label>
+                    	<input type="number" name="itemid" size="10"><br><br>
 
            
                         <label for="price">Unit price </label>

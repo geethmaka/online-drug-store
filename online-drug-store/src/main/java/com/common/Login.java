@@ -63,6 +63,7 @@ public class Login extends HttpServlet {
 					else if(staffData[i].getStaff().equals("Delivery")) {
 						request.getSession().setAttribute("Logged","Delivery");
 						request.getSession().setAttribute("data",DeliveryData);
+						request.getSession().setAttribute("items",ItemData);
 						response.sendRedirect("delivery/index.jsp");
 					}
 					else if(staffData[i].getStaff().equals("Stock")) {
