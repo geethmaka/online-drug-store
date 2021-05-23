@@ -14,6 +14,7 @@
 	         <form method="post" action="addstaff">
 	             <fieldset>
 	                 <legend>Staff Registration</legend>
+	                 <div><div style = "color:red;"><p>${message}</p></div></div>
 	                 <div>
 	                     <label for="fname">First Name :</label><br>
 	                     <input type="text" id="fname" name="fname" size="48" value="test"><br><br>

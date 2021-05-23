@@ -34,7 +34,6 @@
 		<link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/home.css">
         <link rel="stylesheet" href="css/signedInUser.css">
-        <link rel="stylesheet" href="css/slideshow.css">
 	</head>
     <body>
         <div class="topBar">
@@ -80,7 +79,7 @@
             <c:forEach items="${data}" var="item">
 	            <div class="category"> 
 	            		<br>
-	                    <a href="./category.php?category=Electronics" target="blank"><img style="border-radius: 50%;" src="../img/electronics.jpg" height="150" width="150"></a><br><br>
+	                    <a href="./category.php?category=Electronics" target="blank"><img style="border-radius: 50%;" src="img/thumbnail.jpg" height="150" width="150"></a><br><br>
 	                    <p><c:out value="${item.getName()}"/></p>
 	                    <a href="item.jsp?id=<c:out value="${item.getItemID()}"/>"><button>Buy</button></a>
 				</div>
@@ -92,11 +91,11 @@
             <div style="text-align: center;justify-content: center;align-content: center;align-items: center;">
                 <br><br>
                
-                <a class="link" href="faq.html">FAQ</a>&nbsp;|&nbsp;
-                <a class="link" href="contact.html">Contact Us</a>&nbsp;|&nbsp;
-                <a class="link" href="privacy.html">Privacy Policy</a>&nbsp;|&nbsp;
-                <a class="link" href="help.html">Help</a>&nbsp;|&nbsp;
-                <a class="link" href="about.html">About</a>
+                <a class="link" href="faq.jsp">FAQ</a>&nbsp;|&nbsp;
+                <a class="link" href="contact.jsp">Contact Us</a>&nbsp;|&nbsp;
+                <a class="link" href="privacy.jsp">Privacy Policy</a>&nbsp;|&nbsp;
+                <a class="link" href="help.jsp">Help</a>&nbsp;|&nbsp;
+                <a class="link" href="about.jsp">About</a>
                 <div>
                     <br>
                     <img src="img/facebook.png" height="50px" width="50px">&nbsp;&nbsp;&nbsp;&nbsp;
@@ -107,4 +106,3 @@
         </div>
     </body>
 </html>
-<%%>
