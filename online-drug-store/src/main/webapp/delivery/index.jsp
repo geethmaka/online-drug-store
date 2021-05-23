@@ -129,7 +129,7 @@
                         <input type="number" id="quan" name="quantity" size="48"><br><br>
 
                         <div style="text-align: center;">
-                            <button type="submit">Add product</button>
+                            <button type="submit">Add Order</button>
                         </div>
                     </form>
                 </fieldset>

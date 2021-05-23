@@ -124,8 +124,6 @@
             </div>
         </div> 
     </body>
-    <script type="text/javascript">
-    </script>
  <%}else{ %>
  <p>blocked</p>
  </body>

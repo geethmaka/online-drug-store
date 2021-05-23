@@ -5,7 +5,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <% 
 	if(request.getSession().getAttribute("Logged")==null){
-		request.getSession().setAttribute("Logged","User");
+		request.getSession().setAttribute("Logged","Guest");
 		if(request.getAttribute("data")==null){
 			DatabaseConnection dbc = new DatabaseConnection();
 			Item[] items = (Item[]) dbc.getItemDetails();

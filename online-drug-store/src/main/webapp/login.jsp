@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<% if(request.getSession().getAttribute("Logged")==null){ %>
+<% if((request.getSession().getAttribute("Logged")==null)||request.getSession().getAttribute("Logged").equals("Guest")){ %>
 <html>
 <head>
 	<meta charset="ISO-8859-1">
