@@ -6,11 +6,12 @@
 <% 
 	if(request.getSession().getAttribute("Logged")==null){
 		request.getSession().setAttribute("Logged","Guest");
-		if(request.getAttribute("data")==null){
-			DatabaseConnection dbc = new DatabaseConnection();
-			Item[] items = (Item[]) dbc.getItemDetails();
-			request.setAttribute("data", items);
-		}
+	}
+
+	if(request.getAttribute("data")==null){
+		DatabaseConnection dbc = new DatabaseConnection();
+		Item[] items = (Item[]) dbc.getItemDetails();
+		request.setAttribute("data", items);
 	}
 	
 %>
@@ -24,6 +25,11 @@
 				display:gird;
 				grid-template-rows:10% 80% 10%;
 			}
+			.product{
+			  width: 150px;
+			  height :150px;
+  				border: 2px solid green;
+  				}
 		</style>
 		<link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/home.css">
@@ -37,7 +43,7 @@
             </div>
             <div class="searchBar">
                 <div></div>
-                <form action="search.php" method="post">
+                <form action="search" method="post">
                     <div class="searchBarRow" style="text-align: center;align-items: center;">
                         <div style="text-align: center;">
                             <input style="height:40px;" type="text" name="search" size="150">
@@ -70,10 +76,16 @@
             <%}%>
         </div>
         <div class="main">
-        	<c:forEach items="${data}" var="item">
-        			<p><c:out value="${item.getName()}"/></p>
-        			<a href="item.jsp?id=<c:out value="${item.getItemID()}"/>"><button>Buy</button></a>
+            <div id="items">
+            <c:forEach items="${data}" var="item">
+	            <div class="category"> 
+	            		<br>
+	                    <a href="./category.php?category=Electronics" target="blank"><img style="border-radius: 50%;" src="../img/electronics.jpg" height="150" width="150"></a><br><br>
+	                    <p><c:out value="${item.getName()}"/></p>
+	                    <a href="item.jsp?id=<c:out value="${item.getItemID()}"/>"><button>Buy</button></a>
+				</div>
         	</c:forEach>
+        	</div>
         </div>
         <br>
         <div class="bottomBar">

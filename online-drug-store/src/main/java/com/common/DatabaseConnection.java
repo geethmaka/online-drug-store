@@ -112,4 +112,23 @@ public class DatabaseConnection {
 		}
 		return null;
 	}
+	
+	public Item[] getSearchDetails(String search) {
+		List<Item> ll = new LinkedList<Item>();
+		Item[] array = null;
+		try {
+			Statement stmt=this.getConnection().createStatement();
+			String command= "SELECT * from item WHERE name LIKE '%"+search+"%'";
+			ResultSet rs=stmt.executeQuery(command);
+			while(rs.next()) {
+				Item n=new Item(rs.getInt(1),rs.getString(2),rs.getInt(3),rs.getDouble(4));
+				ll.add(n);
+			}
+			
+			array = ll.toArray(new Item[ll.size()]);
+			 
+		} catch (Exception e) {
+		}
+		return array;
+	}
 }
