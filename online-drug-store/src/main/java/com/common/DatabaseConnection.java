@@ -38,7 +38,6 @@ public class DatabaseConnection {
 			array = ll.toArray(new Staff[ll.size()]);
 			 
 		} catch (Exception e) {
-//			response.getWriter().append(e.toString());
 		}
 		return array;
 	}
