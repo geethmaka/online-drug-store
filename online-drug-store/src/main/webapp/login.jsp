@@ -9,7 +9,7 @@
     <title>Login</title>
 </head>
     <body>
-        <img src="img/cart.png" class="logo">
+        <a href="../index.jsp"><img src="img/cart.png" class="logo"></a><br><br>
         <br><br><br>
         <div class="center_form">
             <div>
@@ -56,6 +56,7 @@
         </div>
     </body>
 </html>
+
 <% }else if(request.getSession().getAttribute("Logged").equals("Admin")){
 	response.sendRedirect("admin/index.jsp");}
 else if(request.getSession().getAttribute("Logged").equals("Delivery")){

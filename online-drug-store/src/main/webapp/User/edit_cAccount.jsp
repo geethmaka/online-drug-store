@@ -8,8 +8,7 @@
     <link rel="stylesheet" type="text/css" href="../css/main.css">
     <link rel="stylesheet" type="text/css" href="../css/signedInUser.css">
     <link rel="stylesheet" type="text/css" href="../css/customer.css">
-    <link rel="stylesheet" type="text/css" href="../css/form.css">
-    <link rel="stylesheet" type="text/css" href="../css/forms.css">
+    
     <script src="JS/Edit_Account.js"></script>
 </head>
 <body>
@@ -30,9 +29,9 @@
         </div>
         <div class="welcome">
             <span style="font-weight: bolder;font-size: 20px;">Welcome Back,</span><br>
-            <span id="username">${username}</span><br><br>
+            <span id="username">${Customer.getFirstName()}</span><br><br>
             <button class="btn">My Account</button>&nbsp;&nbsp;
-            <button class="btn">SignOut</button>
+            <form action="../logout" method="post"><button type="submit" class="btn">SignOut</button></form>
         </div>
     </div>
     <div class="main">
@@ -45,7 +44,7 @@
         <div>
             <form action="EditAccount" method="POST">
 	            <div class="right">
-	            	<button type="submit" id="delete" name="delete" class="btn" value="delete">Delete Account</button>
+	            	<button type="submit" id="delete" name="delete" class="btn1" value="delete">Delete Account</button>
 	            </div>
             	<br>
             
@@ -84,10 +83,7 @@
 				<div style = "color:red;"><p>${message}</p></div>
 				<div style = "color:red;"><p>${message1}</p></div>
                 
-                <button type="submit" id="submit" name="submit" class="btn" value="submit">SUBMIT</button>
-                
-                
-                
+                <button type="submit" id="submit" name="submit" class="btn1" value="submit">SUBMIT</button>   
             </form><br>
         </div>
     <div class="bottomBar">

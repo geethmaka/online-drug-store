@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.24, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: online_drug_store
+-- Host: localhost    Database: online_drug_store
 -- ------------------------------------------------------
 -- Server version	8.0.24
 
@@ -38,16 +38,6 @@ CREATE TABLE `customer` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `customer`
---
-
-LOCK TABLES `customer` WRITE;
-/*!40000 ALTER TABLE `customer` DISABLE KEYS */;
-INSERT INTO `customer` VALUES (1,'Test','Test','test','12345678','admin','add','add','ddd','sss'),(3,'Grrrr','dfdfdfdf','ggfggg@gjgjgj.com','94710891055','test','dddd','dddd','dddd','ddddd'),(4,'peter','paker','peterpaker@gmail.com','94718458373','Asdf123','kandy','kandy','kandy','kandy'),(5,'P','K','none','12345','none','none','none','none','none');
-/*!40000 ALTER TABLE `customer` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Temporary view structure for view `customerorders`
 --
 
@@ -82,18 +72,8 @@ CREATE TABLE `delivery` (
   PRIMARY KEY (`deliveryID`),
   KEY `fk_delivery_orderID` (`orderID`),
   CONSTRAINT `fk_delivery_orderID` FOREIGN KEY (`orderID`) REFERENCES `orders` (`orderID`) ON DELETE SET NULL
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `delivery`
---
-
-LOCK TABLES `delivery` WRITE;
-/*!40000 ALTER TABLE `delivery` DISABLE KEYS */;
-INSERT INTO `delivery` VALUES (1,3,'shipped'),(4,10,'pending'),(6,12,'pending');
-/*!40000 ALTER TABLE `delivery` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `employee`
@@ -115,16 +95,6 @@ CREATE TABLE `employee` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `employee`
---
-
-LOCK TABLES `employee` WRITE;
-/*!40000 ALTER TABLE `employee` DISABLE KEYS */;
-INSERT INTO `employee` VALUES (1,'test','test','admin','710891055','admin','Admin'),(2,'rr','rrr','ponnaya','44444','rrr','Delivery'),(3,'admin1','admin','admin1','2222','admin','Admin'),(4,'hirosha','samara','hiroc','333','h','Stock'),(5,'test','test','test','00','rrrr','Admin'),(7,'test','test','test','0','test55','Delivery');
-/*!40000 ALTER TABLE `employee` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `item`
 --
 
@@ -141,14 +111,21 @@ CREATE TABLE `item` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `item`
+-- Temporary view structure for view `order_details`
 --
 
-LOCK TABLES `item` WRITE;
-/*!40000 ALTER TABLE `item` DISABLE KEYS */;
-INSERT INTO `item` VALUES (1,'TestItem1',10,100),(4,'Test',222,1111);
-/*!40000 ALTER TABLE `item` ENABLE KEYS */;
-UNLOCK TABLES;
+DROP TABLE IF EXISTS `order_details`;
+/*!50001 DROP VIEW IF EXISTS `order_details`*/;
+SET @saved_cs_client     = @@character_set_client;
+/*!50503 SET character_set_client = utf8mb4 */;
+/*!50001 CREATE VIEW `order_details` AS SELECT 
+ 1 AS `customerID`,
+ 1 AS `orderID`,
+ 1 AS `name`,
+ 1 AS `quantity`,
+ 1 AS `totalAmount`,
+ 1 AS `status`*/;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Table structure for table `orders`
@@ -168,18 +145,8 @@ CREATE TABLE `orders` (
   KEY `fk_order_itemID` (`itemID`),
   CONSTRAINT `fk_order_customerID` FOREIGN KEY (`customerID`) REFERENCES `customer` (`customerID`) ON DELETE SET NULL,
   CONSTRAINT `fk_order_itemID` FOREIGN KEY (`itemID`) REFERENCES `item` (`itemID`) ON DELETE SET NULL
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `orders`
---
-
-LOCK TABLES `orders` WRITE;
-/*!40000 ALTER TABLE `orders` DISABLE KEYS */;
-INSERT INTO `orders` VALUES (3,1,1,10,1000),(10,5,1,1000,111000),(12,5,1,10000,800000);
-/*!40000 ALTER TABLE `orders` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Final view structure for view `customerorders`
@@ -198,6 +165,24 @@ UNLOCK TABLES;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
 /*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
+-- Final view structure for view `order_details`
+--
+
+/*!50001 DROP VIEW IF EXISTS `order_details`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8mb4 */;
+/*!50001 SET character_set_results     = utf8mb4 */;
+/*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `order_details` (`customerID`,`orderID`,`name`,`quantity`,`totalAmount`,`status`) AS select `o`.`customerID` AS `customerID`,`o`.`orderID` AS `orderID`,`i`.`name` AS `name`,`o`.`quantity` AS `quantity`,`o`.`totalAmount` AS `totalAmount`,`d`.`status` AS `status` from ((`orders` `o` join `item` `i`) join `delivery` `d`) where ((`d`.`orderID` = `o`.`orderID`) and (`o`.`itemID` = `i`.`itemID`)) */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -208,4 +193,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-25 16:56:29
+-- Dump completed on 2021-05-25 22:27:34

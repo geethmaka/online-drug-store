@@ -95,7 +95,7 @@
 	    				</c:forEach>
                     </table>
                     <div>
-                                <table class="table" border ="1">
+			<table class="table" border ="1">
                 <tr>
                 	<th><b>Product Name</b></th>
                     <th><b>Product Name</b></th>

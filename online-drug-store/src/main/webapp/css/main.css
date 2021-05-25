@@ -19,6 +19,11 @@ a{
     text-decoration: none;
 }
 
+p{
+    color:#ffff;
+    text-decoration: none;
+}
+
 .main{
     padding-right: 150px;
     padding-left: 150px;
@@ -83,20 +88,34 @@ p{
 ul{
 	color:#ffff;
 }
-table{
 
-    border-collapse: collapse;
-    width: 100%;
-  }
-  
-   td {
-    text-align: left;
-    padding: 8px;
+/*buttons*/
+.btn{
+	background-color:transparent;
+	border-radius: 2px;
+    color: white;
+    padding: 2px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    text-transform: uppercase;
+    background-color: #808080;
+	box-shadow: 1px 1px #666666;
+	transform: translateY(1px);
+} 
 
-   }
-
-    th {
-      background-color: #e4eef0;
-      color: black
-
-   }
+.btn1{
+	background-color:transparent;
+	border-radius: 4px;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    text-transform: uppercase;
+    background-color: #808080;
+	box-shadow: 1px 1px #666666;
+	transform: translateY(1px);
+}

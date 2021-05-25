@@ -7,6 +7,7 @@ import java.util.List;
 import com.classes.Customer;
 import com.classes.Delivery;
 import com.classes.Item;
+import com.classes.OrderDetails;
 
 public class DatabaseConnection {
 	private Connection con;
@@ -129,6 +130,22 @@ public class DatabaseConnection {
 			 
 		} catch (Exception e) {
 		}
+		return array;
+	}
+	
+	public OrderDetails[] getOrderDetails(int customerID) {
+		List<OrderDetails> ll = new LinkedList<OrderDetails>();
+		OrderDetails[] array = null;
+		try {
+			Statement stmt = this.getConnection().createStatement();
+			ResultSet rs=stmt.executeQuery("select * from order_Details where customerID = " + customerID);
+			while(rs.next()) {
+				OrderDetails n = new OrderDetails(rs.getInt(1),rs.getInt(2), rs.getString(3), rs.getInt(4), rs.getDouble(5),rs.getString(6));
+				ll.add(n);
+			}
+			array = ll.toArray(new OrderDetails[ll.size()]);	 
+		} catch (Exception e) {}
+		
 		return array;
 	}
 }

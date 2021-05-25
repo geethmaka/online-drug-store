@@ -56,10 +56,9 @@ form{
 
 .btn{
 	background-color:transparent;
-	/* background-color: #c0c0c0; */
 	border-radius: 2px;
     color: white;
-    padding: 3px 6px;
+    padding: 2px 5px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -69,4 +68,19 @@ form{
 	box-shadow: 1px 1px #666666;
 	transform: translateY(1px);
 } 
+
+.btn1{
+	background-color:transparent;
+	border-radius: 4px;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    text-transform: uppercase;
+    background-color: #808080;
+	box-shadow: 1px 1px #666666;
+	transform: translateY(1px);
+}
 

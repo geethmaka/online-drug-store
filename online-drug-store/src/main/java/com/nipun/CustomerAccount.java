@@ -23,5 +23,4 @@ public class CustomerAccount extends HttpServlet {
 		response.getWriter();
 		doGet(request, response);
 	}
-
 }

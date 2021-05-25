@@ -38,7 +38,7 @@
     <body>
         <div class="topBar">
             <div style="padding-left: 20px;padding-top:30px;">
-                <a href="./home.php"><img src="img/cart.png" height="100" width="100"></a>
+                <a href="index.jsp"><img src="img/cart.png" height="100" width="100"></a>
             </div>
             <div class="searchBar">
                 <div></div>
@@ -58,18 +58,18 @@
             <!-- this part only shows when user logged in-->
             <div id="logOutButtonContainer" style="align-items: center;align-content: center; text-align: center;padding-top: 35px;">
                 <span style="font-weight: bolder;font-size: 20px;">Welcome Back,</span><br>
-                <span id="username">${Customer.getFirstName()}</span><br><br>
-                <a href="./customer_account.jsp"><button>My Account</button></a>&nbsp;&nbsp;
-                <form action="logout"><button type="submit">SignOut</button></form>
+                <span id="username">${Customer.getFirstName()}</span><br>
+                <a href="User/customer_account.jsp"><button class="btn">My Account</button></a><br>
+                <form action="logout"><button type="submit" class="btn">SignOut</button></form>
             </div>
             <%}else{ %>
             <!--this page is shown by default-->
             <div id="loginButtonContainer" class="searchBar" style="align-items: center;align-content: center; text-align: center;padding-top: 35px;">
                 <div>
-                    <a href="login.jsp"><button class='button'><b>Login</b></button></a>
+                    <a href="login.jsp"><button class='button btn'><b>Login</b></button></a>
                 </div>
                 <div>
-                    <a href="User/Registration1.jsp"><button><b>SignUp</b></button></a>
+                    <a href="User/Registration1.jsp"><button class="btn"><b>SignUp</b></button></a>
                 </div>
             </div>
             <%}%>
