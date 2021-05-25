@@ -1,102 +1,98 @@
-body{ 
-    background-image: url('../img/background5.jpg');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    font-family: 'Segoe UI';
+body {
+  background-image: url("../img/background5.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  font-family: "Segoe UI";
 }
 
-.logo
-{
-    padding-left: 20px;
-    padding-top:30px;
-    max-height:5px;
-    max-width: 5px;
+.logo {
+  padding-left: 20px;
+  padding-top: 30px;
+  max-height: 5px;
+  max-width: 5px;
 }
 
-a{
-    color:#ffff;
-    text-decoration: none;
+a {
+  color: #ffff;
+  text-decoration: none;
 }
 
-.main{
-    padding-right: 150px;
-    padding-left: 150px;
-    text-align: center;
+.main {
+  padding-right: 150px;
+  padding-left: 150px;
+  text-align: center;
 }
 
-.topBar{
-    display: grid;
-    background-color: #21ada8;
-    height: 180px;
-    width: 100%;
-    grid-template-columns: 300px auto;
+.topBar {
+  display: grid;
+  background-color: #21ada8;
+  height: 180px;
+  width: 100%;
+  grid-template-columns: 300px auto;
 }
 
-.searchBar{
-    display:grid;
-    grid-template-rows: 60px 60px 60px;
+.searchBar {
+  display: grid;
+  grid-template-rows: 60px 60px 60px;
 }
 
-.searchBarRow{
-    display:grid;
-    grid-template-columns: 850px auto;
+.searchBarRow {
+  display: grid;
+  grid-template-columns: 850px auto;
 }
 
-.bottomBar{
-	background-color:ffff;
+.bottomBar {
+  background-color: ffff;
 }
 
-.footer{
-    text-align: center;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
+.footer {
+  text-align: center;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
 }
 
-.border{
-    border-style: dashed;
+.border {
+  border-style: dashed;
 }
 
-.searchButton{
-    background: none;
-    border:none;
-    height: 40px;
+.searchButton {
+  background: none;
+  border: none;
+  height: 40px;
 }
 
-.link:hover{
-    color: white;
+.link:hover {
+  color: white;
 }
 
-.question{
-	color:#ffff;
+.question {
+  color: #ffff;
 }
 
-h1{
-	color:#ffff;
+h1 {
+  color: #ffff;
 }
 
-p{
-	color:#ffff;
+p {
+  color: #ffff;
 }
 
-ul{
-	color:#ffff;
+ul {
+  color: #ffff;
 }
-table{
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
 
-    border-collapse: collapse;
-    width: 100%;
-  }
-  
-   td {
-    text-align: left;
-    padding: 8px;
+td {
+  text-align: left;
+  padding: 8px;
+}
 
-   }
-
-    th {
-      background-color: #e4eef0;
-      color: black
-
-   }
+th {
+  background-color: #e4eef0;
+  color: black;
+}

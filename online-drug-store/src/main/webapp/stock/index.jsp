@@ -7,6 +7,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" type="text/css" href="../css/table.css">
+<link rel="stylesheet" href="../css/home.css">
 <meta charset="ISO-8859-1">
      <title>Seller Account</title>
     </head>
@@ -15,48 +17,22 @@
 %>
 
     <body>
-    	<form action="../logout" method="post"><button type="submit">Logout</button></form>
-        <div class="topBar">
+    	
+    <div class="topBar">
             <div style="padding-left: 20px;padding-top:30px;">
-                <a href="./home.php"><img src="../img/cart.png" height="100" width="100"></a>
+                <img src="../img/cart.png" height="100" width="100">
             </div>
             <div class="searchBar">
                 <div></div>
                 <div class="searchBarRow" style="text-align: center;align-items: center;">
-                    <div style="text-align: center;">
-                        <input style="height:40px;" type="text" size="150">
-                    </div>
-                    <div>
-                        <button class="searchButton"><img src="../img/search.png" height="30" width="30"></button>
-                    </div>
                 </div>
-                <div></div>
             </div>
-            <div id="logOutButtonContainer" style="align-items: center;align-content: center; text-align: center;padding-top: 35px;display:none;">
-                <span style="font-weight: bolder;font-size: 20px;">Welcome Back,</span><br>
-                <span id="username">[username]</span><br><br>
-                <form action="../php/logout.php"><button type="submit">SignOut</button></form>
-            </div>
-            <div id="loginButtonContainer" class="searchBar" style="align-items: center;align-content: center; text-align: center;padding-top: 35px;">
-                <div>
-                    <a href="./login.html"><button>Login</button></a>
-                </div>
-                <div>
-                    <a href="./commonregistration.html"><button>SignUp</button></a>
-                </div>
+            <div style="align-items: center;align-content: center; text-align: center;padding-top: 35px;">
+            <br><br>
+                <form action="../logout" method="post"><button type="submit">Logout</button></form>
             </div>
         </div>
         <div class="main">
-            <div class="covermain">
-                <img src="../img/cover2.jpg" class="cover">
-                <img src="../img/logo.png" height="100" width="100" class="propic">
-                <div class="right">
-                    <button><a href="edit_account.php?user=seller">Edit account</a></button>
-                </div>
-                <br>
-                <p><?php echo $_SESSION['username']; ?></p>
-                <p><?php echo $_SESSION['email']; ?></p>
-            </div><br>
             <table class="table" border ="1">
                 <tr>
                     <th><b>Product Name</b></th>

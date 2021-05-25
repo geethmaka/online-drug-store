@@ -1,19 +1,55 @@
-.category{
-    opacity: 0.85;
-    text-align: center;
+body {
+  background-image: url("../img/background5.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  font-family: "Segoe UI";
 }
-.category:hover{
-    opacity: 2;
+.category {
+  opacity: 0.85;
+  text-align: center;
 }
-#items{
-    display: grid;
-    grid-template-columns: 200px 200px 200px 200px 200px 200px;
-    /*grid-template-rows: 210px 210px;*/
+.category:hover {
+  opacity: 2;
 }
-.topBar{
-    display: grid;
-    background-color: #21ADA8;
-    height: 180px;
-    width: 100%;
-    grid-template-columns: 300px auto 250px;
+#items {
+  display: grid;
+  grid-template-columns: 200px 200px 200px 200px 200px 200px;
+}
+.topBar {
+  display: grid;
+  background-color: #21ada8;
+  height: 180px;
+  width: 100%;
+  grid-template-columns: 300px auto 250px;
+}
+
+a {
+  color: #ffff;
+  text-decoration: none;
+}
+.logo {
+  padding-left: 20px;
+  padding-top: 30px;
+  max-height: 5px;
+  max-width: 5px;
+}
+.main {
+  padding-right: 150px;
+  padding-left: 150px;
+  text-align: center;
+}
+.searchBar {
+  display: grid;
+  grid-template-rows: 60px 60px 60px;
+}
+
+.searchBarRow {
+  display: grid;
+  grid-template-columns: 850px auto;
+}
+.searchButton {
+  background: none;
+  border: none;
+  height: 40px;
 }

@@ -3,6 +3,10 @@
 <%@ page import = "com.classes.Item" %>
 <%@ page import = "com.common.DatabaseConnection" %>
 <%
+	if(request.getSession().getAttribute("Logged")==null){
+		request.getSession().setAttribute("Logged","Guest");
+	}
+
 	DatabaseConnection dbc = new DatabaseConnection();
 	Item item = dbc.fetchItem(Integer.parseInt(request.getParameter("id")));
 %>
@@ -58,9 +62,10 @@
         <div class="main">
         <form action='buyitem' method='post'>
                     <h1><%=item.getName()%></h1>
-                    Price : Rs. <input type='number' name='price' value="<%=item.getUnitPrice()%>" readonly='readonly'>
-                    <br><br>Quantity : <input type='number' name='qunatity'><br><br>
-                    <button type='submit' name='itemID' value="<%=item.getItemID()%>">Purchase</button></form>
+                    Price : Rs. <input type="number" name="price" value="<%=item.getUnitPrice()%>" readonly/>
+                    <br><br>Quantity : <input type="number" id="quan" name="quantity" size="48"><br><br>
+                    <button type='submit' name='itemID' value="<%=item.getItemID()%>">Purchase</button>
+        </form>
         </div>
         <br>
         <div class="bottomBar">

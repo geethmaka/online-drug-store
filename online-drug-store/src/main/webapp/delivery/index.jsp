@@ -31,20 +31,10 @@
             <div class="searchBar">
                 <div></div>
                 <div class="searchBarRow" style="text-align: center;align-items: center;">
-                    <div style="text-align: center;">
-                        <input style="height:40px;" type="text" size="150">
-                    </div>
-                    <div>
-                        <button class="searchButton"><img src="../img/search.png" height="30" width="30"></button>
-                    </div>
                 </div>
             </div>
             <div style="align-items: center;align-content: center; text-align: center;padding-top: 35px;">
-              
-                <a href="Shippingdetails.jsp"><button class="button">Shipping</button></a>
-                <br><br>
-                <a href="Orderdetails.jsp" ><button class="button">Order</button></a>
-                <br><br>
+            <br><br>
                 <form action="../logout"><button type="submit" class="button">SignOut</button></form>
             </div>
         </div>

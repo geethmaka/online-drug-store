@@ -19,39 +19,22 @@
 	Staff[] data = (Staff[]) request.getSession().getAttribute("data");
 %>
 	<body>
-		<!--<div class="topBar">
+        <div class="topBar">
             <div style="padding-left: 20px;padding-top:30px;">
                 <a href=""><img src="../img/cart.png" height="100" width="100"></a>
             </div>
             <div class="searchBar">
                 <div></div>
-                <form action="" method="post">
-                    <div class="searchBarRow" style="text-align: center;align-items: center;">
-                        <div style="text-align: center;">
-                            <input style="height:40px;" type="text" name="search" size="150">
-                        </div>
-                        <div>
-                            <button type="submit" class="searchButton"><img src="" height="30" width="30"></button>
-                        </div>
-                    </div>
-                </form>
                 <div></div>
-            </div>-->
-            <!--<div id="logOutButtonContainer" style="align-items: center;align-content: center; text-align: center;padding-top: 35px;display:none;">
-                <span style="font-weight: bolder;font-size: 20px;">Welcome Back,</span><br>
-                <span id="username">[username]</span><br><br>
-                <a href="./customerAccount.php"><button>My Account</button></a>&nbsp;&nbsp;
-                <form action="../php/logout.php"><button type="submit">SignOut</button></form>
+                <div></div>
             </div>
-            <div id="loginButtonContainer" class="searchBar" style="align-items: center;align-content: center; text-align: center;padding-top: 35px;">
-                <div>
-                    <a href="./login.html"><button>Login</button></a>
-                </div>
-                <div>
-                    <a href=""><button>SignUp</button></a>
-                </div>
+            <div style="float: right;">
+            	<br><br>
+                <a href="add-staff.jsp"><button>Add another employee</button></a>
+                <a href="update-user-details.jsp"><button>Update Staff Details</button></a>
+                <form action="../logout" method="post"><button type="submit">Logout</button></form>
             </div>
-        </div>-->
+        </div>
         <div id="main" class="main">
             <br>
             <table border="1">

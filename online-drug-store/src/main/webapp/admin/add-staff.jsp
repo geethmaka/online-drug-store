@@ -6,9 +6,28 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 <link rel="stylesheet" type="text/css" href="../css/forms.css">
+<link rel="stylesheet" type="text/css" href="../css/main.css">
+<link rel="stylesheet" type="text/css" href="../css/table.css">
+<link rel="stylesheet" href="../css/home.css">
+<link rel="stylesheet" href="../css/signedInUser.css">
 </head>
 	<body>
-	    <a href="./home.php"><img src="../img/cart.png" class="logo"></a><br><br>
+	            <div class="topBar">
+            <div style="padding-left: 20px;padding-top:30px;">
+                <a href=""><img src="../img/cart.png" height="100" width="100"></a>
+            </div>
+            <div class="searchBar">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div style="float: right;">
+            	<br><br>
+                <a href="add-staff.jsp"><button>Add another employee</button></a>
+                <a href="update-user-details.jsp"><button>Update Staff Details</button></a>
+                <form action="../logout" method="post"><button type="submit">Logout</button></form>
+            </div>
+        </div>
 	    <div class="center_form">
 	     <div>
 	         <form method="post" action="addstaff">

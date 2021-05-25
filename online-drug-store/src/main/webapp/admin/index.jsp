@@ -9,19 +9,26 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="../css/main.css">
 <link rel="stylesheet" type="text/css" href="../css/table.css">
+<link rel="stylesheet" href="../css/home.css">
 </head>
 
 <% if(request.getSession().getAttribute("Logged").equals("Admin")) {
 	Staff[] data = (Staff[]) request.getSession().getAttribute("data");
 %>
-
-        <div>
-            <span style="font-size: 30px;">Admin Panel</span>
+        <div class="topBar">
+            <div style="padding-left: 20px;padding-top:30px;">
+                <a href=""><img src="../img/cart.png" height="100" width="100"></a>
+            </div>
+            <div class="searchBar">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
             <div style="float: right;">
+            	<br><br>
                 <a href="add-staff.jsp"><button>Add another employee</button></a>
-                <!--<form action="update-redirect" method="post">--><a href="update-user-details.jsp"><button>Update Staff Details</button></a><!--</form>-->
+                <a href="update-user-details.jsp"><button>Update Staff Details</button></a>
                 <form action="../logout" method="post"><button type="submit">Logout</button></form>
             </div>
         </div>

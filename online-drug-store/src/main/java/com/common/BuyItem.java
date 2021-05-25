@@ -31,7 +31,10 @@ public class BuyItem extends HttpServlet {
 		DatabaseConnection dbc = new DatabaseConnection();
 		try {
 			Statement stmt=dbc.getConnection().createStatement();
-			String command = "insert into orders(customerID,itemID,quantity,totalAmount) VALUES("+request.getParameter("itemID")+","+request.getParameter("itemID")+","+request.getParameter("quantity")+","+request.getParameter("tot")+")";
+			double tot=Integer.parseInt(request.getParameter("quantity"))*Double.parseDouble(request.getParameter("price"));
+			
+			String command = "insert into orders(customerID,itemID,quantity,totalAmount) VALUES("+request.getSession().getAttribute("CustomerID")+","+request.getParameter("itemID")+","+request.getParameter("quantity")+","+tot+")";
+
 			PreparedStatement ps=dbc.getConnection().prepareStatement(command,Statement.RETURN_GENERATED_KEYS);
 			
 			ps.executeUpdate();
