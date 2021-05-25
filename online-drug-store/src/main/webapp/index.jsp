@@ -79,9 +79,8 @@
             <c:forEach items="${data}" var="item">
 	            <div class="category"> 
 	            		<br>
-	                    <a href="./category.php?category=Electronics" target="blank"><img style="border-radius: 50%;" src="img/thumbnail.jpg" height="150" width="150"></a><br><br>
+	                    <a href="item.jsp?id=<c:out value="${item.getItemID()}"/>"><img style="border-radius: 50%;" src="img/thumbnail.jpg" height="150" width="150"></a><br>
 	                    <p><c:out value="${item.getName()}"/></p>
-	                    <a href="item.jsp?id=<c:out value="${item.getItemID()}"/>"><button>Buy</button></a>
 				</div>
         	</c:forEach>
         	</div>

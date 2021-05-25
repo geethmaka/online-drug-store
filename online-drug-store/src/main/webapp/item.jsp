@@ -6,6 +6,7 @@
 	DatabaseConnection dbc = new DatabaseConnection();
 	Item item = dbc.fetchItem(Integer.parseInt(request.getParameter("id")));
 %>
+<%if(request.getSession().getAttribute("Logged").equals("User")){ %>
 <% if(item!=null){ %>
 <!DOCTYPE html>
 <html>
@@ -84,3 +85,9 @@
 <% }%>
     </body>
 </html>
+<%} else {
+	RequestDispatcher r=request.getRequestDispatcher("login.jsp");  
+	request.setAttribute("Message","Please login to buy a item");
+	r.forward(request, response);
+}
+%>
