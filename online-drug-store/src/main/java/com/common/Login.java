@@ -19,6 +19,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.classes.Customer;
 import com.classes.Delivery;
 import com.classes.Item;
+import com.classes.*;
 
 @WebServlet("/login")
 public class Login extends HttpServlet {
@@ -40,6 +41,7 @@ public class Login extends HttpServlet {
 			Delivery[] DeliveryData=dbc.getDeliveryDetails();
 			Customer[] CustomerData=dbc.getCustomerDetails();
 			Item[] ItemData=dbc.getItemDetails();
+			
 			boolean Found = false;
 			
 			for(int i=0;i<CustomerData.length;i++) {
@@ -48,6 +50,8 @@ public class Login extends HttpServlet {
 					request.getSession().setAttribute("CustomerID",CustomerData[i].getCustomerID());
 					request.getSession().setAttribute("Customer",CustomerData[i]);
 					request.getSession().setAttribute("Logged","User");
+					OrderDetails[] Orderdetails=dbc.getOrderDetails(CustomerData[i].getCustomerID());
+					request.getSession().setAttribute("orderDetials",Orderdetails);
 					response.sendRedirect("index.jsp");
 					break;
 				}

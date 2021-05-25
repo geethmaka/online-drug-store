@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ page import = "java.util.List" %>
+<%@ page import = "java.util.LinkedList" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page import = "com.classes.OrderDetails" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,8 +13,8 @@
     <title>Customer Account</title>
     <link rel="stylesheet" type="text/css" href="../css/main.css">
     <link rel="stylesheet" type="text/css" href="../css/signedInUser.css">   
-    <link rel="stylesheet" type="text/css" href="../css/customer.css">  
-  
+    <link rel="stylesheet" type="text/css" href="../css/customer.css">
+    <link rel="stylesheet" type="text/css" href="../css/table.css">  
 </head>
 <body>
     <div class="topBar">
@@ -29,9 +34,8 @@
         </div>
         <div class="welcome">
             <span style="font-weight: bolder;font-size: 20px;">Welcome Back,</span><br>
-            <span id="username">${username}</span><br><br>
-            <button class="btn">My Account</button>&nbsp;&nbsp;
-            <button class="btn">SignOut</button>
+            <span id="username">${Customer.getFirstName()}</span><br><br>
+            <form action="../logout" method="post"><button type="submit" class="btn">SignOut</button></form>
         </div>
     </div>
     <div class="main">
@@ -42,18 +46,29 @@
                 <button class="btn"><a href="edit_cAccount.jsp">Edit account</a></button>
             </div>
             <div>
-            	<p>[Account Name]</p>
-	            <p>[email address]</p>
-            </div>      
+            	<p id="username">${Customer.getFirstName()}</p>
+	            <p>${Customer.getEmail()}</p>
+            </div>
         </div><br>
-        <div class="left">
-            <p>Order Number:<span> </span></p>
-            <p>Item name:<span> </span></p>
-            <p>Quantity:<span> </span></p>
-            <p>Total:<span> </span></p>
-            <p>Status:<span> </span></p>
-        </div>
-   
+       	<table class="table" border ="1">
+			<tr>
+           		<th><b>Order Number</b></th>
+               	<th><b>Item Name</b></th>
+             	<th><b>Quantity</b></td>
+               	<th><b>Amount</b></td>
+               	<th><b>Order Status</b></td>
+           	</tr>
+			<c:forEach items="${orderDetials}" var="Item"> 
+     		<tr>
+     			<td><c:out value="${Item.getOrderID()}"/></td>
+     			<td><c:out value="${Item.getName()}" /></td>
+  				<td><c:out value="${Item.getQuantity()}" /></td>
+   				<td><c:out value="${Item.getTotal()}" /></td>
+   				<td><c:out value="${Item.getStatus()}" /></td>
+			</tr>
+			</c:forEach>
+		</table>
+	</div>
     <div class="bottomBar">
         <div class="footer">
             <br><br>

@@ -83,7 +83,7 @@
                     </table>
                     <br><br>
                     <div>
-                                <table class="table" border ="1">
+			<table class="table" border ="1">
                 <tr>
                 	<th><b>Product ID</b></th>
                     <th><b>Product Name</b></th>
