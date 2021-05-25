@@ -1,7 +1,6 @@
-package com.hirosha;
+package com.nipun;
 
 import java.io.IOException;
-
 import java.sql.Statement;
 
 import javax.servlet.ServletException;
@@ -11,29 +10,35 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.common.DatabaseConnection;
-import com.classes.Item;
+import com.common.Staff;
 
-@WebServlet("/stock/deleteitem")
-public class DeleteItem extends HttpServlet {
+/**
+ * Servlet implementation class DeleteAccount
+ */
+@WebServlet("/User/deleteaccount")
+public class DeleteAccount extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+       
 
-    public DeleteItem() {
+    public DeleteAccount() {
         super();
+
     }
 
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+	}
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.getWriter().append(request.getParameter("id"));
 		DatabaseConnection dbc = new DatabaseConnection();
+		
 		
 		try {
 			Statement stmt=dbc.getConnection().createStatement();
-			String command = "delete from item where itemID=" + request.getParameter("id");
+			String command = "delete from customer where customerID=" + request.getSession().getAttribute("CustomerID");
 			int rows=stmt.executeUpdate(command);
 			
-			
-			Item[] data=dbc.getItemDetails();
-			request.getSession().setAttribute("data", data);
-			response.sendRedirect("index.jsp");
+			response.sendRedirect("../index.jsp");
 		} catch (Exception e) {
 			response.getWriter().append(e.toString());
 		}

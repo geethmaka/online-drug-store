@@ -12,8 +12,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.classes.Customer;
-import com.classes.Delivery;
 import com.classes.Item;
 
 @WebServlet("/buyitem")
@@ -28,6 +26,7 @@ public class BuyItem extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		int rows;
 		int id = 0;
 		DatabaseConnection dbc = new DatabaseConnection();
 		int originalQuantity = dbc.getRemainingItems(Integer.parseInt(request.getParameter("itemID")));
@@ -53,8 +52,9 @@ public class BuyItem extends HttpServlet {
 					id=rs.getInt(1);
 				}
 				
+				
 				command= "insert into delivery(orderID,status) values("+id+",'pending')";
-				int rows=stmt.executeUpdate(command);
+				rows=stmt.executeUpdate(command);
 				
 				command= "update item set quantity="+remainingItems+" where itemID="+Integer.parseInt(request.getParameter("itemID"));
 				rows=stmt.executeUpdate(command);

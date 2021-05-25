@@ -1,13 +1,9 @@
 package com.geethmaka;
 
 import java.io.IOException;
-import java.sql.ResultSet;
 import java.sql.Statement;
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
 
-import javax.servlet.RequestDispatcher;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -16,9 +12,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.common.DatabaseConnection;
 import com.common.Staff;
-import com.common.User;
 
-@WebServlet("/admin/deleteuser")
+
+@WebServlet("/user/deleteuser")
 public class DeleteUser extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -34,7 +30,6 @@ public class DeleteUser extends HttpServlet {
 			Statement stmt=dbc.getConnection().createStatement();
 			String command = "delete from employee where employeeID=" + request.getParameter("id");
 			int rows=stmt.executeUpdate(command);
-			
 			
 			Staff[] data=dbc.getStaffdetails();
 			request.getSession().setAttribute("data", data);

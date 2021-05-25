@@ -42,10 +42,10 @@
         <!--<button id="up_pro_pic">UPLOAD</button><br>-->
         <br>
         <div>
-            <form action="EditAccount" method="POST">
-	            <div class="right">
-	            	<button type="submit" id="delete" name="delete" class="btn1" value="delete">Delete Account</button>
+        	    <div class="right">
+	            	<form action="deleteaccount" method="post"><button type="submit"name="delete" class="btn1" >Delete Account</button></form>
 	            </div>
+            <form action="EditAccount" method="POST">
             	<br>
             
                 <input type="checkbox" id="chgun" name="change_un" onclick='enableusername()'>

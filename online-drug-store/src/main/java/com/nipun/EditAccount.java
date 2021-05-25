@@ -27,52 +27,49 @@ public class EditAccount extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		DatabaseConnection dbc = new DatabaseConnection();
-		int customerID = (int) request.getSession().getAttribute("CustomerID");
+		String pw = null;
 		
+		response.getWriter().append(request.getParameter("change_pwd"));
 		try {
-			if (request.getAttribute("delete").equals(null) && request.getAttribute("submit").equals("submit")) {
-				if (request.getParameter("change_un").equals("on")) {
-					Statement stmt1 = dbc.getConnection().createStatement();
-					String command1 = "UPDATE customer SET fistName = '" + request.getParameter("lname") + "', lastName ='" + request.getParameter("fname") + "' where customerID =" + customerID;
-					int rows1 = stmt1.executeUpdate(command1);
-				}
-				else if (request.getParameter("change_pwd").equals("on")) {
-					Statement stmt2 = dbc.getConnection().createStatement();
-					String command2 = "Select password from customer where customerID = " + customerID;
-					ResultSet rs = stmt2.executeQuery(command2);
-					
-					if (!rs.next()) {
-						RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/User/EditAccount.jsp");
-						request.setAttribute("message", "Please recheck the old Password!");
-						dispatcher.forward(request, response);
-					}
-					else {
-						if (request.getParameter("newpwd").equals(request.getParameter("reenterpwd"))) {
-							Statement stmt3 = dbc.getConnection().createStatement();
-							String command3 = "UPDATE customer SET password = '" + request.getParameter("password") + "' where customerID =" + customerID;
-							int rows3 = stmt3.executeUpdate(command3);
-							
-							RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("login.jsp");
-							dispatcher.forward(request, response);
-						}
-						else {
-							RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/User/EditAccount.jsp");
-							request.setAttribute("message1", "Password mismatch!!!");
-							dispatcher.forward(request, response);
-						}
-					}
-				}
+			if (request.getParameter("change_un").equals("on")) {
+				Statement stmt1 = dbc.getConnection().createStatement();
+				String command1 = "UPDATE customer SET firstName = '" + request.getParameter("fname") + "', lastName ='" + request.getParameter("lname") + "' where customerID =" + request.getSession().getAttribute("CustomerID");
+				int rows1 = stmt1.executeUpdate(command1);
 			}
-			else if(request.getAttribute("submit").equals("submit") && request.getAttribute("delete").equals(null)) {
-				Statement stmt5=dbc.getConnection().createStatement();
-				String command5 = "delete from customer where customerID = " + customerID;
-				int rows3 = stmt5.executeUpdate(command5);
-				
-				RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("login.jsp");
-				dispatcher.forward(request, response);
-			}
+			else if (request.getParameter("change_pwd").equals("on")) {
+			response.getWriter().append(request.getParameter("change_un"));}
+//				Statement stmt2 = dbc.getConnection().createStatement();
+//				String command2 = "Select password from customer where customerID = " + request.getSession().getAttribute("CustomerID");
+//				ResultSet rs = stmt2.executeQuery(command2);
+//			
+//				while(rs.next()) {
+//					pw=rs.getString(1);
+//					response.getWriter().append(pw);
+//				}
+//				if(pw.equals(request.getParameter("oldpwd"))) {
+//					if (request.getParameter("newpwd").equals(request.getParameter("reenterpwd"))) {
+//						Statement stmt3 = dbc.getConnection().createStatement();
+//						String command3 = "UPDATE customer SET password = '" + request.getParameter("newpwd") + "' where customerID =" + request.getSession().getAttribute("CustomerID");
+//						response.getWriter().append(command3);
+//						int rows3 = stmt3.executeUpdate(command3);
+//					
+//						RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("login.jsp");
+//						dispatcher.forward(request, response);
+//					}
+//					else {
+//						RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/User/EditAccount.jsp");
+//						request.setAttribute("message1", "Password mismatch!!!");
+//						dispatcher.forward(request, response);
+//					}
+//				}
+//				else {
+//					RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/User/EditAccount.jsp");
+//					request.setAttribute("message", "Please recheck the old Password!");
+//					dispatcher.forward(request, response);	
+//				}
+//			}
 		} catch (Exception e) {
-			response.getWriter().append(e.toString());
+//			//response.getWriter().append(e.toString());
 		}
 	}
 

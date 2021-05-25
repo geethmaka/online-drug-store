@@ -2,8 +2,7 @@ package com.geethmaka;
 
 import java.io.IOException;
 import java.sql.*;
-import java.util.LinkedList;
-import java.util.List;
+
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -14,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.common.DatabaseConnection;
 import com.common.Staff;
-import com.common.User;
+
 
 @WebServlet("/admin/addstaff")
 public class Addstaff extends HttpServlet {
