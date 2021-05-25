@@ -18,7 +18,9 @@
             </div>
             <div class="searchBar">
                 <div></div>
-                <div></div>
+                                <div class="searchBarRow" style="text-align: center;align-items: center;">
+                	<h1>Admin Panel</h1>
+                </div>
                 <div></div>
             </div>
             <div style="float: right;">

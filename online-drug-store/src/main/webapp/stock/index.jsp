@@ -9,6 +9,7 @@
 <head>
 <link rel="stylesheet" type="text/css" href="../css/table.css">
 <link rel="stylesheet" href="../css/home.css">
+ <link rel="stylesheet" type="text/css" href="../css/forms.css">
 <meta charset="ISO-8859-1">
      <title>Seller Account</title>
     </head>
@@ -25,6 +26,7 @@
             <div class="searchBar">
                 <div></div>
                 <div class="searchBarRow" style="text-align: center;align-items: center;">
+                	<h1>Stock Handler</h1>
                 </div>
             </div>
             <div style="align-items: center;align-content: center; text-align: center;padding-top: 35px;">
@@ -33,6 +35,7 @@
             </div>
         </div>
         <div class="main">
+        <br><br>
             <table class="table" border ="1">
                 <tr>
                     <th><b>Product Name</b></th>

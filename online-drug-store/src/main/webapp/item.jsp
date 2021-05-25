@@ -62,7 +62,8 @@
         <div class="main">
         <form action='buyitem' method='post'>
                     <h1><%=item.getName()%></h1>
-                    Price : Rs. <input type="number" name="price" value="<%=item.getUnitPrice()%>" readonly/>
+                    Price : Rs. <input type="number" name="price" value="<%=item.getUnitPrice()%>" readonly/><br>
+                    Available Quantity <span><%=item.getQuantity()%></span>
                     <br><br>Quantity : <input type="number" id="quan" name="quantity" size="48"><br><br>
                     <button type='submit' name='itemID' value="<%=item.getItemID()%>">Purchase</button>
         </form>

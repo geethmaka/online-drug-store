@@ -1,110 +1,106 @@
 @charset "ISO-8859-1";
 
 body {
-    background-image: url('../img/background5.jpg');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    font-family: 'Segoe UI';
+  background-image: url("../img/background5.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  font-family: "Segoe UI";
 }
 
-a{
-    color:#ffff;
-    text-decoration: none;
+a {
+  color: #ffff;
+  text-decoration: none;
 }
 
-.footer{
-    text-align: center;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
+.footer {
+  text-align: center;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
 }
 
-.bottomBar{
-    height: 140px;
-    width: 100%;
+.bottomBar {
+  height: 140px;
+  width: 100%;
 }
 
 .toplogin {
-	color:#ffff;
-    float:right;
-}   
+  color: #ffff;
+  float: right;
+}
 
 /*form*/
 fieldset {
-    border-radius: 10px;
-    color:#ffff;
-    border-color:  gray;
+  border-radius: 10px;
+  color: #ffff;
+  border-color: gray;
 }
 legend {
-    background-color: gray;
-    color: white;
+  background-color: gray;
+  color: white;
 }
 input {
-	color: white;
-    margin: 5px;
-    border-radius:5px;
-    border-color:  gray;
-    background-color: transparent;
+  color: white;
+  margin: 5px;
+  border-radius: 5px;
+  border-color: gray;
+  background-color: transparent;
 }
-.center_form{
-    padding-left: 550px; 
-    padding-right: 550px;
+.center_form {
+  padding-left: 550px;
+  padding-right: 550px;
 }
-.formtop{
-    text-align:center;
-    font-weight: bolder;
-    font-size: 20px;
+.formtop {
+  text-align: center;
+  font-weight: bolder;
+  font-size: 20px;
 }
-.center{
-    text-align:center;
+.center {
+  text-align: center;
 }
 
 /*buttons*/
-.greenbtn{
-    background-color: #46d676;
+.greenbtn {
+  background-color: #46d676;
 }
-.greenbtn:hover 
-{
-    background-color: #319b69;
+.greenbtn:hover {
+  background-color: #319b69;
 }
 
-.btn
-{
-    border-radius: 4px;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 14px;
-    text-transform: uppercase;
+.btn {
+  border-radius: 4px;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  text-transform: uppercase;
 }
-.greenbtn:active 
-{
+.greenbtn:active {
   background-color: #3e8e41;
   box-shadow: 3px 3px #00000000;
   transform: translateY(2px);
 }
 
-
 /*links*/
 .link:link {
-    color:  #00ff40 ;
+  color: #00ff40;
 }
 .link:visited {
-    color: rgb(0, 255, 0)le;
+  color: rgb(0, 255, 0) le;
 }
 .link:hover {
-    color: rgb(0, 255, 128);
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  color: rgb(0, 255, 128);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
 .link:active {
-    color:#008040; 
-} 
-.logo{
-    padding-left: 20px;
-    padding-top:30px;
-    width:100px;
-    height:100px;
+  color: #008040;
+}
+.logo {
+  padding-left: 20px;
+  padding-top: 30px;
+  width: 100px;
+  height: 100px;
 }

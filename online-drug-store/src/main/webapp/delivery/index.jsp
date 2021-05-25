@@ -17,10 +17,10 @@
 
         <title>Delivery handling</title>
         <link rel="stylesheet" type="text/css" href="../css/main.css">
-        <link rel="stylesheet" type="text/css" href="../css/profile.css">   
-        <link rel="stylesheet" type="text/css" href="../css/button.css">    
+        <link rel="stylesheet" type="text/css" href="../css/profile.css">     
         <link rel="stylesheet" href="../css/signedInUser.css">  
         <link rel="stylesheet" href="../css/table.css">  
+        <link rel="stylesheet" type="text/css" href="../css/forms.css">
     </head>
        
     <body>
@@ -31,6 +31,7 @@
             <div class="searchBar">
                 <div></div>
                 <div class="searchBarRow" style="text-align: center;align-items: center;">
+                	<h1>Delivery Manager</h1>
                 </div>
             </div>
             <div style="align-items: center;align-content: center; text-align: center;padding-top: 35px;">
@@ -40,10 +41,6 @@
         </div>
        
         <div class="main">
-                <img src="../img/logo.png" height="100" width="100" class="propic">
-                    <br><br>
-                    <p>Delivery manager</p>
-            </div> 
             
             <br><br><br><br>
                         <table id="table" border="1" width="100%">
@@ -84,10 +81,11 @@
 			    	 	</tr>
 	    				</c:forEach>
                     </table>
+                    <br><br>
                     <div>
                                 <table class="table" border ="1">
                 <tr>
-                	<th><b>Product Name</b></th>
+                	<th><b>Product ID</b></th>
                     <th><b>Product Name</b></th>
                     <th><b>Quantity</b></td> 
                     <th><b>Unit Price</b></td>  
@@ -102,7 +100,8 @@
 	    		</c:forEach>
             </table>
                     </div>
-                <div>
+                    <br><br>
+                <sdiv>
                 <fieldset>
                     <legend><b>Add New Product</b><br></legend>
                     <form action="placeorder" method="post">
@@ -124,7 +123,7 @@
                     </form>
                 </fieldset>
             </div>
-        
+        </div>
         <div class="bottomBar">
             <div class="footer">
                 <br><br>

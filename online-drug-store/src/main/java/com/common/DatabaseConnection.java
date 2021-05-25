@@ -130,4 +130,18 @@ public class DatabaseConnection {
 		}
 		return array;
 	}
+	
+	public int getRemainingItems(int id) {
+		try {
+			Statement stmt=this.getConnection().createStatement();
+			String command = "select quantity from item where itemID="+id;
+			ResultSet rs=stmt.executeQuery(command);
+			while(rs.next()) {
+				return rs.getInt(1);
+			}
+			 
+		} catch (Exception e) {
+		}
+		return -1;
+	}
 }
