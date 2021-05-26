@@ -86,7 +86,6 @@ ul {
 
 /*buttons*/
 .btn{
-	background-color:transparent;
 	border-radius: 2px;
     color: white;
     padding: 2px 5px;
@@ -112,6 +111,20 @@ ul {
     text-transform: uppercase;
     background-color: #808080;
 	box-shadow: 1px 1px #666666;
+	transform: translateY(1px);
+}
+
+.btn2{
+	background-color:transparent;
+	border-radius: 4px;
+    color: white;
+    padding: 3px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    text-transform: uppercase;
+	box-shadow: 1px 1px  #666666;
 	transform: translateY(1px);
 }
 
