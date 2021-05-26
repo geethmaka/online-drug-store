@@ -10,9 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.common.DatabaseConnection;
-import com.common.Staff;
 
-@WebServlet("/User/deleteaccount")
+@WebServlet("/User/deleteAccount")
 public class DeleteAccount extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -29,13 +28,15 @@ public class DeleteAccount extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		DatabaseConnection dbc = new DatabaseConnection();
 		
-		
 		try {
 			Statement stmt=dbc.getConnection().createStatement();
 			String command = "delete from customer where customerID=" + request.getSession().getAttribute("CustomerID");
 			int rows=stmt.executeUpdate(command);
 			
-			response.sendRedirect("../index.jsp");
+			request.getSession().removeAttribute("Logged");
+			request.getSession().removeAttribute("CustomerID");
+			request.getSession().removeAttribute("Customer");
+	    	response.sendRedirect("../login.jsp");
 		} catch (Exception e) {
 			response.getWriter().append(e.toString());
 		}
