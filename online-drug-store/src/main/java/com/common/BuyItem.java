@@ -31,7 +31,8 @@ public class BuyItem extends HttpServlet {
 		DatabaseConnection dbc = new DatabaseConnection();
 		int originalQuantity = dbc.getRemainingItems(Integer.parseInt(request.getParameter("itemID")));
 		if(Integer.parseInt(request.getParameter("quantity"))>originalQuantity) {
-			RequestDispatcher r=request.getRequestDispatcher("index.jsp");  
+			String url="item.jsp?id="+request.getParameter("itemID");
+			RequestDispatcher r=request.getRequestDispatcher(url);   
 			request.setAttribute("message", "Invalid Quantity");
 			r.forward(request, response);
 		}
@@ -61,7 +62,8 @@ public class BuyItem extends HttpServlet {
 				
 				Item[] data=dbc.getItemDetails();
 				request.getSession().setAttribute("data", data);
-				RequestDispatcher r=request.getRequestDispatcher("index.jsp");  
+				String url="item.jsp?id="+request.getParameter("itemID");
+				RequestDispatcher r=request.getRequestDispatcher(url);  
 				request.setAttribute("message", "Purchase Successfull");
 				r.forward(request, response);
 			} catch(Exception e) {

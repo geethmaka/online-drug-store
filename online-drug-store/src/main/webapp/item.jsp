@@ -60,14 +60,15 @@
             <%}%>
         </div>
         <div class="main">
-	        <form action='buyitem' method='post'>
+	        <form action='buyitem' method='post' style="text-align:left;">
+	        	 <h3 style="color:white">${message}</h3>
 		         <h1><%=item.getName()%></h1>
 		         <p>
 		         <span>Available Quantity : </span><span><%=item.getQuantity()%></span>
 		         <br><br>
 		         <span>Price : Rs. </span><input type="number" name="price" value="<%=item.getUnitPrice()%>" readonly/>
 		         <br><br>
-		         <span>Quantity : <input type="number" id="quan" name="quantity" size="48"></span>
+		         <span>Quantity : <input type="number" id="quan" name="quantity" size="48" required></span>
 		         <br><br>
 		         <button type='submit' name='itemID' class='btn1' value="<%=item.getItemID()%>">Purchase</button>
 		         </p>

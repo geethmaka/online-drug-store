@@ -75,7 +75,6 @@
             <%}%>
         </div>
         <div class="main">
-        	<div><h3>${message}</h3></div>
             <div id="items">
             <c:forEach items="${data}" var="item">
 	            <div class="category"> 

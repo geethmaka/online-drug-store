@@ -9,6 +9,7 @@
 <head>
 <link rel="stylesheet" type="text/css" href="../css/table.css">
 <link rel="stylesheet" href="../css/home.css">
+<link rel="stylesheet" href="css/main.css">
  <link rel="stylesheet" type="text/css" href="../css/forms.css">
 <meta charset="ISO-8859-1">
      <title>Seller Account</title>
