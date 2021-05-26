@@ -44,7 +44,7 @@
             <div id="logOutButtonContainer" style="align-items: center;align-content: center; text-align: center;padding-top: 35px;">
                 <span style="font-weight: bolder;font-size: 20px;">Welcome Back,</span><br>
                 <span id="username">${Customer.getFirstName()}</span><br><br>
-                <a href="./customer_account.jsp"><button class="btn">My Account</button></a>&nbsp;&nbsp;
+                <a href="User/customer_account.jsp"><button class="btn">My Account</button></a><br>
                 <form action="logout"><button type="submit" class="btn">SignOut</button></form>
             </div>
             <%}else{ %>
@@ -60,13 +60,18 @@
             <%}%>
         </div>
         <div class="main">
-        <form action='buyitem' method='post'>
-                    <h1><%=item.getName()%></h1>
-                    <span style="color:#fff;">Price : Rs. </span><input type="number" name="price" value="<%=item.getUnitPrice()%>" readonly/><br>
-                    <span style="color:#fff;">Available Quantity </span><span><%=item.getQuantity()%></span>
-                    <br><br>Quantity : <input type="number" id="quan" name="quantity" size="48"><br><br>
-                    <button type='submit' name='itemID' value="<%=item.getItemID()%>">Purchase</button>
-        </form>
+	        <form action='buyitem' method='post'>
+		         <h1><%=item.getName()%></h1>
+		         <p>
+		         <span>Available Quantity : </span><span><%=item.getQuantity()%></span>
+		         <br><br>
+		         <span>Price : Rs. </span><input type="number" name="price" value="<%=item.getUnitPrice()%>" readonly/>
+		         <br><br>
+		         <span>Quantity : <input type="number" id="quan" name="quantity" size="48"></span>
+		         <br><br>
+		         <button type='submit' name='itemID' class='btn1' value="<%=item.getItemID()%>">Purchase</button>
+		         </p>
+	        </form>
         </div>
         <br>
         <div class="bottomBar">

@@ -80,29 +80,10 @@ h1 {
   color: #ffff;
 }
 
-p {
-  color: #ffff;
-}
-
 ul {
   color: #ffff;
 }
-table {
-  border-collapse: collapse;
-  width: 100%;
-}
 
-<<<<<<< HEAD
-td {
-  text-align: left;
-  padding: 8px;
-}
-
-th {
-  background-color: #e4eef0;
-  color: black;
-}
-=======
 /*buttons*/
 .btn{
 	background-color:transparent;
@@ -123,7 +104,7 @@ th {
 	background-color:transparent;
 	border-radius: 4px;
     color: white;
-    padding: 5px 10px;
+    padding: 3px 6px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -133,4 +114,7 @@ th {
 	box-shadow: 1px 1px #666666;
 	transform: translateY(1px);
 }
->>>>>>> user
+
+button:hover {
+	opacity: 0.8;
+}

@@ -9,8 +9,8 @@
     <title>Login</title>
 </head>
     <body>
-        <a href="../index.jsp"><img src="img/cart.png" class="logo"></a><br><br>
-        <br><br><br>
+    	<img src="img/cart.png" class="logo"><br><br>
+        <br><br>
         <div class="center_form">
             <div>
                 <form action="login" method="post">
@@ -27,8 +27,8 @@
                         </div>
                         <div>
                             <a href="User/forgot_password1.jsp" class="link">Forgot Password?</a>
-                        </div><br><br>
-                        <div>
+                        </div>
+                        <div class='center'>
                         	<div style = "color:red;"><p>${Message}</p></div>
                         </div>
                         <div class="center">

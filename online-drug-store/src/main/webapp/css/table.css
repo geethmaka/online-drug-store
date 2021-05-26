@@ -1,27 +1,23 @@
 @charset "ISO-8859-1";
 table{
 
-    border-collapse: collapse;
-    width: 100%;
-    border: 2px solid Gray;
+  border-collapse: collapse;
+  width: 100%;
+  border: 2px solid Gray;
 }
   
 td {
 	color: white;
-    text-align: left;
-    padding: 8px;
+  text-align: left;
+  padding: 8px;
 }
 
 th {
-    background-color:transparent;
-    color: white;
+  background-color:transparent;
+  color: white;
 }
 
 h1{
-
-td {
-  text-align: left;
-  padding: 8px;
   color: #fff;
 }
 

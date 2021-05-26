@@ -19,7 +19,7 @@
 <body>
     <div class="topBar">
         <div class="logo">
-            <img src="../img/cart.png" height="100" width="100">
+            <a href="../index.jsp"><img src="../img/cart.png" height="100" width="100"></a>
         </div>
         <div class="searchBar">
             <div></div>

@@ -12,9 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 import com.common.DatabaseConnection;
 import com.common.Staff;
 
-/**
- * Servlet implementation class DeleteAccount
- */
 @WebServlet("/User/deleteaccount")
 public class DeleteAccount extends HttpServlet {
 	private static final long serialVersionUID = 1L;

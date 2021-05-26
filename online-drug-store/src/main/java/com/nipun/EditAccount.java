@@ -35,13 +35,15 @@ public class EditAccount extends HttpServlet {
 				Statement stmt1 = dbc.getConnection().createStatement();
 				String command1 = "UPDATE customer SET firstName = '" + request.getParameter("fname") + "', lastName ='" + request.getParameter("lname") + "' where customerID =" + request.getSession().getAttribute("CustomerID");
 				int rows1 = stmt1.executeUpdate(command1);
+				
+				response.sendRedirect("../login.jsp");
 			}
 			else if (request.getParameter("change_pwd").equals("on")) {
-			response.getWriter().append(request.getParameter("change_un"));}
+			response.getWriter().append(request.getParameter("change_pwd"));}
 //				Statement stmt2 = dbc.getConnection().createStatement();
 //				String command2 = "Select password from customer where customerID = " + request.getSession().getAttribute("CustomerID");
 //				ResultSet rs = stmt2.executeQuery(command2);
-//			
+//			]
 //				while(rs.next()) {
 //					pw=rs.getString(1);
 //					response.getWriter().append(pw);

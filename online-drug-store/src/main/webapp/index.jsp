@@ -58,7 +58,7 @@
             <!-- this part only shows when user logged in-->
             <div id="logOutButtonContainer" style="align-items: center;align-content: center; text-align: center;padding-top: 35px;">
                 <span style="font-weight: bolder;font-size: 20px;">Welcome Back,</span><br>
-                <span id="username">${Customer.getFirstName()}</span><br>
+                <span id="username">${Customer.getFirstName()}</span><br><br>
                 <a href="User/customer_account.jsp"><button class="btn">My Account</button></a><br>
                 <form action="logout"><button type="submit" class="btn">SignOut</button></form>
             </div>

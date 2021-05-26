@@ -14,7 +14,7 @@
 <body>
     <div class="topBar">
         <div class="logo">
-            <img src="../img/cart.png" height="100" width="100">
+            <a href="../index.jsp"><img src="../img/cart.png" height="100" width="100"></a>
         </div>
         <div class="searchBar">
             <div></div>
@@ -30,7 +30,7 @@
         <div class="welcome">
             <span style="font-weight: bolder;font-size: 20px;">Welcome Back,</span><br>
             <span id="username">${Customer.getFirstName()}</span><br><br>
-            <button class="btn">My Account</button>&nbsp;&nbsp;
+            <a href="customer_account.jsp"><button class="btn">My Account</button></a>
             <form action="../logout" method="post"><button type="submit" class="btn">SignOut</button></form>
         </div>
     </div>
