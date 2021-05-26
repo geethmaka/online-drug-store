@@ -62,7 +62,8 @@
                     <input type="text" id="chglname" name="lname"></input> <br><br>
                 </fieldset>
 
-                <input type="checkbox" id="chgpwd" name="change_pwd" onclick='enablepassword()'>
+                <!--<input type="checkbox" id="chgpwd" name="change_pwd" onclick='enablepassword()'>-->
+                <input type="checkbox" id="chgpwd" name="change_pwd">
                 <label for="change_pwd">Change Password</label>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br>
 
