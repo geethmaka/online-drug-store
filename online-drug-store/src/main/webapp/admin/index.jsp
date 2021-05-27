@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Admin panel</title>
 <link rel="stylesheet" type="text/css" href="../css/table.css">
 <link rel="stylesheet" href="../css/home.css">
 </head>
