@@ -8,8 +8,7 @@
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="../css/table.css">
-<link rel="stylesheet" href="../css/home.css">
-<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" type="text/css" href="../css/home.css">
  <link rel="stylesheet" type="text/css" href="../css/forms.css">
 <meta charset="ISO-8859-1">
      <title>Stock handler</title>
@@ -32,7 +31,7 @@
             </div>
             <div style="align-items: center;align-content: center; text-align: center;padding-top: 35px;">
             <br><br>
-                <form action="../logout" method="post"><button type="submit">Logout</button></form>
+                <form action="../logout" method="post"><button class="btn1" type="submit">Logout</button></form>
             </div>
         </div>
         <div class="main">
@@ -50,10 +49,10 @@
 				   		<td><input type="number" name="productquantity" value="<c:out value="${Item.getQuantity()}" />"></td>
 				    	<td><input type="number" name="productprice" value="<c:out value="${Item.getUnitPrice()}" />"></td>
 				    	<td>
-				    	 		<button type = "submit" name="id" value="${Item.getItemID()}">Update Item</button>
+				    	 		<button class="btn1" type = "submit" name="id" value="${Item.getItemID()}">Update Item</button>
 				    	 	</form>
 				    		<form action="deleteitem" method="post">
-				    	 		<button type = "submit" name="id" value="${Item.getItemID()}">Remove Item</button>
+				    	 		<button class="btn1" type = "submit" name="id" value="${Item.getItemID()}">Remove Item</button>
 				    	 	</form>
 				    	 </td>
 			    	 </tr>
@@ -67,10 +66,7 @@
                         <label for="pname">Product Name </label>
                         <input type="text" id="pname" name="pname" size="48"><br><br>
 
-                        <label for="desc">Description </label>
-                        <input type="text" id="desc" name="desc" size="48"><br><br>
-
-                        
+                 
                         <label for="price">Unit price </label>
                         <input type="number" name="price" size="48"><br><br>
                         
@@ -79,7 +75,7 @@
                         <input type="number" id="quan" name="quantity" size="48"><br><br>
 
                         <div style="text-align: center;">
-                            <button type="submit">Add product</button>
+                            <button class="btn2" type="submit">Add product</button>
                         </div>
                     </form>
                 </fieldset>
