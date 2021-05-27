@@ -60,7 +60,7 @@
             <%}%>
         </div>
         <div class="main">
-	        <form action='buyitem' method='post' style="text-align:left;">
+	        <form action='buyitem' method='post'>
 	        	 <h3 style="color:white">${message}</h3>
 		         <h1><%=item.getName()%></h1>
 		         <p>

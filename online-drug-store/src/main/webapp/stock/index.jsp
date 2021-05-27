@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="css/main.css">
  <link rel="stylesheet" type="text/css" href="../css/forms.css">
 <meta charset="ISO-8859-1">
-     <title>Seller Account</title>
+     <title>Stock handler</title>
     </head>
 <% if(request.getSession().getAttribute("Logged").equals("Stock")) {
 	Item[] data = (Item[]) request.getSession().getAttribute("data");
