@@ -14,7 +14,7 @@ import com.common.DatabaseConnection;
 import com.common.Staff;
 
 
-@WebServlet("/user/deleteuser")
+@WebServlet("/admin/deleteuser")
 public class DeleteUser extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

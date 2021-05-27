@@ -65,9 +65,6 @@
 	
 	                     <label for="rpwd">Re-enter Password :</label><br>
 	                     <input type="password" id="rpwd" name="rpwd" size="48"  title="Six or more characters" required><br><br>
-	                     
-	                     <input type="checkbox" id="agreeterms" name="agreeterms" onclick="enableButon()">
-	                     <label for="agreeterms">By clicking, I agree to the Terms of Use and have read the Privacy Statement</label><br><br>
 	                 </div>
 	                 
 	                 <div class="center">    
