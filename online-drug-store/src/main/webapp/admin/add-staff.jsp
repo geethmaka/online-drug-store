@@ -25,9 +25,9 @@
             </div>
             <div style="float: right;">
             	<br><br>
-                <a href="add-staff.jsp"><button>Add another employee</button></a>
-                <a href="update-user-details.jsp"><button>Update Staff Details</button></a>
-                <form action="../logout" method="post"><button type="submit">Logout</button></form>
+                <a href="add-staff.jsp"><button class="btn2">Add another employee</button></a>
+                <a href="update-user-details.jsp"><button class="btn2">Update Staff Details</button></a>
+                <form action="../logout" method="post"><button type="submit" class="btn2">Logout</button></form>
             </div>
         </div>
 	    <div class="center_form">
@@ -38,21 +38,20 @@
 	                 <div><div style = "color:red;"><p>${message}</p></div></div>
 	                 <div>
 	                     <label for="fname">First Name :</label><br>
-	                     <input type="text" id="fname" name="fname" size="48" value="test"><br><br>
+	                     <input type="text" id="fname" name="fname" size="48"><br><br>
 	
 	                     <label for="lname">Last Name :</label><br>
-	                     <input type="text" id="lname" name="lname" size="48" value="test"><br><br>
+	                     <input type="text" id="lname" name="lname" size="48" ><br><br>
 	
 	                     <label for="email">Email :</label><br>
-	                     <input type="text" id="email" name="email" size="48" value="test"><br><br>
-	                     <!-- pattern="[a-z 0-9 +-_%]+@+[a-z 0-9 +-_%]+.[a-z]{2,3}" Required -->
+	                     <input type="text" id="email" name="email" size="48" pattern="[a-z 0-9 +-_%]+@+[a-z 0-9 +-_%]+.[a-z]{2,3}" Required><br><br>
 	
 	                     <label for="number">Number :</label><br>
-	                     <input type="number" id="number" name="number" size="10" value="00"><br><br>
+	                     <input type="number" id="number" name="number" size="10" value="00" Required><br><br>
 	
 	
 	                     <label for="type">Type :</label><br>
-	                     &nbsp;&nbsp;<select name="type" id="type">
+	                     &nbsp;&nbsp;<select name="type" id="type" Required>
 	                         <option value="" selected></option>
 	                         <option value="Admin">Admin</option>
 	                         <option value="DeliveryM">Delivery Manager</option>
@@ -61,11 +60,11 @@
 	                     <br><br>
 	                     <label for="pw">Password :</label><br>
 	                     <input type="password" id="pwd" name="pwd" size="48" 
-	                     title="Must contain at least one  number and one uppercase and lowercase letter, and at least 6 or more characters" value="test"><br><br>
-	                     <!-- pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" -->
+	                     title="Must contain at least one  number and one uppercase and lowercase letter, and at least 6 or more characters" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" Required><br><br>
+	                     <!--  -->
 	
 	                     <label for="rpwd">Re-enter Password :</label><br>
-	                     <input type="password" id="rpwd" name="rpwd" size="48"  title="Six or more characters" ><br><br>
+	                     <input type="password" id="rpwd" name="rpwd" size="48"  title="Six or more characters" required><br><br>
 	                     
 	                     <input type="checkbox" id="agreeterms" name="agreeterms" onclick="enableButon()">
 	                     <label for="agreeterms">By clicking, I agree to the Terms of Use and have read the Privacy Statement</label><br><br>

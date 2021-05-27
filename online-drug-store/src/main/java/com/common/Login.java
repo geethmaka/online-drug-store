@@ -2,10 +2,6 @@ package com.common;
 
 import java.io.IOException;
 
-
-//import java.sql.*;
-//import java.util.*;
-//
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -41,6 +37,7 @@ public class Login extends HttpServlet {
 			
 			boolean Found = false;
 			
+			try {
 			for(int i=0;i<CustomerData.length;i++) {
 				if((CustomerData[i].getEmail().equals(request.getParameter("email")))&&(CustomerData[i].getPassword().equals(request.getParameter("password")))) {
 					Found=true;
@@ -52,8 +49,9 @@ public class Login extends HttpServlet {
 					response.sendRedirect("index.jsp");
 					break;
 				}
-			}
+			}}catch (Exception e) {}
 			
+			try {
 			for(int i=0;i<staffData.length;i++) {
 				if((staffData[i].getEmail().equals(request.getParameter("email")))&&(staffData[i].getPassword().equals(request.getParameter("password")))) {
 					Found=true;
@@ -75,6 +73,7 @@ public class Login extends HttpServlet {
 					}
 					break;
 				}
+			}}catch (Exception e) {
 			}
 			 
 			if(!Found) {

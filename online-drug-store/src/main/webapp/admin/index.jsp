@@ -10,7 +10,8 @@
 <meta charset="ISO-8859-1">
 <title>Admin panel</title>
 <link rel="stylesheet" type="text/css" href="../css/table.css">
-<link rel="stylesheet" href="../css/home.css">
+<link rel="stylesheet" href="../css/main.css">
+<link rel="stylesheet" href="../css/signedInUser.css">
 </head>
 
 <% if(request.getSession().getAttribute("Logged").equals("Admin")) {
@@ -29,9 +30,9 @@
             </div>
             <div style="float: right;">
             	<br><br>
-                <a href="add-staff.jsp"><button>Add another employee</button></a>
-                <a href="update-user-details.jsp"><button>Update Staff Details</button></a>
-                <form action="../logout" method="post"><button type="submit">Logout</button></form>
+                <a href="add-staff.jsp"><button class="btn2">Add another employee</button></a>
+                <a href="update-user-details.jsp"><button class="btn2">Update Staff Details</button></a>
+                <form action="../logout" method="post"><button type="submit" class="btn2">Logout</button></form>
             </div>
         </div>
         <br>
@@ -43,7 +44,7 @@
                     <table id="table" border="1" width="100%">
                         <tr>
                             <td colspan="6">
-                                User Detials
+                                Staff Detials
                             </td>
                             <td rowspan="2">
                                 Action
@@ -67,7 +68,7 @@
 				    	 	<td><c:out value="${staff.getStaff()}" /></td>
 				    	 	<td>
 				    	 		<form action="deleteuser" method="post">
-				    	 			<button type = "submit" name="id" value="${staff.getId()}">Delete User</button>
+				    	 			<button type = "submit" name="id" value="${staff.getId()}" class="btn2">Delete User</button>
 				    	 		</form>
 				    	 	<td>
 			    	 	</tr>

@@ -32,9 +32,9 @@
             </div>
             <div style="float: right;">
             	<br><br>
-                <a href="add-staff.jsp"><button>Add another employee</button></a>
-                <a href="update-user-details.jsp"><button>Update Staff Details</button></a>
-                <form action="../logout" method="post"><button type="submit">Logout</button></form>
+                <a href="add-staff.jsp"><button class="btn2">Add another employee</button></a>
+                <a href="update-user-details.jsp"><button class="btn2">Update Staff Details</button></a>
+                <form action="../logout" method="post"><button type="submit" class="btn2">Logout</button></form>
             </div>
         </div>
         <div id="main" class="main">
@@ -57,12 +57,7 @@
 					    	 <td><input type="text" name="email" value="<c:out value="${staff.getEmail()}" />"></td>
 					    	 <td><input type="text" name="phone" value="<c:out value="${staff.getPhoneNo()}" />"></td>
 					    	 <td><input type="text" name="password" value="<c:out value="${staff.getPassword()}" />"></td>
-					    	 <td>
-					    	 	<select name="staff">
-					    	 		<option value="Delivery">Delivery Staff</option>
-					    	 		<option value="Other">Other</option>
-					    	 	</select>
-					    	 </td>
+					    	 <td><input type="text" name="staff" value="<c:out value="${staff.getStaff()}" />"></td>
 					    	 <td>
 					    	 	<button type = "submit" name="id" value="<c:out value="${staff.getId()}" />">Update User</button>
 					    	 <td>

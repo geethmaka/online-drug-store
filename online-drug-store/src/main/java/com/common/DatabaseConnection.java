@@ -39,6 +39,7 @@ public class DatabaseConnection {
 			array = ll.toArray(new Staff[ll.size()]);
 			 
 		} catch (Exception e) {
+			
 		}
 		return array;
 	}
