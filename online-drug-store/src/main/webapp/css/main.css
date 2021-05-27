@@ -131,3 +131,11 @@ ul {
 button:hover {
 	opacity: 0.8;
 }
+
+input{
+	color: white;
+  	margin: 5px;
+ 	border-radius: 5px;
+  	border-color: gray;
+  	background-color: transparent;
+}

@@ -86,9 +86,9 @@ input {
 }
 
 /*links*/
-.link:link {
+/* .link:link {
   color: #00ff40;
-}
+} */
 .link:visited {
   color: rgb(0, 255, 0) le;
 }

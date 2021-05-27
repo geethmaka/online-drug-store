@@ -79,6 +79,7 @@
                 <button type="submit" name="submit" class="btn2">Change Password</button>
             </form>
         </div>
+    </div>
     <div class="bottomBar">
         <div class="footer">
             <br><br>
