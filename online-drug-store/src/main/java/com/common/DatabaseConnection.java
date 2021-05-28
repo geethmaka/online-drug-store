@@ -39,7 +39,7 @@ public class DatabaseConnection {
 			array = ll.toArray(new Staff[ll.size()]);
 			 
 		} catch (Exception e) {
-			
+			e.printStackTrace();
 		}
 		return array;
 	}

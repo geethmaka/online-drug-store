@@ -74,6 +74,7 @@ public class Login extends HttpServlet {
 					break;
 				}
 			}}catch (Exception e) {
+				e.printStackTrace();
 			}
 			 
 			if(!Found) {

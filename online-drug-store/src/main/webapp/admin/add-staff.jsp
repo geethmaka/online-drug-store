@@ -44,10 +44,10 @@
 	                     <input type="text" id="lname" name="lname" size="48" ><br><br>
 	
 	                     <label for="email">Email :</label><br>
-	                     <input type="text" id="email" name="email" size="48" pattern="[a-z 0-9 +-_%]+@+[a-z 0-9 +-_%]+.[a-z]{2,3}" Required><br><br>
+	                     <input type="text" id="email" name="email" size="48" Required pattern="[a-z 0-9 .+-_%]+@+[a-z 0-9 +-_%]+\.[a-z]{2,3}"><br><br>
 	
-	                     <label for="number">Number :</label><br>
-	                     <input type="number" id="number" name="number" size="10" value="00" Required><br><br>
+	                     <label for="number">Contact Number :</label><br>
+	                     <input type="number" id="number" name="number" size="10" Required pattern="[0-9]{10}" placeholder="0712345678"><br><br>
 	
 	
 	                     <label for="type">Type :</label><br>

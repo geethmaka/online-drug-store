@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.classes.Item;
+import com.classes.OrderDetails;
 
 @WebServlet("/buyitem")
 public class BuyItem extends HttpServlet {
@@ -63,7 +64,9 @@ public class BuyItem extends HttpServlet {
 				Item[] data=dbc.getItemDetails();
 				request.getSession().setAttribute("data", data);
 				String url="item.jsp?id="+request.getParameter("itemID");
-				RequestDispatcher r=request.getRequestDispatcher(url);  
+				RequestDispatcher r=request.getRequestDispatcher(url); 
+				OrderDetails[] Orderdetails=dbc.getOrderDetails((int)request.getSession().getAttribute("CustomerID"));
+				request.getSession().setAttribute("orderDetials",Orderdetails);
 				request.setAttribute("message", "Purchase Successfull");
 				r.forward(request, response);
 			} catch(Exception e) {

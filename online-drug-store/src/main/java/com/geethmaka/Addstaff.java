@@ -29,6 +29,7 @@ public class Addstaff extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		DatabaseConnection dbc = new DatabaseConnection();
+		if(request.getParameter("pwd").equals(request.getParameter("rpwd"))) {
 		try {
 			Statement stmt=dbc.getConnection().createStatement();
 			String command = "select * from employee where email='"+request.getParameter("email")+"'";
@@ -47,6 +48,11 @@ public class Addstaff extends HttpServlet {
 			
 		} catch(Exception e) {
 			e.printStackTrace();
+		}
+		}else {
+			RequestDispatcher redirect = getServletContext().getRequestDispatcher("/admin/add-staff.jsp");
+			request.setAttribute("message", "Passwords do not match");
+			redirect.forward(request, response);
 		}
 	}
 

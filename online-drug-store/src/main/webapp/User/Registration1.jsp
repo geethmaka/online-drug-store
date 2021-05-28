@@ -34,7 +34,7 @@
                         placeholder="ex:-peterpaker@gmail.com" Required pattern="[a-z 0-9 .+-_%]+@+[a-z 0-9 +-_%]+\.[a-z]{2,3}"><br><br>
 
                         <label for="pno">Telephone (Enter Phone number starting from 94):</label><br>
-                        <input type ="tel" id="pno" name="pno"  size="48"placeholder="94712345678" Required pattern="[0-9]{11}"><br><br>
+                        <input type ="tel" id="pno" name="pno"  size="48" placeholder="94712345678" Required pattern="[0-9]{11}"><br><br>
                         
                         <label for="pwd">Password :</label><br>
                         <input type="password" id="pwd" name="pwd" size="48"  
