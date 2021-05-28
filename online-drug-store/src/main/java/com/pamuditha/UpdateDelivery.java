@@ -27,19 +27,8 @@ public class UpdateDelivery extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		DatabaseConnection dbc = new DatabaseConnection();
 		
-		try {
-			Statement stmt=dbc.getConnection().createStatement();
-			String command = "update delivery set status='"+request.getParameter("status")+"' where deliveryID="+request.getParameter("id");
-			
-			int rows=stmt.executeUpdate(command);
-			
-			
-			Delivery[] data=dbc.getDeliveryDetails();
-			request.getSession().setAttribute("data", data);
-			response.sendRedirect("index.jsp");
-		} catch (Exception e) {
-			response.getWriter().append(e.toString());
-		}
+		
+		boolean updateDelivery = dbc.updateDelivery(request.getParameter("status"), request.getParameter("id"));
 	}
 
 }

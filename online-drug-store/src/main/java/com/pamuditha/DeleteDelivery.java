@@ -26,29 +26,10 @@ public class DeleteDelivery extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.getWriter().append(request.getParameter("id"));
 		DatabaseConnection dbc = new DatabaseConnection();
-		int orderID=0;
 		
-		try {
-			Statement stmt=dbc.getConnection().createStatement();
-			String command = "delete from delivery where deliveryID=" + request.getParameter("id");
-			String getOrderId = "select orderID from delivery where deliveryID=" + request.getParameter("id");
-			
-			ResultSet rs=stmt.executeQuery(getOrderId);
-			while(rs.next()) {
-				orderID=rs.getInt(1);
-			}
-			
-			String deleteOrder = "delete from orders where orderID=" + orderID;
-			int rows=stmt.executeUpdate(command);
-			int rowss=stmt.executeUpdate(deleteOrder);
-			
-			
-			Delivery[] data=dbc.getDeliveryDetails();
-			request.getSession().setAttribute("data", data);
-			response.sendRedirect("index.jsp");
-		} catch (Exception e) {
-			response.getWriter().append(e.toString());
-		}
+		boolean deleteDel = dbc.deleteDelivery(request.getParameter("id"));
+		
+		
 	}
 
 }
