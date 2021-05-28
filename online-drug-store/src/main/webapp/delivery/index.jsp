@@ -102,7 +102,8 @@
 	            </table>
 	                    </div>
 	                    <br><br>
-	                <sdiv>
+	                <div>
+	                <h3>${message}</h3>
 	                <fieldset>
 	                    <legend><b>Add New Product</b><br></legend>
 	                    <form action="placeorder" method="post">

@@ -358,6 +358,7 @@ public class DatabaseConnection {
 		int id = 0;
 		int originalQuantity = this.getRemainingItems(Integer.parseInt(itemId));
 		
+		if(Integer.parseInt(qty)<originalQuantity) {
 		try {
 			int tot=Integer.parseInt(qty)*Integer.parseInt(price);
 			int remainingItems=originalQuantity-Integer.parseInt(qty);
@@ -382,7 +383,8 @@ public class DatabaseConnection {
 		} catch(Exception e) {
 			return false;
 		}
-	}
+	}else{return false;}}
+		
 	
 	public boolean updateDelivery(String status, String id) {
 		try {
