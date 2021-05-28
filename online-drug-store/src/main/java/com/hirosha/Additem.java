@@ -28,17 +28,8 @@ public class Additem extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		DatabaseConnection dbc = new DatabaseConnection();
-		try {
-			Statement stmt=dbc.getConnection().createStatement();
-			String command = "insert into item(name,quantity,unitPrice) VALUES('"+request.getParameter("pname")+"',"+request.getParameter("quantity")+","+request.getParameter("price")+")";
-			int rows=stmt.executeUpdate(command);
-
-			Item[] data=dbc.getItemDetails();
-			request.getSession().setAttribute("data", data);
-			response.sendRedirect("index.jsp");
-		} catch(Exception e) {
-			e.printStackTrace();
-		}
+		
+		boolean addItem = dbc.addItem( request.getParameter("pname"), request.getParameter("quantity"), request.getParameter("price"));
 	}
 
 }

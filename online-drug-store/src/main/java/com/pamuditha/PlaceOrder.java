@@ -32,38 +32,10 @@ public class PlaceOrder extends HttpServlet {
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		int id = 0;
 		DatabaseConnection dbc = new DatabaseConnection();
-		int originalQuantity = dbc.getRemainingItems(Integer.parseInt(request.getParameter("itemID")));
-		try {
-			int tot=Integer.parseInt(request.getParameter("quantity"))*Integer.parseInt(request.getParameter("price"));
-			int remainingItems=originalQuantity-Integer.parseInt(request.getParameter("quantity"));
-			Statement stmt=dbc.getConnection().createStatement();
-			String command = "insert into orders(customerID,itemID,quantity,totalAmount) VALUES(1"+","+request.getParameter("itemID")+","+request.getParameter("quantity")+","+tot+")";
-			PreparedStatement ps=dbc.getConnection().prepareStatement(command,Statement.RETURN_GENERATED_KEYS);
-			
-			ps.executeUpdate();
-			ResultSet rs=ps.getGeneratedKeys();
-			
-			if(rs.next()){
-				id=rs.getInt(1);
-			}
-			
-			command= "insert into delivery(orderID,status) values("+id+",'pending')";
-			int rows=stmt.executeUpdate(command);
-			
-			command= "update item set quantity="+remainingItems+" where itemID="+Integer.parseInt(request.getParameter("itemID"));
-			rows=stmt.executeUpdate(command);
-			
-			Delivery[] data=dbc.getDeliveryDetails();
-			request.getSession().setAttribute("data", data);
-			request.getSession().removeAttribute("items");
-			Item[] items=dbc.getItemDetails();
-			request.getSession().setAttribute("items", items);
-			response.sendRedirect("index.jsp");
-		} catch(Exception e) {
-			e.printStackTrace();
-		}
+		
+		
+		boolean placeOd = dbc.placeOrder(request.getParameter("itemID"), request.getParameter("quantity"), request.getParameter("quantity"));
 	}
 
 }

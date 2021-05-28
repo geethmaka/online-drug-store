@@ -217,6 +217,15 @@ public class DatabaseConnection {
 				return false;
 			}
 			
+	public boolean addItem(String pname, String qty, String price) {
+		try {
+			Statement stmt=this.getConnection().createStatement();
+			String command = "insert into item(name,quantity,unitPrice) VALUES('" +pname+"',"+ qty +","+price+")";
+			int rows=stmt.executeUpdate(command);
+
+			Item[] data=this.getItemDetails();
+			request.getSession().setAttribute("data", data);
+			response.sendRedirect("index.jsp");
 		} catch(Exception e) {
 			e.printStackTrace();
 			return false;
@@ -292,6 +301,100 @@ public class DatabaseConnection {
 			return true;
 		} catch (Exception e) {
 			return false;
+		
+		return true;
+	}
+	
+	
+	public boolean deleteItem(String id) {
+		try {
+			Statement stmt=this.getConnection().createStatement();
+			String command = "delete from item where itemID=" + id;
+			int rows=stmt.executeUpdate(command);
+			
+			
+			Item[] data=this.getItemDetails();
+			request.getSession().setAttribute("data", data);
+			response.sendRedirect("index.jsp");
+		} catch (Exception e) {
+			response.getWriter().append(e.toString());
+		}
+	}
+	
+	public boolean deleteDelivery(String id) {
+		int orderID=0;
+		
+		try {
+			Statement stmt=this.getConnection().createStatement();
+			String command = "delete from delivery where deliveryID=" + id;
+			String getOrderId = "select orderID from delivery where deliveryID=" + id;
+			
+			ResultSet rs=stmt.executeQuery(getOrderId);
+			while(rs.next()) {
+				orderID=rs.getInt(1);
+			}
+			
+			String deleteOrder = "delete from orders where orderID=" + orderID;
+			int rows=stmt.executeUpdate(command);
+			int rowss=stmt.executeUpdate(deleteOrder);
+			
+			
+			Delivery[] data=this.getDeliveryDetails();
+			request.getSession().setAttribute("data", data);
+			response.sendRedirect("index.jsp");
+		} catch (Exception e) {
+			response.getWriter().append(e.toString());
+		}
+	}
+	
+	public boolean placeOrder(String itemId, String qty, String price) {
+		int id = 0;
+		int originalQuantity = this.getRemainingItems(Integer.parseInt(itemId));
+		
+		try {
+			int tot=Integer.parseInt(qty)*Integer.parseInt(price);
+			int remainingItems=originalQuantity-Integer.parseInt(qty);
+			Statement stmt=this.getConnection().createStatement();
+			String command = "insert into orders(customerID,itemID,quantity,totalAmount) VALUES(1"+","+itemId+","+qty+","+tot+")";
+			PreparedStatement ps=this.getConnection().prepareStatement(command,Statement.RETURN_GENERATED_KEYS);
+			
+			ps.executeUpdate();
+			ResultSet rs=ps.getGeneratedKeys();
+			
+			if(rs.next()){
+				id=rs.getInt(1);
+			}
+			
+			command= "insert into delivery(orderID,status) values("+id+",'pending')";
+			int rows=stmt.executeUpdate(command);
+			
+			command= "update item set quantity="+remainingItems+" where itemID="+Integer.parseInt(itemId);
+			rows=stmt.executeUpdate(command);
+			
+			Delivery[] data=this.getDeliveryDetails();
+			request.getSession().setAttribute("data", data);
+			request.getSession().removeAttribute("items");
+			Item[] items=this.getItemDetails();
+			request.getSession().setAttribute("items", items);
+			response.sendRedirect("index.jsp");
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public boolean updateDelivery(String status, String id) {
+		try {
+			Statement stmt=this.getConnection().createStatement();
+			String command = "update delivery set status='"+status+"' where deliveryID="+id;
+			
+			int rows=stmt.executeUpdate(command);
+			
+			
+			Delivery[] data=this.getDeliveryDetails();
+			request.getSession().setAttribute("data", data);
+			response.sendRedirect("index.jsp");
+		} catch (Exception e) {
+			response.getWriter().append(e.toString());
 		}
 	}
 }

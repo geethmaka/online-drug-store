@@ -25,18 +25,7 @@ public class DeleteItem extends HttpServlet {
 		response.getWriter().append(request.getParameter("id"));
 		DatabaseConnection dbc = new DatabaseConnection();
 		
-		try {
-			Statement stmt=dbc.getConnection().createStatement();
-			String command = "delete from item where itemID=" + request.getParameter("id");
-			int rows=stmt.executeUpdate(command);
-			
-			
-			Item[] data=dbc.getItemDetails();
-			request.getSession().setAttribute("data", data);
-			response.sendRedirect("index.jsp");
-		} catch (Exception e) {
-			response.getWriter().append(e.toString());
-		}
+		boolean deleteItem = dbc.deleteItem(request.getParameter("id"));
 	}
 
 }
