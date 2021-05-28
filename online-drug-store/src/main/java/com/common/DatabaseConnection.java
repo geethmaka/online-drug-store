@@ -4,6 +4,8 @@ import java.sql.*;
 import java.util.LinkedList;
 import java.util.List;
 
+import javax.servlet.RequestDispatcher;
+
 import com.classes.Customer;
 import com.classes.Delivery;
 import com.classes.Item;
@@ -160,5 +162,136 @@ public class DatabaseConnection {
 		} catch (Exception e) {}
 		
 		return array;
+	}
+	
+	
+	public boolean buyItem(int itemID,int quantity,double price,int customerID) {
+		int originalQuantity = this.getRemainingItems(itemID);
+		int rows;
+		int id = 0;
+		if(quantity>originalQuantity) {
+			return false;
+		}
+		else {
+			int remainingItems=originalQuantity-quantity;
+			try {
+				Statement stmt=this.getConnection().createStatement();
+				double tot=quantity*price;
+				
+				String command = "insert into orders(customerID,itemID,quantity,totalAmount) VALUES("+customerID+","+itemID+","+quantity+","+tot+")";
+	
+				PreparedStatement ps=this.getConnection().prepareStatement(command,Statement.RETURN_GENERATED_KEYS);
+				
+				ps.executeUpdate();
+				ResultSet rs=ps.getGeneratedKeys();
+				
+				if(rs.next()){
+					id=rs.getInt(1);
+				}
+				
+				
+				command= "insert into delivery(orderID,status) values("+id+",'pending')";
+				rows=stmt.executeUpdate(command);
+				
+				command= "update item set quantity="+remainingItems+" where itemID="+itemID;
+				rows=stmt.executeUpdate(command);
+				
+				return true;
+			} catch(Exception e) {
+				e.printStackTrace();
+				return false;
+			}
+		}
+	}
+	
+	public boolean addStaff(String email,String fname,String lname,int number,String pwd,String type) {
+		try {
+			Statement stmt=this.getConnection().createStatement();
+			String command = "select * from employee where email='"+email+"'";
+			ResultSet rs=stmt.executeQuery(command);
+			if(!rs.next()) {
+				command = "insert into employee(firstName,lastName,email,phoneNo,password,Staff) VALUES('"+fname+"','"+lname+"','"+email+"','"+number+"','"+pwd+"','"+type+"')";
+				int rows=stmt.executeUpdate(command);
+				return true;
+			}else {
+				return false;
+			}
+			
+		} catch(Exception e) {
+			e.printStackTrace();
+			return false;
+		}
+	}
+	public boolean deleteStaff(String id) {
+		try {
+			Statement stmt=this.getConnection().createStatement();
+			String command = "delete from employee where employeeID=" + id;
+			int rows=stmt.executeUpdate(command);
+			
+			return true;
+		
+		} catch (Exception e) {
+			return false;
+		}
+	}
+	
+	public boolean updateStaff(String fname,String lname,String email,String number,String pwd,String staff,String id) {
+		try {
+			Statement stmt=this.getConnection().createStatement();
+			
+			String command = "UPDATE employee SET firstName = '"+fname+"',lastName = '"+lname+"',email = '"+email+"',phoneNo='"+number+"',password ='"+ pwd+"',Staff ='"+ staff+"' WHERE employeeID ="+ id;
+			int rows=stmt.executeUpdate(command);
+			
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
+	}
+	
+	public boolean changeUsername(String fname,String lname,String id) {
+		try {
+			Statement stmt = this.getConnection().createStatement();
+			String command = "UPDATE customer SET firstName = '" + fname + "', lastName ='" + lname+ "' where customerID =" + id;
+			int rows = stmt.executeUpdate(command);
+			return true;
+		} catch (SQLException e) {
+			return false;
+		}
+	}
+	
+	public boolean changePassword(int id,String oldpwd,String newpwd) {
+		String pwd=null;
+		try {
+			Statement stmt = this.getConnection().createStatement();
+			String command = "Select password from customer where customerID=" + id;
+			ResultSet rs = stmt.executeQuery(command);
+			
+			while(rs.next()) {
+				pwd = rs.getString(1);
+			}
+			
+			if(oldpwd.equals(pwd)) {
+					String command1 = "UPDATE customer SET password = '" + newpwd + "' where customerID =" + id;
+					stmt.executeUpdate(command1);
+					return true;
+			}else {
+				return false;
+			}
+		}
+		catch (SQLException e) {
+			return false;
+		}
+	}
+	
+	public boolean deleteAccount(int id) {
+		try {
+			Statement stmt=this.getConnection().createStatement();
+			String command = "delete from customer where customerID=" + id;
+			int rows=stmt.executeUpdate(command);
+			
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
 	}
 }

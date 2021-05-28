@@ -31,17 +31,12 @@ public class UpdateUser extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		DatabaseConnection dbc = new DatabaseConnection();
 
-		try {
-			Statement stmt=dbc.getConnection().createStatement();
-			
-			String command = "UPDATE employee SET firstName = '"+request.getParameter("fname")+"',lastName = '"+request.getParameter("lname")+"',email = '"+request.getParameter("email")+"',phoneNo='"+request.getParameter("phone")+"',password ='"+ request.getParameter("password")+"',Staff ='"+ request.getParameter("staff")+"' WHERE employeeID ="+ request.getParameter("id");
-			int rows=stmt.executeUpdate(command);
-			
+		boolean updateStaff=dbc.updateStaff(request.getParameter("fname"), request.getParameter("lname"), request.getParameter("email"), request.getParameter("phone"),request.getParameter("password"),request.getParameter("staff"),request.getParameter("id"));
+		
+		if(updateStaff) {
 			Staff[] data=dbc.getStaffdetails();
 			request.getSession().setAttribute("data",data);
 			response.sendRedirect("index.jsp");
-		} catch (Exception e) {
-			response.getWriter().append(e.toString());
 		}
 	}
 

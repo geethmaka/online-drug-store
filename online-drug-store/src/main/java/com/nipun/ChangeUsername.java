@@ -27,20 +27,15 @@ public class ChangeUsername extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		DatabaseConnection dbc = new DatabaseConnection();
 		
-		try {
-			Statement stmt = dbc.getConnection().createStatement();
-			String command = "UPDATE customer SET firstName = '" + request.getParameter("fname") + "', lastName ='" + request.getParameter("lname") + "' where customerID =" + request.getSession().getAttribute("CustomerID");
-			int rows = stmt.executeUpdate(command);
-			
+		
+		boolean changeUsername=dbc.changeUsername(request.getParameter("fname"),request.getParameter("lname"),request.getSession().getAttribute("CustomerID").toString());
+		
+		if(changeUsername) {
 			request.getSession().removeAttribute("Logged");
 			request.getSession().removeAttribute("CustomerID");
 			request.getSession().removeAttribute("Customer");
 			response.sendRedirect("../login.jsp");
-			
-		} catch (SQLException e) {
-			e.printStackTrace();
 		}
-		
 	}
 
 }

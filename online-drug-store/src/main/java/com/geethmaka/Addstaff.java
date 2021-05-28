@@ -30,25 +30,17 @@ public class Addstaff extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		DatabaseConnection dbc = new DatabaseConnection();
 		if(request.getParameter("pwd").equals(request.getParameter("rpwd"))) {
-		try {
-			Statement stmt=dbc.getConnection().createStatement();
-			String command = "select * from employee where email='"+request.getParameter("email")+"'";
-			ResultSet rs=stmt.executeQuery(command);
-			if(!rs.next()) {
-				command = "insert into employee(firstName,lastName,email,phoneNo,password,Staff) VALUES('"+request.getParameter("fname")+"','"+request.getParameter("lname")+"','"+request.getParameter("email")+"','"+request.getParameter("number")+"','"+request.getParameter("pwd")+"','"+request.getParameter("type")+"')";
-				int rows=stmt.executeUpdate(command);
+			boolean addStaff=dbc.addStaff(request.getParameter("email"), request.getParameter("fname"), request.getParameter("lname"), Integer.parseInt(request.getParameter("number")), request.getParameter("pwd"), request.getParameter("type"));
+			if(addStaff) {
 				Staff[] data=dbc.getStaffdetails();
 				request.getSession().setAttribute("data", data);
 				response.sendRedirect("index.jsp");
-			}else {
+			}
+			else {
 				RequestDispatcher redirect = getServletContext().getRequestDispatcher("/admin/add-staff.jsp");
 				request.setAttribute("message", "Employee Already exists!!!");
 				redirect.forward(request, response);
 			}
-			
-		} catch(Exception e) {
-			e.printStackTrace();
-		}
 		}else {
 			RequestDispatcher redirect = getServletContext().getRequestDispatcher("/admin/add-staff.jsp");
 			request.setAttribute("message", "Passwords do not match");

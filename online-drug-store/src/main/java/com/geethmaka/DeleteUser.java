@@ -25,17 +25,15 @@ public class DeleteUser extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		DatabaseConnection dbc = new DatabaseConnection();
 		
+		boolean deleteStafff=dbc.deleteStaff(request.getParameter("id"));
 		
-		try {
-			Statement stmt=dbc.getConnection().createStatement();
-			String command = "delete from employee where employeeID=" + request.getParameter("id");
-			int rows=stmt.executeUpdate(command);
-			
+		if(deleteStafff) {
 			Staff[] data=dbc.getStaffdetails();
 			request.getSession().setAttribute("data", data);
 			response.sendRedirect("index.jsp");
-		} catch (Exception e) {
-			response.getWriter().append(e.toString());
+		}
+		else {
+			
 		}
 		
 	}

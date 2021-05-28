@@ -27,52 +27,23 @@ public class BuyItem extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		int rows;
-		int id = 0;
+		
 		DatabaseConnection dbc = new DatabaseConnection();
-		int originalQuantity = dbc.getRemainingItems(Integer.parseInt(request.getParameter("itemID")));
-		if(Integer.parseInt(request.getParameter("quantity"))>originalQuantity) {
-			String url="item.jsp?id="+request.getParameter("itemID");
+		String url="item.jsp?id="+request.getParameter("itemID");
+		Item[] data=dbc.getItemDetails();
+		request.getSession().setAttribute("data", data);
+		
+		boolean buyItem=dbc.buyItem(Integer.parseInt(request.getParameter("itemID")),Integer.parseInt(request.getParameter("quantity")),Double.parseDouble(request.getParameter("price")),(int)request.getSession().getAttribute("CustomerID"));
+		
+		if(buyItem) {
 			RequestDispatcher r=request.getRequestDispatcher(url);   
-			request.setAttribute("message", "Invalid Quantity");
+			request.setAttribute("message", "Purchase Successfull");
 			r.forward(request, response);
-		}
-		else {
-			int remainingItems=originalQuantity-Integer.parseInt(request.getParameter("quantity"));
-			try {
-				Statement stmt=dbc.getConnection().createStatement();
-				double tot=Integer.parseInt(request.getParameter("quantity"))*Double.parseDouble(request.getParameter("price"));
-				
-				String command = "insert into orders(customerID,itemID,quantity,totalAmount) VALUES("+request.getSession().getAttribute("CustomerID")+","+request.getParameter("itemID")+","+request.getParameter("quantity")+","+tot+")";
-	
-				PreparedStatement ps=dbc.getConnection().prepareStatement(command,Statement.RETURN_GENERATED_KEYS);
-				
-				ps.executeUpdate();
-				ResultSet rs=ps.getGeneratedKeys();
-				
-				if(rs.next()){
-					id=rs.getInt(1);
-				}
-				
-				
-				command= "insert into delivery(orderID,status) values("+id+",'pending')";
-				rows=stmt.executeUpdate(command);
-				
-				command= "update item set quantity="+remainingItems+" where itemID="+Integer.parseInt(request.getParameter("itemID"));
-				rows=stmt.executeUpdate(command);
-				
-				Item[] data=dbc.getItemDetails();
-				request.getSession().setAttribute("data", data);
-				String url="item.jsp?id="+request.getParameter("itemID");
-				RequestDispatcher r=request.getRequestDispatcher(url); 
-				OrderDetails[] Orderdetails=dbc.getOrderDetails((int)request.getSession().getAttribute("CustomerID"));
-				request.getSession().setAttribute("orderDetials",Orderdetails);
-				request.setAttribute("message", "Purchase Successfull");
-				r.forward(request, response);
-			} catch(Exception e) {
-				e.printStackTrace();
-			}
-		}
+		}else {
+		RequestDispatcher r=request.getRequestDispatcher(url);   
+		request.setAttribute("message", "Invalid Quantity");
+		r.forward(request, response);}
+		
 	}
 
 }
