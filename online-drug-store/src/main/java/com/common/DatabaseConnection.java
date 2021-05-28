@@ -161,4 +161,37 @@ public class DatabaseConnection {
 		
 		return array;
 	}
+	
+	public boolean addItem(String pname, String qty, String price) {
+		try {
+			Statement stmt=this.getConnection().createStatement();
+			String command = "insert into item(name,quantity,unitPrice) VALUES('" +pname+"',"+ qty +","+price+")";
+			int rows=stmt.executeUpdate(command);
+
+			Item[] data=this.getItemDetails();
+			request.getSession().setAttribute("data", data);
+			response.sendRedirect("index.jsp");
+		} catch(Exception e) {
+			e.printStackTrace();
+			return false;
+		}
+		
+		return true;
+	}
+	
+	
+	public boolean deleteItem(String id) {
+		try {
+			Statement stmt=this.getConnection().createStatement();
+			String command = "delete from item where itemID=" + id;
+			int rows=stmt.executeUpdate(command);
+			
+			
+			Item[] data=this.getItemDetails();
+			request.getSession().setAttribute("data", data);
+			response.sendRedirect("index.jsp");
+		} catch (Exception e) {
+			response.getWriter().append(e.toString());
+		}
+	}
 }

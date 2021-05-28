@@ -25,19 +25,7 @@ public class UpdateItem extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		DatabaseConnection dbc = new DatabaseConnection();
 		
-		try {
-			Statement stmt=dbc.getConnection().createStatement();
-			String command = "update item set name='"+request.getParameter("productname")+"',quantity="+request.getParameter("productquantity")+",unitPrice="+request.getParameter("productprice")+" where itemId="+request.getParameter("id");
-			
-			int rows=stmt.executeUpdate(command);
-			
-			
-			Item[] data=dbc.getItemDetails();
-			request.getSession().setAttribute("data", data);
-			response.sendRedirect("index.jsp");
-		} catch (Exception e) {
-			response.getWriter().append(e.toString());
-		}
+		
 	}
 
 }
