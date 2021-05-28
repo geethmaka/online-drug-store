@@ -26,6 +26,12 @@ public class DeleteItem extends HttpServlet {
 		DatabaseConnection dbc = new DatabaseConnection();
 		
 		boolean deleteItem = dbc.deleteItem(request.getParameter("id"));
+		
+		if(deleteItem) {
+			Item[] data=dbc.getItemDetails();
+			request.getSession().setAttribute("data", data);
+			response.sendRedirect("index.jsp");
+		}
 	}
 
 }

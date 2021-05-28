@@ -216,18 +216,32 @@ public class DatabaseConnection {
 			}else {
 				return false;
 			}
+		}		catch(Exception e) {
+			return false;
+		}
+	}
 			
 	public boolean addItem(String pname, String qty, String price) {
 		try {
 			Statement stmt=this.getConnection().createStatement();
 			String command = "insert into item(name,quantity,unitPrice) VALUES('" +pname+"',"+ qty +","+price+")";
 			int rows=stmt.executeUpdate(command);
-
-			Item[] data=this.getItemDetails();
-			request.getSession().setAttribute("data", data);
-			response.sendRedirect("index.jsp");
+			
+			return true;
 		} catch(Exception e) {
 			e.printStackTrace();
+			return false;
+		}
+	}
+	
+	public boolean updateItem(String productname,String productquantity,String price,String id) {
+		try {
+			Statement stmt=this.getConnection().createStatement();
+			String command = "update item set name='"+productname+"',quantity="+productquantity+",unitPrice="+price+" where itemId="+id;
+			
+			int rows=stmt.executeUpdate(command);
+			return true;
+		} catch (Exception e) {
 			return false;
 		}
 	}
@@ -301,8 +315,7 @@ public class DatabaseConnection {
 			return true;
 		} catch (Exception e) {
 			return false;
-		
-		return true;
+	}
 	}
 	
 	
@@ -312,12 +325,9 @@ public class DatabaseConnection {
 			String command = "delete from item where itemID=" + id;
 			int rows=stmt.executeUpdate(command);
 			
-			
-			Item[] data=this.getItemDetails();
-			request.getSession().setAttribute("data", data);
-			response.sendRedirect("index.jsp");
+			return true;
 		} catch (Exception e) {
-			response.getWriter().append(e.toString());
+			return false;
 		}
 	}
 	
@@ -338,12 +348,9 @@ public class DatabaseConnection {
 			int rows=stmt.executeUpdate(command);
 			int rowss=stmt.executeUpdate(deleteOrder);
 			
-			
-			Delivery[] data=this.getDeliveryDetails();
-			request.getSession().setAttribute("data", data);
-			response.sendRedirect("index.jsp");
+			return true;
 		} catch (Exception e) {
-			response.getWriter().append(e.toString());
+			return false;
 		}
 	}
 	
@@ -371,14 +378,9 @@ public class DatabaseConnection {
 			command= "update item set quantity="+remainingItems+" where itemID="+Integer.parseInt(itemId);
 			rows=stmt.executeUpdate(command);
 			
-			Delivery[] data=this.getDeliveryDetails();
-			request.getSession().setAttribute("data", data);
-			request.getSession().removeAttribute("items");
-			Item[] items=this.getItemDetails();
-			request.getSession().setAttribute("items", items);
-			response.sendRedirect("index.jsp");
+			return true;
 		} catch(Exception e) {
-			e.printStackTrace();
+			return false;
 		}
 	}
 	
@@ -389,12 +391,22 @@ public class DatabaseConnection {
 			
 			int rows=stmt.executeUpdate(command);
 			
-			
-			Delivery[] data=this.getDeliveryDetails();
-			request.getSession().setAttribute("data", data);
-			response.sendRedirect("index.jsp");
+			return true;
 		} catch (Exception e) {
-			response.getWriter().append(e.toString());
+			return false;
+		}
+	}
+	
+	public boolean registerUser(String fname,String lname,String email,String phoneno,String pw,String add1,String add2,String city,String province) {
+		try {
+			Statement stmt = this.getConnection().createStatement();
+			String command = "insert into customer(firstName,lastName,email,phoneNo,password,addressLine1,addressLine2,city,province)"
+					+ "VALUES('" + fname + "','" + lname + "','" + email + "','" + phoneno + "','" + pw + "','" + add1 + "','" + add2 + "','" + city + "','" + province + "')";
+			stmt.executeUpdate(command);
+			
+			return true;
+		} catch(Exception e) {
+			return false;
 		}
 	}
 }

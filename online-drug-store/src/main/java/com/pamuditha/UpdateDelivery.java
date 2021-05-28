@@ -29,6 +29,12 @@ public class UpdateDelivery extends HttpServlet {
 		
 		
 		boolean updateDelivery = dbc.updateDelivery(request.getParameter("status"), request.getParameter("id"));
+		
+		if(updateDelivery) {
+			Delivery[] data=dbc.getDeliveryDetails();
+			request.getSession().setAttribute("data", data);
+			response.sendRedirect("index.jsp");
+		}
 	}
 
 }

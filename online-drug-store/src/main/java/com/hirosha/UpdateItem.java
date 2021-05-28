@@ -25,7 +25,13 @@ public class UpdateItem extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		DatabaseConnection dbc = new DatabaseConnection();
 		
+		boolean updateItem=dbc.updateItem(request.getParameter("productname"),request.getParameter("productquantity"),request.getParameter("productprice"),request.getParameter("id"));
 		
+		if(updateItem) {
+			Item[] data=dbc.getItemDetails();
+			request.getSession().setAttribute("data", data);
+			response.sendRedirect("index.jsp");
+		}
 	}
 
 }

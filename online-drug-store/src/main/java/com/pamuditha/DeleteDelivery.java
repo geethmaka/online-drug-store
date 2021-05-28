@@ -29,6 +29,11 @@ public class DeleteDelivery extends HttpServlet {
 		
 		boolean deleteDel = dbc.deleteDelivery(request.getParameter("id"));
 		
+		if(deleteDel) {
+			Delivery[] data=dbc.getDeliveryDetails();
+			request.getSession().setAttribute("data", data);
+			response.sendRedirect("index.jsp");
+		}
 		
 	}
 

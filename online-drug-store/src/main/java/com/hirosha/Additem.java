@@ -30,6 +30,11 @@ public class Additem extends HttpServlet {
 		DatabaseConnection dbc = new DatabaseConnection();
 		
 		boolean addItem = dbc.addItem( request.getParameter("pname"), request.getParameter("quantity"), request.getParameter("price"));
+		if(addItem) {
+			Item[] data=dbc.getItemDetails();
+			request.getSession().setAttribute("data", data);
+			response.sendRedirect("index.jsp");
+		}
 	}
 
 }

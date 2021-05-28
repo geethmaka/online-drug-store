@@ -33,17 +33,11 @@ public class Register2Servlet extends HttpServlet {
 		customer.setCity(request.getParameter("city"));
 		customer.setProvince(request.getParameter("state"));
 		
-		try {
-			Statement stmt = dbc.getConnection().createStatement();
-			String command = "insert into customer(firstName,lastName,email,phoneNo,password,addressLine1,addressLine2,city,province)"
-					+ "VALUES('" + customer.getFirstName() + "','" + customer.getLastName() + "','" + customer.getEmail() + "','" + customer.getPhoenNo() + "','" + customer.getPassword() + "','" + customer.getAddressLine1() + "','" + customer.getAddressLine2() + "','" + customer.getCity() + "','" + customer.getProvince() + "')";
-			stmt.executeUpdate(command);
-			
-			response.sendRedirect("../login.jsp");
-		} catch(Exception e) {
-			e.printStackTrace();
-		}
+		boolean addCustomer= dbc.registerUser(customer.getFirstName(), customer.getLastName(), customer.getEmail(), customer.getPhoenNo(), customer.getPassword(), customer.getAddressLine1(), customer.getAddressLine2(), customer.getCity(), customer.getProvince());
 		
+		if(addCustomer) {
+			response.sendRedirect("../login.jsp");
+		}
 	}
 
 }

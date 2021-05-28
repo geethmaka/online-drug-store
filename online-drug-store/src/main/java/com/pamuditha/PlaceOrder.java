@@ -36,6 +36,15 @@ public class PlaceOrder extends HttpServlet {
 		
 		
 		boolean placeOd = dbc.placeOrder(request.getParameter("itemID"), request.getParameter("quantity"), request.getParameter("quantity"));
+		
+		if(placeOd) {
+			Delivery[] data=dbc.getDeliveryDetails();
+			request.getSession().setAttribute("data", data);
+			request.getSession().removeAttribute("items");
+			Item[] items=dbc.getItemDetails();
+			request.getSession().setAttribute("items", items);
+			response.sendRedirect("index.jsp");
+		}
 	}
 
 }
