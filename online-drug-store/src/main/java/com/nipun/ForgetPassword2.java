@@ -29,12 +29,9 @@ public class ForgetPassword2 extends HttpServlet {
 		
 		int customerID = (int) request.getSession().getAttribute("CustomerID");
 		
-		try {
 			if(request.getParameter("password").equals(request.getParameter("confirmpassword"))) {
-				Statement stmt = dbc.getConnection().createStatement();
-				String command = "UPDATE customer SET password = '" + request.getParameter("password") + "' where customerID =" + customerID;
-				stmt.executeUpdate(command);
 				
+				boolean updatepw=dbc.updatePw(request.getParameter("password"), customerID);
 				response.sendRedirect("../login.jsp");
 			}
 			else {
@@ -43,8 +40,5 @@ public class ForgetPassword2 extends HttpServlet {
 				dispatcher.forward(request, response);
 			}
 			
-		} catch(Exception e) {
-			e.printStackTrace();
-		}
 	}
 }

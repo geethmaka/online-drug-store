@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="../css/main.css">
 <link rel="stylesheet" href="../css/signedInUser.css">
 </head>
-
+<%if (request.getSession().getAttribute("Logged")!=null){ %>
 <% if(request.getSession().getAttribute("Logged").equals("Admin")) {
 	Staff[] data = (Staff[]) request.getSession().getAttribute("data");
 %>
@@ -102,5 +102,6 @@
  <%}else{ %>
  <p>blocked
  </body>
+ <%} %>
  <%} %>
 </html>

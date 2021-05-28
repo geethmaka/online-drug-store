@@ -411,4 +411,16 @@ public class DatabaseConnection {
 			return false;
 		}
 	}
+	
+	public boolean updatePw(String pw,int id) {
+		try {
+		Statement stmt = this.getConnection().createStatement();
+		String command = "UPDATE customer SET password = '" + pw + "' where customerID =" + id;
+		stmt.executeUpdate(command);
+		return true;
+		}
+		catch(Exception e) {
+			return false;
+		}
+	}
 }
